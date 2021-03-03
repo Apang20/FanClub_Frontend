@@ -1,8 +1,202 @@
-.App {
+/* .App {
+  text-align: center;
+} */
+
+/* .App {
+  background-image: url('https://i.gifer.com/Sk6w.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding-top: 150px;
+} */
+
+/* body {
+  margin: 0;
+  font-family: monospace;
+} */
+
+#nav-bar{
+  display: flex;
+  justify-content: center;
+  background: white;
+  /* background-image: url('https://wallpaperaccess.com/full/156229.jpg'); */
+  /* background-image: url('https://i.imgur.com/mmvSad5.gif'); */
+  /* background-image: url(); */
+  /* background-image: url("https://i.pinimg.com/originals/61/b2/7f/61b27fc1fc63f0a8796abdc94206c72e.jpg") no-repeat center center fixed;  */
+
+  opacity: .9;
+  height: 20rem;
+  padding: 2rem;
+  min-height: 30vh;
+  min-width: 100vh;
+  /* flex-direction: column; */
+  /* background-color: #60b1e7;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin); */
+  color: white;
+}
+
+
+#nav-bar img {
+  height: 16rem;
+  width: auto;
+}
+
+/* img{
+  height: 150px;
+} */
+
+.navbar-pic{
+  margin: auto;
+  display: table;
+  height: auto;
+  width: auto;
+
+}
+
+
+.item-container{
+  margin: 20rem;
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  background: white;
+  /* opacity: .9; */
+  
+}
+
+
+.item-card {
+  text-align: center;
+  border: rgb(191, 196, 197) solid 1px;
+  padding: 2rem;
+  width: 5 rem;
+  height: auto;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 4px 5px #2279a1f8;
+  font-size: 15px;
+ 
+}
+
+
+.item-img{
+    justify-self: center;
+    height: 17rem;
+    width: auto;
+}
+
+.item-card:hover{
+  color:#070707;
+  border-color:#f8f1f1;
+  background-color: rgb(223, 219, 215);
+}
+
+button {
+  position: relative;
+  background-color: #0c79a8;
+  border: none;
+  border-radius: 5px;
+  height: 3rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
+}
+
+/* button{
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight: 300;
+  color:#FFFFFF;
+  background-color:rgb(166, 193, 214);
+  text-align:center;
+  transition: all 0.2s;
+} */
+
+.buttonContainer {
+  text-align: right;
+  padding: 1rem;
+}
+
+
+button:hover {
+  background-color: whitesmoke;
+  border: #0d7ce4 solid 1px;
+  color: #053705;
+}
+
+.background-img{
+  /* background: url("https://i.pinimg.com/originals/61/b2/7f/61b27fc1fc63f0a8796abdc94206c72e.jpg") no-repeat center center fixed;  */
+  /* background: url("https://i.pinimg.com/originals/f6/21/b6/f621b606f99a3abec1c4f07e2532aba0.gif") no-repeat center center fixed;  */
+  background: url("https://pa1.narvii.com/6806/4a29915a496ef3c8f8645eac7c77c75724ce5dde_hq.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  /* font-family: 'Bebas Neue', cursive; */
+}
+
+
+
+/* .movie-container{
+  border-style: solid;
+}
+
+.movie-card{
+  text-align: center;
+} */
+
+/* main {
+  background-image: url('https://i.gifer.com/Sk6w.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding-top: 150px;
+} */
+
+/* background {
+  background-image: url('https://i.gifer.com/Sk6w.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding-top: 150px;
+} */
+
+/* .totoro {
+  background-image: url('https://wallpaperaccess.com/full/156229.jpg');
+  padding-bottom: 15px;
+}
+
+.padding {
+  padding-top: 15px;
+}
+
+.name {
+  padding-bottom: 15px;
+}
+
+.navbar{
   text-align: center;
 }
 
-.App-logo {
+
+  
+} */
+/*-------------- MOVIE CONTAINER ----------------------*/
+/*-------------- ITEM CONTAINER ----------------------*/
+/*-------------- NAVBAR CONTAINER ----------------------*/
+/*-------------- CART ----------------------*/
+/*-------------- MOVIE CONTAINER ----------------------*/
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +229,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
