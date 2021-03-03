@@ -21,10 +21,13 @@ import CartItem  from './CartItem'
 
     render() {
         return (
-            <div className="cart"> {console.log(this.props.carts)}
-            {this.props.carts.map(cart => <CartItem cart={cart} removeFromCart={this.props.removeFromCart}/>)}
-            <br/>
+            <div>
+            <h1>Welcome {this.props.currentUser.username}!</h1>
             <button><Link to="/items">Add a new Item!</Link></button>
+
+            <div className="cart"> {console.log(this.props.carts)}
+            {this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart}/>)}
+            
             {/*this.props.currentUser ? 
                 <div>
                 <h1>{this.props.currentUser.username}'s Cart</h1>
@@ -34,6 +37,7 @@ import CartItem  from './CartItem'
                 <h1>Please login to Shop!</h1>
                 <button/>
             */}
+            </div>
             </div>
             
             );

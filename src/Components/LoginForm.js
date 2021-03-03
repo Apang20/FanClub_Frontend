@@ -27,12 +27,14 @@ class LoginForm extends React.Component {
             })
         }).then(res => res.json())
         .then(userData => {
-        
+            // if(this.props.currentUser){
           fetch("http://localhost:3000/users/" + userData.id)
-            .then(res => res.json())
+            .then(res => res.json()) 
+            // .then(res => console.log(res))
             .then(fullData => this.props.updateCurrentUser(fullData)
             )
         })
+        // }
       }
 
 

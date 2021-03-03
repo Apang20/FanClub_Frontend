@@ -9,7 +9,7 @@ import React, { Component } from 'react'
                   <h2>{this.props.item.name}</h2>
                   <h3>${this.props.item.price}</h3>
                   <p><b>Description:</b> {this.props.item.description}</p>
-                  <button onClick={() => (this.props.addToCart(this.props.item))} className="add-btn" >Add me to your cart!</button>
+                  <button onClick={() => (this.props.addToCart(this.props.item, this.props.user))} className="add-btn" >Add me to your cart!</button>
                   </div>
               );
           };

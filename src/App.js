@@ -3,7 +3,7 @@ import './App.css';
 import React, {Fragment} from 'react';
 // import { Route, Switch, Redirect, withRouter, Router } from 'react-router-dom'
 import { Route, Switch, Link, Redirect, BrowserRouter as Router} from 'react-router-dom'
-import Profile from './Components/Profile'
+import Account from './Components/Account'
 //import NotFound from './Components/notFound'
 import LoginForm from './Components/LoginForm';
 import NavBar from './Components/NavBar';
@@ -15,6 +15,7 @@ import Register from './Components/Register'
 import NotFound from './Components/NotFound'
 import Footer from './Components/Footer'
 import Home from './Components/Home'
+import EditForm from './Components/EditForm'
 // import { render } from 'react-dom';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -25,7 +26,7 @@ import Home from './Components/Home'
 const ItemsURL = "http://localhost:3000/items/"
 const CartsURL = "http://localhost:3000/carts/"
 const CartItemsURL = "http://localhost:3000/cart_items/"
-const UserURL = "http://localhost:3000/users/"
+const UsersURL = "http://localhost:3000/users/"
 
 
 class App extends React.Component {
@@ -41,34 +42,38 @@ class App extends React.Component {
         this.setState({currentUser: user})
     }
 
+    logOut = () => {
+        this.setState({currentUser: null})
+    }
+
     componentDidMount() {
-        Promise.all([fetch(ItemsURL), fetch(CartsURL), fetch(UserURL), fetch(CartItemsURL)])
+        Promise.all([fetch(ItemsURL), fetch(CartsURL), fetch(UsersURL), fetch(CartItemsURL)])
           .then(([res1, res2, res3, res4]) => { 
              return Promise.all([res1.json(), res2.json(), res3.json(), res4.json()]) 
           })
-          .then(([items, carts, user, cart_items]) => {
+          .then(([items, carts, users, cart_items]) => {
             this.setState({items})
             this.setState({carts})
-            this.setState({user})
+            this.setState({users})
             this.setState({cart_items})
             console.log(carts, "Carts")
             console.log(cart_items, "Cart_Items")
           });
     }
 
-    
+
   addToCart = (item) => { //item is the obj
       let addCart 
     addCart = {
             item_id: item.id,
-            cart_id: 1
+            cart_id: 3 //grab from backend to make dynamic
     };
     let reqPack = {};
     reqPack.method = "POST"; 
     reqPack.headers = { "Content-Type": "application/json" };
     reqPack.body = JSON.stringify(addCart);
 
-     fetch("http://localhost:3000/cart_items/", reqPack) 
+     fetch("http://localhost:3000/cart_items", reqPack) 
         .then(res => res.json())
         .then(res => {
             res.item = item 
@@ -77,8 +82,8 @@ class App extends React.Component {
             console.log(res)
         })
     }
-    
 
+    
     removeFromCart = (cart_items) => { 
         console.log(cart_items, "removeFromCart function") 
         
@@ -88,20 +93,26 @@ class App extends React.Component {
         .then(res => res.json())
         .then((res) => { 
           this.setState({
-              carts: this.state.carts.filter((filteredCart) => filteredCart !== cart_items)
+              carts: this.state.carts.filter((filteredCart) => filteredCart != cart_items)
             })
         })
     }
 
-    
+    patchInfo = (newInfo) => {
+        this.setState({
+             currentUser: {username: newInfo.username}
+        })
+        // console.log(this.state.currentUser.username, "Current User UserName")
+      }
 
 
 
 render() {
+
     return (
 
         <Fragment>
-      <NavBar/>
+      <NavBar currentUser={this.state.currentUser} logOut={this.logOut}/>
     <Router/>
     <Switch>
       <Route exact path="/" component={Home}/>
@@ -111,11 +122,12 @@ render() {
       <Route exact path="/register" component={Register}/>
       <Route path="/carts" render={() => (
           <Cart currentUser={this.state.currentUser} carts={this.state.carts} removeFromCart={this.removeFromCart}/>)}/>
-          
-      <Route exact path="/user" render={() => <Profile currentUser={this.state.currentUser}/>}/>
+          <Route exact path="/edit" render={() => <EditForm currentUser={this.state.currentUser} patchInfo={this.patchInfo}/>}/>
+
+      <Route exact path="/users" render={() => <Account currentUser={this.state.currentUser}/>}/>
       <Route exact path="/items" render={(props) => (
-        <ItemContainer items={this.state.items} addToCart={this.addToCart} updateCurrentUser={this.updateCurrentUser} /> )}/>
-      <Route component={NotFound}/>
+        <ItemContainer items={this.state.items} addToCart={this.addToCart} updateCurrentUser={this.updateCurrentUser} user={this.state.currentUser}/> )}/>
+
     </Switch>
     <Router/>
     <MovieContainer/>

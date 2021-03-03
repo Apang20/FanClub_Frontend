@@ -3,9 +3,11 @@ import { Redirect } from "react-router-dom";
 
 class Register extends Component {
   state = {
+    firstName: "",
+    lastName: "",
     username: "",
-    password: "",
     email: "",
+    password: "",
     created: false,
     errorMessage: "",
   };
@@ -21,9 +23,11 @@ class Register extends Component {
   createUser = (event) => {
     event.preventDefault();
     event.target.reset();
-    const { username, email, password } = this.state;
+    const { firstName, lastName, username, email, password } = this.state; //firstName, LastName,
 
     let user = {
+      first_name: firstName,
+      last_name: lastName,
       username: username,
       email: email,
       password: password,
@@ -65,8 +69,15 @@ class Register extends Component {
             <form onSubmit={this.createUser}>
               <input
                 type="text"
-                name="username"
-                placeholder="Username"
+                name="firstName"
+                placeholder="First Name"
+                onChange={this.handleChange}
+              />
+              <br />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
                 onChange={this.handleChange}
               />
               <br />
@@ -74,6 +85,13 @@ class Register extends Component {
                 type="text"
                 name="email"
                 placeholder="Email"
+                onChange={this.handleChange}
+              />
+              <br />
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
                 onChange={this.handleChange}
               />
               <br />
