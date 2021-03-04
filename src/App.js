@@ -66,7 +66,7 @@ class App extends React.Component {
       let addCart 
     addCart = {
             item_id: item.id,
-            cart_id: 3 //grab from backend to make dynamic
+            cart_id: 7 //grab from backend to make dynamic
     };
     let reqPack = {};
     reqPack.method = "POST"; 
@@ -100,9 +100,16 @@ class App extends React.Component {
 
     patchInfo = (newInfo) => {
         this.setState({
-             currentUser: {username: newInfo.username}
-        })
-        // console.log(this.state.currentUser.username, "Current User UserName")
+             currentUser: {username: newInfo.username,
+                         first_name: newInfo.firstName,
+                         last_name: newInfo.lastName,
+                         email: newInfo.email,
+                         shipping_address: newInfo.shippingAddress,
+                         phone_number: newInfo.phoneNumber}
+                        })
+                        console.log(newInfo, "NewInfo")
+        console.log(this.state.currentUser, "Current User")
+      
       }
 
 
@@ -136,11 +143,12 @@ render() {
     </Fragment>
     
     )
-}
+  }
 
 }
 
 export default App; 
+
 
 ////   logInUser = (username) => {
 //     let current = this.state.users.find(

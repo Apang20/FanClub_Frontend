@@ -5,8 +5,10 @@ class Register extends Component {
   state = {
     firstName: "",
     lastName: "",
-    username: "",
     email: "",
+    phoneNumber: "",
+    shippingAddress: "",
+    username: "",
     password: "",
     created: false,
     errorMessage: "",
@@ -23,14 +25,19 @@ class Register extends Component {
   createUser = (event) => {
     event.preventDefault();
     event.target.reset();
-    const { firstName, lastName, username, email, password } = this.state; //firstName, LastName,
+    const { firstName, lastName, email, phoneNumber, shippingAddress, username, password } = this.state; //firstName, LastName,
+    console.log(email, "Email")
+    console.log(phoneNumber, "Phone Number")
+    console.log(event.target, "Event")
 
     let user = {
       first_name: firstName,
       last_name: lastName,
-      username: username,
       email: email,
-      password: password,
+      phone_number: phoneNumber,
+      shipping_address: shippingAddress,
+      username: username,
+      password: password
     };
 
     fetch("http://localhost:3000/users", {
@@ -42,10 +49,10 @@ class Register extends Component {
       body: JSON.stringify({ user }),
     })
       .then((r) => r.json())
-      .then((response) => {
-        if (response.status === "created") {
-          this.setState({ created: true, errorMessage: "" });
-        }
+      .then((response) => { console.log(response, "Register response")
+        // if (response.status === "created") {
+        //   this.setState({ created: true, errorMessage: "" });
+        // }
       })
       .catch((response) =>
         this.setState({
@@ -88,6 +95,21 @@ class Register extends Component {
                 onChange={this.handleChange}
               />
               <br />
+              <input
+              type="text"
+              name="phoneNumber"
+              placeholder="Phone Number"
+              onChange={this.handleChange}
+            />
+            <br />
+            <input
+            type="text"
+            name="shippingAddress"
+            placeholder="Shipping Address"
+            onChange={this.handleChange}
+          />
+
+            <br />
               <input
                 type="text"
                 name="username"

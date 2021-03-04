@@ -58,7 +58,7 @@
 
 
 .item-container{
-  margin: 20rem;
+  margin: 8rem;
   padding: 1rem;
   width: stretch;
   height: auto;
@@ -72,13 +72,13 @@
   text-align: center;
   border: rgb(191, 196, 197) solid 1px;
   padding: 2rem;
-  width: 5 rem;
+  width: stretch;
   height: auto;
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 4px 5px #2279a1f8;
   font-size: 15px;
- 
+ opacity: 1;
 }
 
 
@@ -91,7 +91,7 @@
 .item-card:hover{
   color:#070707;
   border-color:#f8f1f1;
-  background-color: rgb(223, 219, 215);
+  background-color: rgb(255, 253, 251);
 }
 
 button {

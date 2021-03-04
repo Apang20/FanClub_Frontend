@@ -14,12 +14,11 @@ import ItemCard  from './ItemCard'
 
 class ItemContainer extends Component {
     render() {
-        console.log(this.props.user, "CurrentUser in ItemContainer")
+        // console.log(this.props.user, "CurrentUser in ItemContainer")
         return(
             <div className="item-container">
             <div className="background-img">
             {this.props.items.map(item => <ItemCard item={item} addToCart={this.props.addToCart} removeFromCart={this.props.removeFromCart} updateCurrentUser={this.props.updateCurrentUser} user={this.props.currentUser}/>)}
-            This is my ItemContainer
             </div>
             </div>
           
