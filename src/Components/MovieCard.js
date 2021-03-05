@@ -1,12 +1,16 @@
-import React from "react";
 
-const MovieCard = () => {
-  return (
-   
-      <div className="movie-card"></div>
-    //   <button onClick={() => props.removeTrans(props.transaction)} className="del-btn"> Delete </button>
-    
-  );
-};
+import React, { Component } from 'react'
 
+class MovieCard extends Component {
+
+  render() {
+    return (
+      <div className="movie-card">
+        <div >
+        </div>
+      </div>
+
+    );
+  };
+}
 export default MovieCard;

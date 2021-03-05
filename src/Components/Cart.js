@@ -1,50 +1,57 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import CartItem  from './CartItem'
+import CartItem from './CartItem'
 
 
- class Cart extends Component {
+class Cart extends Component {
 
-    state = {
-        currentUserData: [],
-      }
-        componentDidMount(){
-        //   fetch("http://localhost:3000/users/" + currentUser.id)
-        if(this.props.currentUser){
-        fetch(`http://localhost:3000/users/${this.props.currentUser.id}`)
-          .then(res => res.json())
-          .then(currentUserData => {
-            this.setState({currentUserData})
-          })}
-        }
-
-
-    render() {
-        return (
-            <div>
-            <h1>Welcome {this.props.currentUser.username}!</h1>
-            <button><Link to="/items">Add a new Item!</Link></button>
-
-            <div className="cart"> {console.log(this.props.carts)}
-            {this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart}/>)}
-            
-            {/*this.props.currentUser ? 
-                <div>
-                <h1>{this.props.currentUser.username}'s Cart</h1>
-                {this.state.currentUserData.carts && this.state.currentUserData.carts.map(cart => <CartItem cart={cart} removeFromCart={this.props.removeFromtCart}/>)}
-                </div>
-                :
-                <h1>Please login to Shop!</h1>
-                <button/>
-            */}
-            </div>
-            </div>
-            
-            );
-        };
+  state = {
+    currentUserData: [],
+  }
+  componentDidMount() {
+    //   fetch("http://localhost:3000/users/" + currentUser.id)
+    if (this.props.currentUser) {
+      fetch(`http://localhost:3000/users/${this.props.currentUser.id}`)
+        .then(res => res.json())
+        .then(currentUserData => {
+          this.setState({ currentUserData })
+        })
     }
-    export default Cart;
-    
+  }
+
+
+  render() {
+    return (
+      <div>
+        <h1>Welcome {this.props.currentUser.username}!</h1>
+        <button><Link to="/items">Add a new Item!</Link></button>
+
+        <div className="cart"> {console.log(this.props.carts)}
+          {this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}
+        </div>
+      </div>
+
+    );
+  };
+}
+export default Cart;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // {this.props.carts.map(carts => <CartItem carts={carts} currentUser={this.props.currentUser}/>)}
     // render(){
     //     return ( 

@@ -49,7 +49,8 @@ class Register extends Component {
       body: JSON.stringify({ user }),
     })
       .then((r) => r.json())
-      .then((response) => { console.log(response, "Register response")
+      .then((response) => {
+        console.log(response, "Register response")
         // if (response.status === "created") {
         //   this.setState({ created: true, errorMessage: "" });
         // }
@@ -68,67 +69,67 @@ class Register extends Component {
         {this.state.created ? (
           <Redirect to="/login" />
         ) : (
-          <div>
-            <div className="please-log-in">
-              <p>{this.state.errorMessage}</p>
-            </div>
-            <br />
-            <form onSubmit={this.createUser}>
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                onChange={this.handleChange}
-              />
+            <div>
+              <div className="please-log-in">
+                <p>{this.state.errorMessage}</p>
+              </div>
               <br />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                onChange={this.handleChange}
-              />
-              <br />
-              <input
-                type="text"
-                name="email"
-                placeholder="Email"
-                onChange={this.handleChange}
-              />
-              <br />
-              <input
-              type="text"
-              name="phoneNumber"
-              placeholder="Phone Number"
-              onChange={this.handleChange}
-            />
-            <br />
-            <input
-            type="text"
-            name="shippingAddress"
-            placeholder="Shipping Address"
-            onChange={this.handleChange}
-          />
+              <form onSubmit={this.createUser}>
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={this.handleChange}
+                />
+                <br />
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={this.handleChange}
+                />
+                <br />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                />
+                <br />
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  onChange={this.handleChange}
+                />
+                <br />
+                <input
+                  type="text"
+                  name="shippingAddress"
+                  placeholder="Shipping Address"
+                  onChange={this.handleChange}
+                />
 
-            <br />
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                onChange={this.handleChange}
-              />
-              <br />
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={this.handleChange}
-              />
-              <br />
-              <br />
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        )}
+                <br />
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  onChange={this.handleChange}
+                />
+                <br />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+                <br />
+                <br />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          )}
         <br />
         <br />
       </div>

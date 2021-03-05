@@ -1,25 +1,16 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+import React from 'react';
 
 
 const Footer = () => {
 
     return (
         <div className="footer">
-           <p></p>
+            <br></br><br></br><br></br>
+            <h1>Footer</h1>
         </div>
     )
 }
 
-// const Profile = (props) => {
-//return (props.currentUser ?
-// <Card>
-//     <Card.Content>
-//         <Card.Header>{props.currentUser.username}</Card.Header>
-        
-//         <Card.Description>{props.currentUser.description</Card.Description>
-//     </Card.Content>
-// </Card> : null
-// );
-//}
 
 export default Footer; 
