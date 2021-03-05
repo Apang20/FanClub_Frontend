@@ -34,7 +34,7 @@ class EditForm extends Component {
             .then(resp => resp.json())
             .then(newInfo => {
                 this.props.patchInfo(this.state) //newInfo
-                e.target.reset()
+                // e.target.reset()
             })
     }
 

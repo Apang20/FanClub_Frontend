@@ -1,16 +1,33 @@
 import React from 'react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
+// import ButtonGroup from '@material-ui/core/ButtonGroup'
+import SaveIcon from '@material-ui/icons/Save'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AddBoxIcon from '@material-ui/icons/AddBox';
 
 class NavBar extends React.Component {
   render() {
     return (
       <div id="nav-bar">
         <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+        <Button
+        endIcon={<SaveIcon/>}
+         size="small" 
+         variant="contained" 
+         color="inherit" > 
+         TEST BTN
+         </Button>
+        
+   
+        {this.props.currentUser ? <Button startIcon={<ShoppingCartIcon/>} variant="outlined" color="primary"> <Link to="/carts">Cart</Link></Button> : null}
+        {this.props.currentUser ? <Button startIcon={<AccountCircleIcon/>} variant="outlined" color="primary" > <Link to="/users">Account</Link></Button> : null}
+        {this.props.currentUser ? <Button startIcon={<ExitToAppIcon/>} variant="outlined" color="secondary" onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountCircleIcon/>} variant="outlined" color="inherint"><Link to="/login">Login</Link></Button>}
+        {this.props.currentUser ? null : <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary" ><Link to="/register">Register</Link></Button>}
+     
 
-        {this.props.currentUser ? <button><Link to="/carts">Cart</Link></button> : null}
-        {this.props.currentUser ? <button><Link to="/users">Account</Link></button> : null}
-        {this.props.currentUser ? <button onClick={this.props.logOut}><Link to="/">Logout</Link></button> : <button><Link to="/login">Login</Link></button>}
-        {this.props.currentUser ? null : <button><Link to="/register">Register</Link></button>}
       </div>
     )
   }
@@ -18,6 +35,7 @@ class NavBar extends React.Component {
 export default NavBar;
 
 
+//        <Button onClick={() => alert('alert message')} size="small" variant="contained" color="primary"> TEST BTN</Button>
 
 
 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Button from '@material-ui/core/Button'
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class CartItem extends Component {
   render() {
@@ -9,7 +11,7 @@ class CartItem extends Component {
         <h2><img src={this.props.cart.item.image} style={{ width: "400px" }} /></h2>
         <h2>${this.props.cart.item.price}</h2>
         {/*console.log(this.props.cart.id, "cart item string")*/}
-        <button onClick={() => (this.props.removeFromCart(this.props.cart))} className="del-btn" > Delete from Cart </button>
+        <Button startIcon={<DeleteIcon/>} color="secondary" onClick={() => (this.props.removeFromCart(this.props.cart))} className="del-btn" >Delete</Button>
       </div>
 
 

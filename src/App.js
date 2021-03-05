@@ -1,13 +1,20 @@
-// import React from 'react';
-// import React, { Component } from "react";
 import './App.css';
+// import React from 'react';
+import ReactDOM from 'react-dom';
 import React, { Fragment } from 'react';
 import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-router-dom'
+
+// import React, { Component } from "react";
+// import { Button, TextField } from '@material-ui/core';
+// import EmailIcon from '@material-ui/core/icons/Email';
+// import PhoneIcon from '@material-ui/core/icons/Phone';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+
 import Account from './Components/Account'
 import LoginForm from './Components/LoginForm';
 import NavBar from './Components/NavBar';
 import Cart from './Components/Cart';
-import MovieContainer from './Components/MovieContainer';
 import ItemContainer from './Components/ItemContainer';
 import FilterBar from './Components/FilterBar';
 import Register from './Components/Register'
@@ -15,6 +22,7 @@ import NotFound from './Components/NotFound'
 import Footer from './Components/Footer'
 import Home from './Components/Home'
 import EditForm from './Components/EditForm'
+import MovieContainer from './Components/MovieContainer';
 import Search from './Components/Search'
 // import { render } from 'react-dom';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -248,11 +256,9 @@ class App extends React.Component {
                             itemLength={this.state.items.length}
                             backItems={this.backItems} />)} />
                     <Route exact path="/notfound" component={NotFound} />
-
-
-
                 </Switch>
                 <Router />
+         
                 <FilterBar />
                 <Footer />
             </Fragment>

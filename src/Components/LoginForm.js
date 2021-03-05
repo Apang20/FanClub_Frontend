@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import Button from '@material-ui/core/Button'
+
 
 class login extends Component {
     state = {
@@ -74,7 +76,7 @@ class login extends Component {
                     />
                     <br />
                     <br />
-                    <button type="submit">Submit</button>
+                    <Button variant="outlined" color="primary" type="submit">Submit</Button>
                 </form>
                 <br />
                 <br />

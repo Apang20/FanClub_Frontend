@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 
 class Account extends Component {
 
@@ -24,7 +25,7 @@ class Account extends Component {
         <h2>Email: {this.props.currentUser.email}</h2>
         <h2>Phone Number: {this.props.currentUser.phone_number}</h2>
         <h2>Shipping Address: {this.props.currentUser.shipping_address}</h2>
-        {this.props.currentUser ? <button><Link to="/edit">Edit Account</Link></button> : null}
+        {this.props.currentUser ? <Button variant="outlined" color="primary"><Link to="/edit">Edit Account</Link></Button> : null}
 
       </div>
     )
