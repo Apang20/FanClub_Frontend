@@ -1,4 +1,5 @@
 // import React from 'react';
+// import React, { Component } from "react";
 import './App.css';
 import React, { Fragment } from 'react';
 import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-router-dom'
@@ -31,7 +32,8 @@ const UsersURL = "http://localhost:3000/users/"
 class App extends React.Component {
 
     state = {
-        currentUser: null,
+        currentUser: null, //user:{}
+        loggedIn: false,
         items: [],
         carts: [],
         cart_items: [],
@@ -44,19 +46,49 @@ class App extends React.Component {
 
 
     updateCurrentUser = (user) => {
-        this.setState({ currentUser: user })
-    }
+        this.setState({
+            currentUser: user,
+            loggedIn: true,
+        });
+    };
 
     logOut = () => {
-        this.setState({ currentUser: null })
+        this.setState({ currentUser: null, loggedIn: false })
+        localStorage.token = "";
+
     }
 
     logInUser = (username) => {
         let current = this.state.users.find(
-          (user) => user.username === username
-          );
-          this.setState({ currentUser: current });
-        };
+            (user) => user.username === username
+        );
+        this.setState({ currentUser: current });
+    };
+
+
+
+    autoLogin = () => {
+        let token = localStorage.token;
+        if (typeof token !== "undefined" && token.length > 1) {
+            this.tokenLogin(token);
+        } else {
+            console.log("No token found, try logging in!");
+        }
+    };
+
+    tokenLogin = (token) => {
+        fetch("http://localhost:3000/auto_login", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token: token }),
+        })
+          .then((r) => r.json())
+          .then((user) => this.updateCurrentUser(user));
+      };
+
 
     componentDidMount() {
         Promise.all([fetch(ItemsURL), fetch(CartsURL), fetch(UsersURL), fetch(CartItemsURL)])
@@ -71,6 +103,7 @@ class App extends React.Component {
                 console.log(carts, "Carts")
                 console.log(cart_items, "Cart_Items")
             });
+            this.autoLogin()
     }
 
 
@@ -127,12 +160,12 @@ class App extends React.Component {
     }
 
     moreItems = () => {
-        this.setState({ 
+        this.setState({
             limit: this.state.limit + 4
         })
     }
     backItems = () => {
-        this.setState({ 
+        this.setState({
             limit: this.state.limit - 4
         })
     }
@@ -148,12 +181,12 @@ class App extends React.Component {
     }
 
     filteredItems = () => {
-       let filtereditems = this.state.items
-        if (this.state.filter !== "All"){
-           filtereditems = filtereditems.filter(item => item.movie === this.state.filter)
+        let filtereditems = this.state.items
+        if (this.state.filter !== "All") {
+            filtereditems = filtereditems.filter(item => item.movie === this.state.filter)
         }
         return filtereditems
-      }
+    }
 
 
     render() {
@@ -163,10 +196,10 @@ class App extends React.Component {
         return (
 
             <Fragment>
-                <NavBar 
-                currentUser={this.state.currentUser} 
-                logOut={this.logOut} />
-                <Router />
+                <NavBar
+                    currentUser={this.state.currentUser}
+                    logOut={this.logOut} />
+                <Router/>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" render={() => (
@@ -174,6 +207,15 @@ class App extends React.Component {
                             <LoginForm
                                 updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
                     )} />
+
+                    <Route exact path="/auth">
+                    Auth Check{" "}
+                    {!this.state.loggedIn
+                      ? "(Works better if you're logged in!)"
+                      : "(Try it now you're logged in!)"}
+                    <NavBar loggedIn={this.state.loggedIn} />
+                    </Route>
+
                     <Route exact path="/register" component={Register} />
                     <Route path="/carts" render={() => (
                         <Cart
@@ -198,21 +240,21 @@ class App extends React.Component {
                             updateFilter={this.updateFilter}
                             movies={this.state.movies}
                             movieFilter={this.state.movieFilter}
-                            updateMovieFilter={this.updateMovieFilter} 
-                            moreItems={this.moreItems} 
+                            updateMovieFilter={this.updateMovieFilter}
+                            moreItems={this.moreItems}
                             limit={this.state.limit}
-                            items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)} 
+                            items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
                             limit={this.state.limit}
                             itemLength={this.state.items.length}
-                            backItems={this.backItems}/>)} />
-                     <Route exact path="/notfound" component={NotFound} />
+                            backItems={this.backItems} />)} />
+                    <Route exact path="/notfound" component={NotFound} />
 
 
 
                 </Switch>
-                <Router/>
-                <FilterBar/>
-                <Footer/>
+                <Router />
+                <FilterBar />
+                <Footer />
             </Fragment>
 
         )

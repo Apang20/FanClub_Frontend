@@ -5,6 +5,7 @@ class login extends Component {
     state = {
         username: "",
         password: "",
+        error: ""
     };
 
     handleChange = (event) => {
@@ -32,15 +33,30 @@ class login extends Component {
         })
             .then((r) => r.json())
             .then((response) => {
-                // localStorage.token = response.jwt;
                 console.log(response)
-                this.props.updateCurrentUser(response);
+                if (response.user){
+                    this.props.updateCurrentUser(response.user);
+                    localStorage.token = response.jwt;
+                }else{
+                    this.setState({error: response.message})
+                    //console.log(response.message)
+                }
+                // Dane: 
+                // localStorage.token = response.jwt;
+                //Video: 
+                // if(response.error_message){
+                // alert(response.error_message)
+                // }else{
+                // this.props.updateCurrentUser(response)
+                // }
+                //this.props.updateCurrentUser(response);
             });
     };
 
     render() {
         return (
             <div>
+            <h3>{this.state.error}</h3>
                 <form onSubmit={this.login}>
                     <br />
                     <input
