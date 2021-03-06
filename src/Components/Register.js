@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import Button from '@material-ui/core/Button'
+
+// import TextField from '@material-ui/core/TextField'
+
 
 class Register extends Component {
   state = {
@@ -26,9 +30,9 @@ class Register extends Component {
     event.preventDefault();
     event.target.reset();
     const { firstName, lastName, email, phoneNumber, shippingAddress, username, password } = this.state; //firstName, LastName,
-    console.log(email, "Email")
-    console.log(phoneNumber, "Phone Number")
-    console.log(event.target, "Event")
+    // console.log(email, "Email")
+    // console.log(phoneNumber, "Phone Number")
+    // console.log(event.target, "Event")
 
     let user = {
       first_name: firstName,
@@ -74,6 +78,8 @@ class Register extends Component {
                 <p>{this.state.errorMessage}</p>
               </div>
               <br />
+
+
               <form onSubmit={this.createUser}>
                 <input
                   type="text"
@@ -81,6 +87,7 @@ class Register extends Component {
                   placeholder="First Name"
                   onChange={this.handleChange}
                 />
+                
                 <br />
                 <input
                   type="text"
@@ -126,7 +133,8 @@ class Register extends Component {
                 />
                 <br />
                 <br />
-                <button type="submit">Submit</button>
+                <Button variant="outlined" color="primary" type="submit">Submit</Button>
+
               </form>
             </div>
           )}
@@ -138,3 +146,72 @@ class Register extends Component {
 }
 
 export default Register;
+
+
+
+
+
+// <form onSubmit={this.createUser}>
+//                 <input
+//                   type="text"
+//                   name="firstName"
+//                   placeholder="First Name"
+//                   onChange={this.handleChange}
+            
+//                 />
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="lastName"
+//                   placeholder="Last Name"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="email"
+//                   placeholder="Email"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="phoneNumber"
+//                   placeholder="Phone Number"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="shippingAddress"
+//                   placeholder="Shipping Address"
+//                   onChange={this.handleChange}
+//                 />
+
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="username"
+//                   placeholder="Username"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="password"
+//                   name="password"
+//                   placeholder="Password"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <br />
+//                 <button type="submit">Submit</button>
+//               </form>
+//             </div>
+//           )}
+//         <br />
+//         <br />
+//       </div>
+//     );
+//   }
+// }
+
