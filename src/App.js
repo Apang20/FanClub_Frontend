@@ -21,7 +21,7 @@ import LoginForm from './Components/LoginForm';
 import NavBar from './Components/NavBar';
 import Cart from './Components/Cart';
 import ItemContainer from './Components/ItemContainer';
-import FilterBar from './Components/FilterBar';
+// import FilterBar from './Components/FilterBar';
 import Register from './Components/Register'
 import NotFound from './Components/NotFound'
 import Footer from './Components/Footer'
@@ -33,11 +33,11 @@ import { blue, green } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
-// import AppBar from '@material-ui/core/AppBar'
-// import Toolbar from '@material-ui/core/Toolbar'
-// import IconButton from '@material-ui/core/IconButton'
-// import MenuIcon from '@material-ui/core/Menu'
-// import Button from '@material-ui/core/Button'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/core/Menu'
+import Button from '@material-ui/core/Button'
 
 const ItemsURL = "http://localhost:3000/items/"
 const CartsURL = "http://localhost:3000/carts/"
@@ -136,12 +136,12 @@ class App extends React.Component {
                 return Promise.all([res1.json(), res2.json(), res3.json(), res4.json()])
             })
             .then(([items, carts, users, cart_items]) => {
-                this.setState({ items })
-                this.setState({ carts })
-                this.setState({ users })
-                this.setState({ cart_items })
-                console.log(carts, "Carts")
-                console.log(cart_items, "Cart_Items")
+                this.setState({ items });
+                this.setState({ carts });
+                this.setState({ users });
+                this.setState({ cart_items });
+                // console.log(carts, "Carts")
+                // console.log(cart_items, "Cart_Items")
             });
         this.autoLogin()
     }
@@ -164,7 +164,7 @@ class App extends React.Component {
                 res.item = item
                 let updateCart = [...this.state.carts, res]
                 this.setState({ carts: updateCart });
-                console.log(res)
+                // console.log(res)
             })
     }
 
@@ -204,6 +204,7 @@ class App extends React.Component {
             limit: this.state.limit + 4
         })
     }
+
     backItems = () => {
         this.setState({
             limit: this.state.limit - 4
@@ -211,7 +212,7 @@ class App extends React.Component {
     }
 
     updateFilter = (filter) => {
-        console.log(filter)
+        // console.log(filter)
         this.setState({ filter })
     }
 
@@ -300,7 +301,6 @@ class App extends React.Component {
                         </Switch>
                         <Router />
 
-                        <FilterBar />
                         <Footer />
                     </Container>
                 </ThemeProvider>
@@ -315,6 +315,7 @@ export default App;
 
 
 
+//<FilterBar />
 
 
 

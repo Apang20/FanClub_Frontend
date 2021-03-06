@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button'
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 
 class ItemCard extends Component {
@@ -11,7 +12,7 @@ class ItemCard extends Component {
                 <h2>{this.props.item.name}</h2>
                 <h3>${this.props.item.price}</h3>
                 <p><b>Description:</b> {this.props.item.description}</p>
-                <Button variant="contained" color="secondary" onClick={() => (this.props.addToCart(this.props.item, this.props.user))} className="add-btn" >Add me to your cart!</Button>
+                <Button endIcon={<AddShoppingCartIcon/>} variant="contained" color="secondary" onClick={() => (this.props.addToCart(this.props.item, this.props.user))} className="add-btn" >Add to Cart</Button>
             </div>
         );
     };

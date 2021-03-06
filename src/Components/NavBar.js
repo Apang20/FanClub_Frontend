@@ -16,10 +16,12 @@ class NavBar extends React.Component {
   render() {
     return (
       
+
+
       <div id="nav-bar">
       <AppBar>
       <Toolbar>
-          <IconButton>
+          <IconButton  >
               <MenuIcon />
           </IconButton>
           <Typography variant="h5">
@@ -79,3 +81,15 @@ export default NavBar;
 //   }
 // }
 // export default NavBar;
+
+// <AppBar position="static">
+// <Toolbar>
+//   <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+//     <MenuIcon />
+//   </IconButton>
+//   <Typography variant="h6" className={classes.title}>
+//     News
+//   </Typography>
+//   <Button color="inherit">Login</Button>
+// </Toolbar>
+// </AppBar>

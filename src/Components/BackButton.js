@@ -1,15 +1,56 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
 const BackButton = (props) => {
-  return <div>
-    <Button startIcon={<SkipPreviousIcon/>}
-    variant="contained" 
-    color="inherit" 
-    onClick={props.backItems}>
-      
+    return <Button onClick={props.backItems} startIcon={<ArrowBackIcon/>} variant="contained" color="inherint">
+            BACK
           </Button>
-  </div>
 }
 export default BackButton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const BackButton = (props) => {
+//   return 
+//   <div>
+//     <Button onClick={props.backItems} startIcon={<ArrowBackIcon/>} variant="contained" color="inherit" >
+      
+//           </Button>
+//   </div>
+// }
+// export default BackButton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react'
