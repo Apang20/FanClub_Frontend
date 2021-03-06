@@ -4,9 +4,14 @@ import Search from './Search'
 import MovieContainer from './MovieContainer'
 import MoreButton from './MoreButton'
 import BackButton from './BackButton'
+import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
 
 
 class ItemContainer extends Component {
+
     render() {
         return (
             <div className="search">
@@ -26,6 +31,18 @@ class ItemContainer extends Component {
             
                     />
                     <div className="item-container">
+                <Typography variant="h2" component="div">
+                    Item Container Message
+                </Typography>
+                <Typography variant="subtitle1">
+                    Item Container Subtitle
+                </Typography>
+
+                    <Grid container spacing={4} justify="center">
+                            <Grid item xs={12} sm={6}>
+                                <Paper style={{ hieght: 75, width: 50 }} />
+                            </Grid>
+                        </Grid>
 
                         <div className="background-img">
                         {this.props.limit + 4 < this.props.itemLength ? <MoreButton moreItems={this.props.moreItems} items={this.props.items}/> : null}

@@ -1,6 +1,8 @@
-import './App.css';
 // import React from 'react';
+// import { render } from 'react-dom';
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 import ReactDOM from 'react-dom';
+import './App.css';
 import React, { Fragment } from 'react';
 import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-router-dom'
 
@@ -9,7 +11,10 @@ import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-ro
 // import EmailIcon from '@material-ui/core/icons/Email';
 // import PhoneIcon from '@material-ui/core/icons/Phone';
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+// import MovieContainer from './Components/MovieContainer';
+// import Search from './Components/Search'
+// import Paper from '@material-ui/core/Paper'
+// import Grid from '@material-ui/core/Grid'
 
 import Account from './Components/Account'
 import LoginForm from './Components/LoginForm';
@@ -22,19 +27,46 @@ import NotFound from './Components/NotFound'
 import Footer from './Components/Footer'
 import Home from './Components/Home'
 import EditForm from './Components/EditForm'
-import MovieContainer from './Components/MovieContainer';
-import Search from './Components/Search'
-// import { render } from 'react-dom';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { blue, green } from '@material-ui/core/colors'
+import 'fontsource-roboto';
+import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
+// import AppBar from '@material-ui/core/AppBar'
+// import Toolbar from '@material-ui/core/Toolbar'
+// import IconButton from '@material-ui/core/IconButton'
+// import MenuIcon from '@material-ui/core/Menu'
+// import Button from '@material-ui/core/Button'
 
-
-
-// const BaseURL = "http://localhost:3000/"
 const ItemsURL = "http://localhost:3000/items/"
 const CartsURL = "http://localhost:3000/carts/"
 const CartItemsURL = "http://localhost:3000/cart_items/"
 const UsersURL = "http://localhost:3000/users/"
+
+const theme = createMuiTheme({
+    typography: {
+        h2: {
+            fontSize: 40,
+            marginBottom: 15,
+            marginTop: 80,
+            textAlign: 'center'
+        },
+        subtitle1: {
+            fontSize: 30,
+            marginBottom: 15,
+            textAlign: 'center'
+        }
+    },
+    palette: {
+        primary: {
+            main: blue[500],
+        },
+        secondary: {
+            main: green[400]
+        }
+    }
+})
 
 
 class App extends React.Component {
@@ -86,16 +118,16 @@ class App extends React.Component {
 
     tokenLogin = (token) => {
         fetch("http://localhost:3000/auto_login", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ token: token }),
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ token: token }),
         })
-          .then((r) => r.json())
-          .then((user) => this.updateCurrentUser(user));
-      };
+            .then((r) => r.json())
+            .then((user) => this.updateCurrentUser(user));
+    };
 
 
     componentDidMount() {
@@ -111,7 +143,7 @@ class App extends React.Component {
                 console.log(carts, "Carts")
                 console.log(cart_items, "Cart_Items")
             });
-            this.autoLogin()
+        this.autoLogin()
     }
 
 
@@ -202,65 +234,76 @@ class App extends React.Component {
         const filteredMovies = this.state.movies.filter(movie => movie.includes(this.state.movieFilter))
 
         return (
-
             <Fragment>
-                <NavBar
-                    currentUser={this.state.currentUser}
-                    logOut={this.logOut} />
-                <Router/>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/login" render={() => (
-                        this.state.currentUser == null ?
-                            <LoginForm
-                                updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
-                    )} />
-
-                    <Route exact path="/auth">
-                    Auth Check{" "}
-                    {!this.state.loggedIn
-                      ? "(Works better if you're logged in!)"
-                      : "(Try it now you're logged in!)"}
-                    <NavBar loggedIn={this.state.loggedIn} />
-                    </Route>
-
-                    <Route exact path="/register" component={Register} />
-                    <Route path="/carts" render={() => (
-                        <Cart
+                <ThemeProvider theme={theme}>
+                    <Container maxWidth="xd">
+                        <header className="App-header">
+                            <Typography variant="h2" component="div"> 
+                               
+                </Typography>
+                            <Typography variant="subtitle1">
+                              
+                </Typography>
+                        </header>
+                        <NavBar
                             currentUser={this.state.currentUser}
-                            carts={this.state.carts}
-                            removeFromCart={this.removeFromCart} />)} />
+                            logOut={this.logOut} />
+                        <Router />
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/login" render={() => (
+                                this.state.currentUser == null ?
+                                    <LoginForm
+                                        updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
+                            )} />
 
-                    <Route exact path="/edit" render={() =>
-                        <EditForm
-                            currentUser={this.state.currentUser}
-                            patchInfo={this.patchInfo} />} />
+                            <Route exact path="/auth">
+                                Auth Check{" "}
+                                {!this.state.loggedIn
+                                    ? "(Works better if you're logged in!)"
+                                    : "(Try it now you're logged in!)"}
+                                <NavBar loggedIn={this.state.loggedIn} />
+                            </Route>
 
-                    <Route exact path="/users" render={() =>
-                        <Account
-                            currentUser={this.state.currentUser} />} />
-                    <Route exact path="/items" render={(props) => (
-                        <ItemContainer
-                            addToCart={this.addToCart}
-                            updateCurrentUser={this.updateCurrentUser}
-                            user={this.state.currentUser}
-                            filter={this.state.filter}
-                            updateFilter={this.updateFilter}
-                            movies={this.state.movies}
-                            movieFilter={this.state.movieFilter}
-                            updateMovieFilter={this.updateMovieFilter}
-                            moreItems={this.moreItems}
-                            limit={this.state.limit}
-                            items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
-                            limit={this.state.limit}
-                            itemLength={this.state.items.length}
-                            backItems={this.backItems} />)} />
-                    <Route exact path="/notfound" component={NotFound} />
-                </Switch>
-                <Router />
-         
-                <FilterBar />
-                <Footer />
+                            <Route exact path="/register" component={Register} />
+                            <Route path="/carts" render={() => (
+                                <Cart
+                                    currentUser={this.state.currentUser}
+                                    carts={this.state.carts}
+                                    removeFromCart={this.removeFromCart} />)} />
+
+                            <Route exact path="/edit" render={() =>
+                                <EditForm
+                                    currentUser={this.state.currentUser}
+                                    patchInfo={this.patchInfo} />} />
+
+                            <Route exact path="/users" render={() =>
+                                <Account
+                                    currentUser={this.state.currentUser} />} />
+                            <Route exact path="/items" render={(props) => (
+                                <ItemContainer
+                                    addToCart={this.addToCart}
+                                    updateCurrentUser={this.updateCurrentUser}
+                                    user={this.state.currentUser}
+                                    filter={this.state.filter}
+                                    updateFilter={this.updateFilter}
+                                    movies={this.state.movies}
+                                    movieFilter={this.state.movieFilter}
+                                    updateMovieFilter={this.updateMovieFilter}
+                                    moreItems={this.moreItems}
+                                    limit={this.state.limit}
+                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
+                                    limit={this.state.limit}
+                                    itemLength={this.state.items.length}
+                                    backItems={this.backItems} />)} />
+                            <Route exact path="/notfound" component={NotFound} />
+                        </Switch>
+                        <Router />
+
+                        <FilterBar />
+                        <Footer />
+                    </Container>
+                </ThemeProvider>
             </Fragment>
 
         )
@@ -269,4 +312,95 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+// return (
+//     <Fragment>
+//         <ThemeProvider theme={theme}>
+//             <Container maxWidth="xd">
+//                 <header className="App-header">
+//                     <Typography variant="h2" component="div"> 
+//                         Welcome Header Message!
+//         </Typography>
+//                     <Typography variant="subtitle1">
+//                         Exclusive Site for Ghibli-Fans
+//         </Typography>
+//                 </header>
+//                 <NavBar
+//                     currentUser={this.state.currentUser}
+//                     logOut={this.logOut} />
+//                 <Router />
+//                 <Switch>
+//                     <Route exact path="/" component={Home} />
+//                     <Route exact path="/login" render={() => (
+//                         this.state.currentUser == null ?
+//                             <LoginForm
+//                                 updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
+//                     )} />
+
+//                     <Route exact path="/auth">
+//                         Auth Check{" "}
+//                         {!this.state.loggedIn
+//                             ? "(Works better if you're logged in!)"
+//                             : "(Try it now you're logged in!)"}
+//                         <NavBar loggedIn={this.state.loggedIn} />
+//                     </Route>
+
+//                     <Route exact path="/register" component={Register} />
+//                     <Route path="/carts" render={() => (
+//                         <Cart
+//                             currentUser={this.state.currentUser}
+//                             carts={this.state.carts}
+//                             removeFromCart={this.removeFromCart} />)} />
+
+//                     <Route exact path="/edit" render={() =>
+//                         <EditForm
+//                             currentUser={this.state.currentUser}
+//                             patchInfo={this.patchInfo} />} />
+
+//                     <Route exact path="/users" render={() =>
+//                         <Account
+//                             currentUser={this.state.currentUser} />} />
+//                     <Route exact path="/items" render={(props) => (
+//                         <ItemContainer
+//                             addToCart={this.addToCart}
+//                             updateCurrentUser={this.updateCurrentUser}
+//                             user={this.state.currentUser}
+//                             filter={this.state.filter}
+//                             updateFilter={this.updateFilter}
+//                             movies={this.state.movies}
+//                             movieFilter={this.state.movieFilter}
+//                             updateMovieFilter={this.updateMovieFilter}
+//                             moreItems={this.moreItems}
+//                             limit={this.state.limit}
+//                             items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
+//                             limit={this.state.limit}
+//                             itemLength={this.state.items.length}
+//                             backItems={this.backItems} />)} />
+//                     <Route exact path="/notfound" component={NotFound} />
+//                 </Switch>
+//                 <Router />
+
+//                 <FilterBar />
+//                 <Footer />
+//             </Container>
+//         </ThemeProvider>
+//     </Fragment>
+
+// )
+// }
+
+// }
+
+// export default App;
+
 

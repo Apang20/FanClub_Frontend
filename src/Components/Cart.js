@@ -27,11 +27,12 @@ class Cart extends Component {
     return (
       <div>
         <h1>Welcome {this.props.currentUser.username}!</h1>
-        <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item!</Link></Button>
-
+        
         <div className="cart"> {console.log(this.props.carts)}
-          {this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}
+        {this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}
         </div>
+        <br></br><br></br>
+        <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item</Link></Button><br></br>
       </div>
 
     );
