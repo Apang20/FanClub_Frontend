@@ -39,6 +39,9 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/core/Menu'
 import Button from '@material-ui/core/Button'
 
+import { ChakraProvider } from "@chakra-ui/react"
+
+
 const ItemsURL = "http://localhost:3000/items/"
 const CartsURL = "http://localhost:3000/carts/"
 const CartItemsURL = "http://localhost:3000/cart_items/"
@@ -201,13 +204,13 @@ class App extends React.Component {
 
     moreItems = () => {
         this.setState({
-            limit: this.state.limit + 4
+            limit: this.state.limit + 8
         })
     }
 
     backItems = () => {
         this.setState({
-            limit: this.state.limit - 4
+            limit: this.state.limit - 8
         })
     }
 
@@ -236,7 +239,8 @@ class App extends React.Component {
 
         return (
             <Fragment>
-                <ThemeProvider theme={theme}>
+            <ChakraProvider>
+            <ThemeProvider theme={theme}>
                     <Container maxWidth="xd">
                         <header className="App-header">
                             <Typography variant="h2" component="div"> 
@@ -293,7 +297,7 @@ class App extends React.Component {
                                     updateMovieFilter={this.updateMovieFilter}
                                     moreItems={this.moreItems}
                                     limit={this.state.limit}
-                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
+                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 6)}
                                     limit={this.state.limit}
                                     itemLength={this.state.items.length}
                                     backItems={this.backItems} />)} />
@@ -304,6 +308,8 @@ class App extends React.Component {
                         <Footer />
                     </Container>
                 </ThemeProvider>
+                </ChakraProvider>
+
             </Fragment>
 
         )

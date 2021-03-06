@@ -1,4 +1,5 @@
 // import React, { Component } from 'react'
+import { Select } from "@chakra-ui/react"
 import React from "react";
 
 const Search = (props) => {
@@ -7,13 +8,18 @@ const Search = (props) => {
 
       <br></br>
       <label>
-        <strong>Filter by Movie: </strong> <br></br>
-        <select onChange={(e) => props.updateFilter(e.target.value)}>
+        <h1></h1> <br></br>
+        <div className="search">
+
+        
+        <Select variant="flushed" size="medium" width="md" placeholder="Filter By Ghibli Movie"  onChange={(e) => props.updateFilter(e.target.value)}>
+        {props.movies.map(movie => {
           <option value="All">All</option>
-          {props.movies.map(movie => {
             return <option value={movie}> {movie} </option>
           })}
-        </select>
+          </Select>
+
+        </div> 
       </label>
     </div>
   );
@@ -21,7 +27,16 @@ const Search = (props) => {
 
 export default Search;
 
+// <select size="large" width="100%" className="select" onChange={(e) => props.updateFilter(e.target.value)}>
+//         </select>
 
+// <Autocomplete
+//   id="combo-box-demo"
+//   options={top100Films}
+//   getOptionLabel={(option) => option.title}
+//   style={{ width: 300 }}
+//   renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+// />
 
 
 

@@ -9,8 +9,8 @@ class ItemCard extends Component {
         return (
             <div className="item-card">
                 <img className="item-img" src={this.props.item.image} alt={this.props.item.name}></img>
-                <h2>{this.props.item.name}</h2>
-                <h3>${this.props.item.price}</h3>
+                <h2><b>{this.props.item.name}</b></h2>
+                <h3><b>${this.props.item.price}</b></h3>
                 <p><b>Description:</b> {this.props.item.description}</p>
                 <Button endIcon={<AddShoppingCartIcon/>} variant="contained" color="secondary" onClick={() => (this.props.addToCart(this.props.item, this.props.user))} className="add-btn" >Add to Cart</Button>
             </div>

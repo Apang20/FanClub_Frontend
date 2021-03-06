@@ -19,19 +19,22 @@ class NavBar extends React.Component {
 
 
       <div id="nav-bar">
-      <AppBar>
+      <AppBar
+      alignItems="right">
       <Toolbar>
           <IconButton  >
               <MenuIcon />
           </IconButton>
           <Typography variant="h5">
           </Typography>
-          <Typography variant="h1" justify="right" textAlign="right"> 
+          <div className="nav-bar-btns" justify="right" alignItems="right">
+          <Typography variant="h1" textAlign="right"> 
           {this.props.currentUser ? <Button startIcon={<ShoppingCartIcon />} variant="outlined" color="inherit"> <Link to="/carts">Cart</Link></Button> : null}
           {this.props.currentUser ? <Button startIcon={<AccountCircleIcon />} variant="outlined" color="inherit" > <Link to="/users">Account</Link></Button> : null}
           {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountCircleIcon />} variant="outlined" color="inherit" ><Link to="/login">Login</Link></Button>}
           {this.props.currentUser ? null : <Button startIcon={<AddBoxIcon />} variant="outlined" color="inherit" ><Link to="/register">Register</Link></Button>}
           </Typography>
+          </div>
       </Toolbar>
   </AppBar>
 

@@ -39,10 +39,11 @@ class ItemContainer extends Component {
                 </Typography>
 
                         <div className="background-img">
-                        {this.props.limit + 4 < this.props.itemLength ? <MoreButton moreItems={this.props.moreItems} items={this.props.items}/> : null}
+                        <div className="more-back-btns">
+                        {this.props.limit + 6 < this.props.itemLength ? <MoreButton moreItems={this.props.moreItems} items={this.props.items}/> : null}
                         {this.props.limit == 0 ? null : <BackButton backItems={this.props.backItems} items={this.props.items}/>} 
+                        </div>
                         {this.props.items.map(item => <ItemCard item={item} addToCart={this.props.addToCart} removeFromCart={this.props.removeFromCart} updateCurrentUser={this.props.updateCurrentUser} user={this.props.currentUser} />)}
-                        
                         </div>
                     </div>
                 </div>

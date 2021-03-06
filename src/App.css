@@ -10,10 +10,6 @@
   padding-top: 150px;
 }
 
-/* body {
-  margin: 0;
-  font-family: monospace;
-} */
 
 #nav-bar{
   display: flex;
@@ -38,13 +34,14 @@
   color: white;
 }
 
+.div.nav-bar-btns {
+justify-content: right;
 
+}
 #nav-bar img {
   height: 16rem;
   width: auto;
 }
-
-
 
 .navbar-pic{
   margin: auto;
@@ -61,20 +58,24 @@
   width: auto;
 }
 
-/* .container {
+.container {
   padding: 1rem;
   width: stretch;
   height: auto;
   background: #515DA2;
   opacity: .8;
-} */
+}
 
 .item-container{
-  margin: 8rem;
-  padding: 1rem;
-  width: stretch;
+  margin: 14rem;
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+  /* padding: 1rem; */
+  width: auto;
   height: auto;
   background: white;
+  flex: 0 1 25%;
+  display: card;
   /* opacity: .9; */
   
 }
@@ -84,8 +85,10 @@
   text-align: center;
   border: rgb(191, 196, 197) solid 1px;
   padding: 2rem;
-  width: stretch;
-  height: auto;
+  width: 23rem;
+  /* overflow: auto; */ 
+  height: 40rem;
+  max-height: 100%;
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 4px 5px #2279a1f8;
@@ -94,17 +97,24 @@
 }
 
 
-.item-img{
+.item-img {
     justify-self: center;
     height: 17rem;
     width: auto;
 }
 
-.item-card:hover{
+.item-card:hover {
   color:#070707;
   border-color:#f8f1f1;
   background-color: rgb(255, 253, 251);
 }
+/* 
+.search {
+position: auto;
+justify-self: left;
+size: large;
+} */
+
 
 button {
   position: relative;
@@ -119,19 +129,6 @@ button {
   text-align:center;
 }
 
-/* button{
-  display: inline-block;
-  padding: 0.3em 1.2em;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 2em;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-weight: 300;
-  color:#FFFFFF;
-  background-color:rgb(166, 193, 214);
-  text-align:center;
-  transition: all 0.2s;
-} */
 
 .buttonContainer {
   text-align: center;
@@ -145,6 +142,7 @@ button:hover {
   color: #053705;
 }
 
+
 .background-img{
   /* background: url("https://i.pinimg.com/originals/61/b2/7f/61b27fc1fc63f0a8796abdc94206c72e.jpg") no-repeat center center fixed;  */
   /* background: url("https://i.pinimg.com/originals/f6/21/b6/f621b606f99a3abec1c4f07e2532aba0.gif") no-repeat center center fixed;  */
@@ -153,7 +151,7 @@ button:hover {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* font-family: 'Bebas Neue', cursive; */
 }
 
