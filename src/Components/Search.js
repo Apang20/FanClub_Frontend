@@ -10,7 +10,9 @@ const Search = (props) => {
       <label>
         <h1></h1> <br></br>
         <div className="search">
-
+        <div>
+        <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+        </div>
         
         <Select variant="flushed" size="medium" width="md" placeholder="Filter By Ghibli Movie"  onChange={(e) => props.updateFilter(e.target.value)}>
         {props.movies.map(movie => {

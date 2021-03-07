@@ -37,9 +37,7 @@ class NavBar extends React.Component {
           </div>
       </Toolbar>
   </AppBar>
-  <div>
-  <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
-  </div>
+  
   </div>
 
           
@@ -49,6 +47,9 @@ class NavBar extends React.Component {
   }
 } 
 export default NavBar;
+// <div>
+//   <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+//   </div>
 
 
 //        <Button onClick={() => alert('alert message')} size="small" variant="contained" color="primary"> TEST BTN</Button>

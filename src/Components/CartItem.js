@@ -2,16 +2,17 @@ import React, { Component } from 'react'
 import Button from '@material-ui/core/Button'
 import DeleteIcon from '@material-ui/icons/Delete';
 
+
 class CartItem extends Component {
   render() {
     // {console.log(this.props.cart)}
     return (
-      <div className="cart-item">
+      <div className="cart-card">
         <h2>{this.props.cart.item.name}</h2>
-        <h2><img src={this.props.cart.item.image} style={{ width: "400px" }} /></h2>
+        <h2><img src={this.props.cart.item.image} style={{ width: "250px" }} /></h2>
         <h2>${this.props.cart.item.price}</h2>
         {/*console.log(this.props.cart.id, "cart item string")*/}
-        <Button startIcon={<DeleteIcon/>} color="secondary" onClick={() => (this.props.removeFromCart(this.props.cart))} className="del-btn" >Delete</Button>
+        <Button startIcon={<DeleteIcon/>} variant="outlined"  onClick={() => (this.props.removeFromCart(this.props.cart))} className="del-btn" >Delete</Button>
       </div>
 
 

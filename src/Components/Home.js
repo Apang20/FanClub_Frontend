@@ -2,10 +2,11 @@ import React, { Component } from "react";
 class home extends Component {
     render() {
         return (
-            <div>
-                <img className="background-pic" src="" />
+            <div className="home">
+                <img className="home-pic" src="" />
 
-            </div>
+               
+                </div>
         );
     }
 }

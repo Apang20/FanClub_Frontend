@@ -29,7 +29,7 @@ import Home from './Components/Home'
 import EditForm from './Components/EditForm'
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import { blue, green } from '@material-ui/core/colors'
+import { blue, green, red } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
@@ -66,7 +66,10 @@ const theme = createMuiTheme({
             main: blue[300],
         },
         secondary: {
-            main: green[400]
+            main: green[400],
+        },
+        tertiary: {
+            main: red[400]
         }
     }
 })

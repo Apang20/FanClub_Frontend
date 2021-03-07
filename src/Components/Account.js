@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+
+
 class Account extends Component {
   
   state = {
@@ -19,6 +21,10 @@ class Account extends Component {
     return (
     
       <div className="form">
+      <div>
+      <br/>
+      <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+      </div>  
       <div><h1><b><u>Welcome to Your Account Page!</u></b></h1></div><br></br>
 
         <h2><b>Username: </b>{this.props.currentUser.username}</h2>

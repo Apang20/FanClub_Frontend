@@ -46,6 +46,10 @@ class EditForm extends Component {
     render() {
         return (
             <div className="form">
+            <div>
+            <br/>
+      <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+      </div>  
             <form onSubmit={(e) => this.handleSubmit(e)} >
 
                 <div className="form">

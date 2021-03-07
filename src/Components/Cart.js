@@ -27,17 +27,20 @@ class Cart extends Component {
   render() {
     return (
       <div>      
-    
-      <div className="font"> {console.log(this.props.carts)}
-
-                               
       
+      <div>
+      <br/>
+      <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+      </div>           
+      <div className="cart-container">
+      <div className="font"> {console.log(this.props.carts)} 
       <b>{this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}</b>
       </div>
-
-      <br></br><br></br>
-        <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item</Link></Button><br></br>
-
+      <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item</Link></Button>
+      </div>
+      
+      
+      
         </div>
 
     );
