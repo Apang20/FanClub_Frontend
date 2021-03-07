@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import CartItem from './CartItem'
 import Button from '@material-ui/core/Button'
-import AddBoxIcon from '@material-ui/icons/AddBox';
+import AddBoxIcon from '@material-ui/icons/AddBox'
 
 
 
@@ -11,6 +11,7 @@ class Cart extends Component {
   state = {
     currentUserData: [],
   }
+
   componentDidMount() {
     //   fetch("http://localhost:3000/users/" + currentUser.id)
     if (this.props.currentUser) {
@@ -25,15 +26,19 @@ class Cart extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Welcome {this.props.currentUser.username}!</h1>
-        
-        <div className="cart"> {console.log(this.props.carts)}
-        {this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}
-        </div>
-        <br></br><br></br>
-        <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item</Link></Button><br></br>
+      <div>      
+    
+      <div className="font"> {console.log(this.props.carts)}
+
+                               
+      
+      <b>{this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}</b>
       </div>
+
+      <br></br><br></br>
+        <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item</Link></Button><br></br>
+
+        </div>
 
     );
   };

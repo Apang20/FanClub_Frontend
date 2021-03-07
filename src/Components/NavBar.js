@@ -37,13 +37,14 @@ class NavBar extends React.Component {
           </div>
       </Toolbar>
   </AppBar>
-
-          <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+  <div>
+  <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+  </div>
+  </div>
 
           
 
         
-      </div>
     )
   }
 } 

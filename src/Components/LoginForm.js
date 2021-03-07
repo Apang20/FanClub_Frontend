@@ -57,23 +57,27 @@ class login extends Component {
 
     render() {
         return (
-            <div>
+            <div className="form">
             <h3>{this.state.error}</h3>
                 <form onSubmit={this.login}>
                     <br />
                     <input
                         type="text"
+                        varient="outlined"
                         name="username"
                         placeholder="Username"
                         onChange={this.handleChange}
                     />
                     <br />
+                    <br></br>
                     <input
                         type="password"
+                        varient="outlined"
                         name="password"
                         placeholder="Password"
                         onChange={this.handleChange}
                     />
+                    <br />
                     <br />
                     <br />
                     <Button variant="outlined" color="primary" type="submit">Submit</Button>

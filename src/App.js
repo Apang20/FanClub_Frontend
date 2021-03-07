@@ -63,7 +63,7 @@ const theme = createMuiTheme({
     },
     palette: {
         primary: {
-            main: blue[500],
+            main: blue[300],
         },
         secondary: {
             main: green[400]
@@ -82,7 +82,7 @@ class App extends React.Component {
         cart_items: [],
         filter: "All",
         movieFilter: "",
-        movies: ["My Neighbor Totoro", "Ponyo", "Ghibli", "Howls Moving Castle", "Princess Mononoke", "Spirited Away", "Kiki's Delivery Service"],
+        movies: ["My Neighbor Totoro", "Ponyo", "Ghibli", "Howl's Moving Castle", "Princess Mononoke", "Spirited Away", "Kiki's Delivery Service"],
         search: "",
         limit: 0
     }
@@ -215,7 +215,6 @@ class App extends React.Component {
     }
 
     updateFilter = (filter) => {
-        // console.log(filter)
         this.setState({ filter })
     }
 
@@ -297,19 +296,18 @@ class App extends React.Component {
                                     updateMovieFilter={this.updateMovieFilter}
                                     moreItems={this.moreItems}
                                     limit={this.state.limit}
-                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 6)}
+                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 8)}
                                     limit={this.state.limit}
                                     itemLength={this.state.items.length}
                                     backItems={this.backItems} />)} />
                             <Route exact path="/notfound" component={NotFound} />
                         </Switch>
                         <Router />
-
-                        <Footer />
+                       <Footer/>         
                     </Container>
                 </ThemeProvider>
                 </ChakraProvider>
-
+                
             </Fragment>
 
         )

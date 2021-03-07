@@ -32,12 +32,12 @@ class ItemContainer extends Component {
 
                     <div className="item-container">
                 <Typography variant="h2" component="div">
-                    Item Container Message
+                    
                 </Typography>
                 <Typography variant="subtitle1">
-                    Item Container Subtitle
+                    
                 </Typography>
-
+                
                         <div className="background-img">
                         <div className="more-back-btns">
                         {this.props.limit + 6 < this.props.itemLength ? <MoreButton moreItems={this.props.moreItems} items={this.props.items}/> : null}
@@ -48,6 +48,7 @@ class ItemContainer extends Component {
                     </div>
                 </div>
             </div>
+
 
         )
     }

@@ -45,15 +45,13 @@ class EditForm extends Component {
 
     render() {
         return (
-
+            <div className="form">
             <form onSubmit={(e) => this.handleSubmit(e)} >
-                <h1>Edit Account Form:</h1>
 
-                <div class="row">
+                <div className="form">
                     <TextField
                         varient="outlined"
                         color="primary"
-                        label="Username"
                         type="text"
                         onChange={(e) => this.setState({ username: e.target.value })}
                         placeholder="Username"
@@ -62,11 +60,10 @@ class EditForm extends Component {
                         name="username"
                     />
 
-                    <div class="col-sm">
+                    <div className="form">
                         <TextField
                             varient="outlined"
                             color="primary"
-                            label="First Name"
                             type="text"
                             onChange={(e) => this.setState({ firstName: e.target.value })}
                             placeholder="First Name"
@@ -75,11 +72,10 @@ class EditForm extends Component {
                             name="firstName"
                         />
 
-                        <div class="col-sm">
+                        <div className="form">
                             <TextField
                                 varient="outlined"
                                 color="primary"
-                                label="Last Name"
                                 type="text"
                                 onChange={(e) => this.setState({ lastName: e.target.value })}
                                 placeholder="Last Name"
@@ -88,11 +84,10 @@ class EditForm extends Component {
                                 name="lastName"
                             />
 
-                            <div class="col-sm">
+                            <div className="form">
                                 <TextField
                                     varient="outlined"
                                     color="primary"
-                                    label="Email"
                                     type="email"
                                     onChange={(e) => this.setState({ email: e.target.value })}
                                     placeholder="Email@gmail.com"
@@ -101,11 +96,10 @@ class EditForm extends Component {
                                     name="emailName"
                                 />
 
-                                <div class="col-sm">
+                                <div className="form">
                                     <TextField
                                         varient="outlined"
                                         color="primary"
-                                        label="Phone Number"
                                         type="text"
                                         onChange={(e) => this.setState({ phoneNumber: e.target.value })}
                                         placeholder="Phone Number"
@@ -114,14 +108,13 @@ class EditForm extends Component {
                                         name="phoneName"
                                     />
 
-                                    <div class="col-sm">
+                                    <div className="form">
                                         <TextField
                                             varient="outlined"
                                             color="primary"
-                                            label="Address"
                                             type="text"
                                             onChange={(e) => this.setState({ shippingAddress: e.target.value })}
-                                            placeholder="Phone Number"
+                                            placeholder="Shipping Address"
                                             class="form-control"
                                             id="shippingaddressvalue"
                                             name="shippingAddress"
@@ -133,8 +126,9 @@ class EditForm extends Component {
                         </div>
                     </div>
                 </div>
-                <input class="button" id="submit" type="submit" />
-            </form>
+                <input  class="button" id="submit" type="submit" />
+                </form>
+                </div>
         )
     }
 }
