@@ -15,6 +15,8 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import Copyright from '../Components/Copyright'
+
 // import { Paper } from '@material-ui/core/';
 
 // import Copyright from './Copyright'
@@ -115,8 +117,9 @@ class LoginForm extends Component {
         <Typography component="h1" variant="h5">
           Studio Ghibli Login
         </Typography>
-        <form onSubmit={this.login} className={classes.form}>
-            <h3>{this.state.error}</h3>
+        <form onSubmit={this.login} 
+        className={classes.form}>
+          <h2>{this.state.error}</h2>
               
         {/*<form className={classes.form} noValidate>*/}
           <TextField
@@ -172,6 +175,7 @@ class LoginForm extends Component {
         </form>
       </div>
       <Box mt={8} >
+      <Copyright />
       </Box>
     </Container>
 
