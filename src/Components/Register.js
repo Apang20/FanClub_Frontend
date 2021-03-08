@@ -1,8 +1,46 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import Button from '@material-ui/core/Button'
-
+// import React, { Component } from "react";
+// import { Redirect } from "react-router-dom";
+// import Button from '@material-ui/core/Button'
 // import TextField from '@material-ui/core/TextField'
+// import React, { Fragment } from 'react';
+import React, {Component} from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import { withStyles } from "@material-ui/core/styles";
+
+
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+
+
+const styles = theme => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '110%', 
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+});
 
 
 class Register extends Component {
@@ -11,7 +49,6 @@ class Register extends Component {
     lastName: "",
     email: "",
     phoneNumber: "",
-    shippingAddress: "",
     username: "",
     password: "",
     created: false,
@@ -28,20 +65,18 @@ class Register extends Component {
 
   createUser = (event) => {
     event.preventDefault();
-    event.target.reset();
-    const { firstName, lastName, email, phoneNumber, shippingAddress, username, password } = this.state; //firstName, LastName,
-    // console.log(email, "Email")
-    // console.log(phoneNumber, "Phone Number")
-    // console.log(event.target, "Event")
+    // event.target.reset();
+    const { firstName, lastName, email, phoneNumber, username, password, created } = this.state; 
 
     let user = {
       first_name: firstName,
       last_name: lastName,
       email: email,
       phone_number: phoneNumber,
-      shipping_address: shippingAddress,
       username: username,
       password: password
+      // created: true
+
     };
 
     fetch("http://localhost:3000/users", {
@@ -55,9 +90,9 @@ class Register extends Component {
       .then((r) => r.json())
       .then((response) => {
         console.log(response, "Register response")
-        // if (response.status === "created") {
-        //   this.setState({ created: true, errorMessage: "" });
-        // }
+        //         // if (response.status === "created") {
+        //         //   this.setState({ created: true, errorMessage: "" });
+        //         // }
       })
       .catch((response) =>
         this.setState({
@@ -68,87 +103,300 @@ class Register extends Component {
   };
 
   render() {
+    const {classes} = this.props
     return (
-      <div>
+
+        <Container component="main" maxWidth="xs">
+  <CssBaseline />
+  <br/>
+  <br/>
+  <div className={classes.paper}>
+    <Avatar className={classes.avatar}>
+    
+      <LockOutlinedIcon />
+    </Avatar>
+    
+    <Typography component="h1" variant="h5">
+      Register
+    </Typography>
+    <form onSubmit={this.createUser} className={classes.form}>
+        <h3>{this.state.error}</h3>
+ 
+      {/*<div>
         {this.state.created ? (
-          <Redirect to="/login" />
+          <Redirect to="/items" />
         ) : (
             <div>
-              <div className="please-log-in">
                 <p>{this.state.errorMessage}</p>
-              </div>
-              <br />
+        </div>*/}
+        
+  
+              <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="firstName"
+              label="firstname"
+              name="firstName"
+              autoComplete="firstname"
+              autoFocus
+              onChange={this.handleChange}
+              />
 
-
-              <form onSubmit={this.createUser}>
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  onChange={this.handleChange}
-                />
-                
-                <br />
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Email"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <input
-                  type="text"
-                  name="phoneNumber"
-                  placeholder="Phone Number"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <input
-                  type="text"
-                  name="shippingAddress"
-                  placeholder="Shipping Address"
-                  onChange={this.handleChange}
-                />
-
-                <br />
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <br />
-                <Button variant="outlined" color="primary" type="submit">Submit</Button>
-
-              </form>
+            <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="lastName"
+            label="lastname"
+            name="lastName"
+            autoComplete="lastname"
+            autoFocus
+            onChange={this.handleChange}
+          />
+           <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            onChange={this.handleChange}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="phoneNumber"
+            label="Phone Number"
+            name="phoneNumber"
+            autoComplete="phoneNumber"
+            autoFocus
+            onChange={this.handleChange}
+          />
+            <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="username"
+            autoFocus
+            onChange={this.handleChange}
+          />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={this.handleChange}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}>
+              Register
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="/login" variant="body2">
+                  
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/login" variant="body2">
+                  {"Already have an account or just registered? Login Here!"}
+                </Link>
+              </Grid>
+            </Grid>
+            
+            </form>
             </div>
-          )}
-        <br />
-        <br />
-      </div>
-    );
+            <Box mt={8} >
+            </Box>
+            </Container>
+
+      );
+    }
   }
-}
-
-export default Register;
+  
 
 
 
+              
+
+export default withStyles(styles)(Register)
+
+
+
+
+// import React, { Component } from "react";
+// import { Redirect } from "react-router-dom";
+// import Button from '@material-ui/core/Button'
+
+// // import TextField from '@material-ui/core/TextField'
+
+
+// class Register extends Component {
+//   state = {
+//     firstName: "",
+//     lastName: "",
+//     email: "",
+//     phoneNumber: "",
+//     shippingAddress: "",
+//     username: "",
+//     password: "",
+//     created: false,
+//     errorMessage: "",
+//   };
+
+//   handleChange = (event) => {
+//     const { name, value } = event.target;
+
+//     this.setState({
+//       [name]: value,
+//     });
+//   };
+
+//   createUser = (event) => {
+//     event.preventDefault();
+//     event.target.reset();
+//     const { firstName, lastName, email, phoneNumber, shippingAddress, username, password } = this.state; //firstName, LastName,
+//     // console.log(email, "Email")
+//     // console.log(phoneNumber, "Phone Number")
+//     // console.log(event.target, "Event")
+
+//     let user = {
+//       first_name: firstName,
+//       last_name: lastName,
+//       email: email,
+//       phone_number: phoneNumber,
+//       shipping_address: shippingAddress,
+//       username: username,
+//       password: password
+//     };
+
+//     fetch("http://localhost:3000/users", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Accept: "application/json",
+//       },
+//       body: JSON.stringify({ user }),
+//     })
+//       .then((r) => r.json())
+//       .then((response) => {
+//         console.log(response, "Register response")
+//         // if (response.status === "created") {
+//         //   this.setState({ created: true, errorMessage: "" });
+//         // }
+//       })
+//       .catch((response) =>
+//         this.setState({
+//           errorMessage:
+//             "Uh-oh! It didn't work...Make sure your server is running!",
+//         })
+//       );
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         {this.state.created ? (
+//           <Redirect to="/login" />
+//         ) : (
+//             <div>
+//               <div className="please-log-in">
+//                 <p>{this.state.errorMessage}</p>
+//               </div>
+//               <br />
+
+
+//               <form onSubmit={this.createUser}>
+//                 <input
+//                   type="text"
+//                   name="firstName"
+//                   placeholder="First Name"
+//                   onChange={this.handleChange}
+//                 />
+                
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="lastName"
+//                   placeholder="Last Name"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="email"
+//                   placeholder="Email"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="phoneNumber"
+//                   placeholder="Phone Number"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="shippingAddress"
+//                   placeholder="Shipping Address"
+//                   onChange={this.handleChange}
+//                 />
+
+//                 <br />
+//                 <input
+//                   type="text"
+//                   name="username"
+//                   placeholder="Username"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <input
+//                   type="password"
+//                   name="password"
+//                   placeholder="Password"
+//                   onChange={this.handleChange}
+//                 />
+//                 <br />
+//                 <br />
+//                 <Button variant="outlined" color="primary" type="submit">Submit</Button>
+
+//               </form>
+//             </div>
+//           )}
+//         <br />
+//         <br />
+//       </div>
+//     );
+//   }
+// }
+
+// export default Register;
 
 
 // <form onSubmit={this.createUser}>

@@ -31,7 +31,7 @@ import Copyright from './Copyright'
       backgroundColor: theme.palette.secondary.main,
     },
     form: {
-      width: '100%', 
+      width: '110%', 
       marginTop: theme.spacing(1),
     },
     submit: {
@@ -97,9 +97,13 @@ class LoginForm extends Component {
 
     render() {
         const {classes} = this.props
+
         return (
+           
             <Container component="main" maxWidth="xs">
       <CssBaseline />
+      <br/>
+      <br/>
       <br/>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -108,7 +112,7 @@ class LoginForm extends Component {
         </Avatar>
         
         <Typography component="h1" variant="h5">
-          Sign in
+          Studio Ghibli Login
         </Typography>
         <form onSubmit={this.login} className={classes.form}>
             <h3>{this.state.error}</h3>
@@ -150,7 +154,7 @@ class LoginForm extends Component {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Login
           </Button>
           <Grid container>
             <Grid item xs>
@@ -160,13 +164,13 @@ class LoginForm extends Component {
             </Grid>
             <Grid item>
               <Link href="/register" variant="body2">
-                {"Don't have an account? Sign Up"}
+                {"Don't have an account? Register Here!"}
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
+      <Box mt={8} >
       </Box>
     </Container>
 

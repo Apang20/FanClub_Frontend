@@ -1,10 +1,6 @@
 // import React from 'react';
 // import { render } from 'react-dom';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
-import ReactDOM from 'react-dom';
-import './App.css';
-import React, { Fragment } from 'react';
-import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-router-dom'
 
 // import React, { Component } from "react";
 // import { Button, TextField } from '@material-ui/core';
@@ -16,12 +12,18 @@ import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-ro
 // import Paper from '@material-ui/core/Paper'
 // import Grid from '@material-ui/core/Grid'
 
+// import FilterBar from './Components/FilterBar';
+
+import ReactDOM from 'react-dom';
+import './App.css';
+import React, { Fragment } from 'react';
+import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-router-dom'
+
 import Account from './Components/Account'
 import LoginForm from './Components/LoginForm';
 import NavBar from './Components/NavBar';
 import Cart from './Components/Cart';
 import ItemContainer from './Components/ItemContainer';
-// import FilterBar from './Components/FilterBar';
 import Register from './Components/Register'
 import NotFound from './Components/NotFound'
 import Footer from './Components/Footer'
@@ -196,7 +198,7 @@ class App extends React.Component {
                 first_name: newInfo.firstName,
                 last_name: newInfo.lastName,
                 email: newInfo.email,
-                shipping_address: newInfo.shippingAddress,
+                // shipping_address: newInfo.shippingAddress,
                 phone_number: newInfo.phoneNumber
             }
         })

@@ -46,7 +46,7 @@ export default function CenteredGrid() {
     <CssBaseline />
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.paper} variant="body2" color="textSecondary" >Studio Ghibli Copyright ©</Paper>
+          <Paper className={classes.paper} variant="body2" color="textSecondary" >Studio Ghibli Treasures Copyright ©</Paper>
         </Grid>
        
       </Grid>
