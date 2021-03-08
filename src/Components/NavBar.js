@@ -3,8 +3,10 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import SaveIcon from '@material-ui/icons/Save'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined';
+// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -30,9 +32,9 @@ class NavBar extends React.Component {
           <div className="nav-bar-btns" justify="right" alignItems="right">
           <Typography variant="h1" textAlign="right"> 
           {this.props.currentUser ? <Button startIcon={<ShoppingCartIcon />} variant="outlined" color="inherit"> <Link to="/carts">Cart</Link></Button> : null}
-          {this.props.currentUser ? <Button startIcon={<AccountCircleIcon />} variant="outlined" color="inherit" > <Link to="/users">Account</Link></Button> : null}
-          {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountCircleIcon />} variant="outlined" color="inherit" ><Link to="/login">Login</Link></Button>}
-          {this.props.currentUser ? null : <Button startIcon={<AddBoxIcon />} variant="outlined" color="inherit" ><Link to="/register">Register</Link></Button>}
+          {this.props.currentUser ? <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" > <Link to="/users">Account</Link></Button> : null}
+          {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" ><Link to="/login">Login</Link></Button>}
+          {this.props.currentUser ? null : <Button startIcon={<LockOutlinedIcon />} variant="outlined" color="inherit" ><Link to="/register">Register</Link></Button>}
           </Typography>
           </div>
       </Toolbar>

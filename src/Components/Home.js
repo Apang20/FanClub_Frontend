@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+// import Feature from './Components/Feature'
 
 const styles = theme => ({
   mainFeaturedPost: {
@@ -23,7 +24,7 @@ const styles = theme => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.2)',
+    backgroundColor: 'rgba(0,0,0,.4)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
@@ -39,6 +40,7 @@ const styles = theme => ({
 class Home extends React.Component{ 
 render(){
     const {classes} = this.props
+
 return (
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://www.desktopbackground.org/download/2560x960/2011/12/17/313888_studio-ghibli-characters-wallpapers-anime-wallpapers_2560x1600_h.jpg)`
 }}>

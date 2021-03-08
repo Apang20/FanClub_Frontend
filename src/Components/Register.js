@@ -105,7 +105,7 @@ class Register extends Component {
   render() {
     const {classes} = this.props
     return (
-
+                      
         <Container component="main" maxWidth="xs">
   <CssBaseline />
   <br/>
@@ -137,7 +137,7 @@ class Register extends Component {
               required
               fullWidth
               id="firstName"
-              label="firstname"
+              label="First Name"
               name="firstName"
               autoComplete="firstname"
               autoFocus
@@ -150,7 +150,7 @@ class Register extends Component {
             required
             fullWidth
             id="lastName"
-            label="lastname"
+            label="Last Name"
             name="lastName"
             autoComplete="lastname"
             autoFocus
@@ -203,17 +203,18 @@ class Register extends Component {
               id="password"
               autoComplete="current-password"
               onChange={this.handleChange}
-            />
+          />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+           />
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}>
+              className={classes.submit}
+              href='/login'>
               Register
             </Button>
             <Grid container>
@@ -236,8 +237,9 @@ class Register extends Component {
             </Container>
 
       );
-    }
-  }
+    };
+  };
+
   
 
 
@@ -245,7 +247,6 @@ class Register extends Component {
               
 
 export default withStyles(styles)(Register)
-
 
 
 
