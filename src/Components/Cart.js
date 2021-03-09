@@ -27,10 +27,7 @@ const styles = theme => ({
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    marginTop: theme.spacing(18),
-    // backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
-    // backgroundImage: 'url(https://media.giphy.com/media/eHQ5BsgBIBIGI/giphy.gif)',
-    // backgroundImage: 'url(https://media.giphy.com/media/2Op4x4ThJnxIs/giphy.gif)',
+    marginTop: theme.spacing(12),
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -40,19 +37,23 @@ const styles = theme => ({
     // marginTop: theme.spacing(4),
   },
   cardGrid: {
-    height: '100%',
-    width: '100%',
+    // height: '100%',
+    // width: '100%',
+    padding: theme.spacing(8, 10, 5, 8),
+
     position: 'relative',
     display: 'flex',
     marginBottom: theme.spacing(4),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(9),
-    // backgroundColor: theme.palette.background.paper,
-    // backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
+    // marginLeft: theme.spacing(1),
+    // marginRight: theme.spacing(1),
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
+    // backgroundImage: 'url(https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-53-576158cc05ab8__880.jpg)',
+    backgroundImage: 'url(https://i.pinimg.com/originals/9f/99/33/9f99336cbe0e60b055056f68645c0e32.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundColor: theme.palette.grey[400],
+    // backgroundColor: theme.palette.grey[400],
 
   },
   card: {
@@ -115,7 +116,7 @@ class Cart extends Component {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="medium" color="" variant="contained" style={{fontFamily: 'Quicksand'}}  endIcon={<DeleteOutlinedIcon />} onClick={() => this.props.removeFromCart(cart_item)}>
+            <Button className="del-btn"  size="medium" variant="contained" style={{fontFamily: 'Quicksand'}}  endIcon={<DeleteOutlinedIcon />} onClick={() => this.props.removeFromCart(cart_item)}>
               Delete
             </Button>
           </CardActions>
@@ -137,7 +138,7 @@ class Cart extends Component {
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography  variant="h1" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}}  gutterBottom>
+            <Typography  variant="h2" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}} >
              
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph style={{fontFamily: 'Vidaloka'}}>

@@ -194,11 +194,11 @@ class App extends React.Component {
             currentUser: {
                 id: newInfo.id,
                 username: newInfo.username,
-                first_name: newInfo.firstName,
-                last_name: newInfo.lastName,
                 email: newInfo.email,
-                shipping_address: newInfo.shippingAddress,
-                phone_number: newInfo.phoneNumber
+                // first_name: newInfo.firstName,
+                // last_name: newInfo.lastName,
+                // shipping_address: newInfo.shippingAddress,
+                // phone_number: newInfo.phoneNumber
             }
         })
         // console.log(newInfo, "NewInfo")

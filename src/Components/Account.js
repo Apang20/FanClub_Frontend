@@ -18,7 +18,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.common.white,
     color: theme.palette.common.white,
     marginBottom: theme.spacing(2),
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(8),
     backgroundImage: 'url(https://i.imgur.com/VYBxMKp.gif)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -34,10 +34,10 @@ const styles = theme => ({
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    marginBottom: theme.spacing(10),
+    marginBottom: theme.spacing(25),
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(13),
+      padding: theme.spacing(5),
     //   padding: theme.spacing(40),
       paddingRight: 0,
     },
@@ -70,13 +70,13 @@ return (
 <Grid container spacing={8} justify="center">
 <Grid item md={5}>
 <div className={classes.mainFeaturedPostContent} container spacing={3} justify="center">
-<Typography className={classes.title} justify="center" component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>
-<b>Studio Ghibli Account Page</b>
+<Typography className={classes.title} justify="center" component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/>
+<b> Ghibli Account Page</b>
 </Typography>
 <br/>
 <Typography className={classes.subTitle} spacing={3} justify="center"variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
-<h2><b>Username: </b>{this.props.currentUser.username}</h2>
-<h2><b>Email: </b> {this.props.currentUser.email}</h2><br/>
+<h2><u>Username</u>:           {this.props.currentUser.username}</h2>
+<h2><u>Email</u>:              {this.props.currentUser.email}</h2><br/><br/>
 {this.props.currentUser ? <Button variant="outlined" color="primary" style={{fontFamily: 'Vidaloka'}}><Link to="/edit">Edit Account</Link></Button> : null}
 
 </Typography>

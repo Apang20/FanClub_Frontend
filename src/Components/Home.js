@@ -13,6 +13,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(1),
     //backgroundImage: 'url(https://i.imgur.com/VYBxMKp.gif)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -24,7 +25,7 @@ const styles = theme => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.5)',
+    backgroundColor: 'rgba(0,0,0,.6)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
