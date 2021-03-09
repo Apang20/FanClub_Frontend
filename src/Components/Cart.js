@@ -45,14 +45,14 @@ const styles = theme => ({
     position: 'relative',
     display: 'flex',
     marginBottom: theme.spacing(4),
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(9),
     // backgroundColor: theme.palette.background.paper,
-    backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
+    // backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    // backgroundColor: theme.palette.grey[400],
+    backgroundColor: theme.palette.grey[400],
 
   },
   card: {
