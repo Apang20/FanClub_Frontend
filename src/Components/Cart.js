@@ -29,9 +29,11 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(18),
     // backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
-    // backgroundSize: 'cover',
-    // backgroundRepeat: 'no-repeat',
-    // backgroundPosition: 'center',
+    // backgroundImage: 'url(https://media.giphy.com/media/eHQ5BsgBIBIGI/giphy.gif)',
+    // backgroundImage: 'url(https://media.giphy.com/media/2Op4x4ThJnxIs/giphy.gif)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
 
   },
   heroButtons: {
@@ -46,11 +48,11 @@ const styles = theme => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(9),
     // backgroundColor: theme.palette.background.paper,
-    // backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
+    backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundColor: theme.palette.grey[500],
+    // backgroundColor: theme.palette.grey[400],
 
   },
   card: {

@@ -100,7 +100,7 @@ class Register extends Component {
     })
       .then((r) => r.json())
       .then((response) => {
-        console.log(response, "Register response")
+        // console.log(response, "Register response")
         //         // if (response.status === "created") {
         //         //   this.setState({ created: true, errorMessage: "" });
         //         // }
@@ -123,9 +123,9 @@ class Register extends Component {
   <div className={classes.paper}>
     <Avatar className={classes.avatar}>
       <LockOutlinedIcon />
-    </Avatar>
+    </Avatar> <br/>
     <Typography component="h1" variant="h5">
-      Register
+    Register
     </Typography>
     <div>
         {this.state.created ? (

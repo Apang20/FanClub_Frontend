@@ -17,7 +17,7 @@ const styles = theme => ({
     justifyContent: 'center',
     backgroundColor: theme.palette.common.white,
     color: theme.palette.common.white,
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(2),
     marginTop: theme.spacing(4),
     backgroundImage: 'url(https://i.imgur.com/VYBxMKp.gif)',
     backgroundSize: 'cover',
@@ -34,10 +34,10 @@ const styles = theme => ({
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    marginBottom: theme.spacing(20),
+    marginBottom: theme.spacing(10),
     padding: theme.spacing(3),
-    [theme.breakpoints.up('xs')]: {
-      padding: theme.spacing(0),
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(13),
     //   padding: theme.spacing(40),
       paddingRight: 0,
     },
@@ -67,7 +67,7 @@ return (
 {<img style={{ display: 'none' }} src={`url(https://data.whicdn.com/images/159503389/original.gif)`} alt={classes.imageText} />}
 {/**/}<div className={classes.overlay} />
 
-<Grid container spacing={3} justify="center">
+<Grid container spacing={8} justify="center">
 <Grid item md={5}>
 <div className={classes.mainFeaturedPostContent} container spacing={3} justify="center">
 <Typography className={classes.title} justify="center" component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>

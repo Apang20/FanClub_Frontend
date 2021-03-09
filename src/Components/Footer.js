@@ -8,7 +8,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="inherit" align="center" component="h1" variant="h7">
+    <Typography variant="body1" color="inherit" align="center" component="h1" variant="h7">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
         Studio Ghibli
@@ -22,7 +22,7 @@ function Copyright() {
 const styles = theme => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
-    marginTop: theme.spacing(110),
+    marginTop: theme.spacing(60),
     padding: theme.spacing(6, 0),
   },
 });
@@ -34,7 +34,7 @@ class Footer extends React.Component {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
+        <Typography variant="h4" align="center" gutterBottom>
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
         </Typography>
