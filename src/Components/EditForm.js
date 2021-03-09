@@ -38,7 +38,7 @@ class EditForm extends Component {
             .then(resp => resp.json())
             .then(newInfo => {
                 this.props.patchInfo(newInfo) 
-                // e.target.reset()
+                e.target.reset()
             })
     }
 
@@ -47,11 +47,11 @@ class EditForm extends Component {
         return (
             <div className="form">
             <div>
-            <br/>
+         
             
       <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
       </div> 
-       <br/>
+       
             <form onSubmit={(e) => this.handleSubmit(e)} >
 
                 <div className="form">

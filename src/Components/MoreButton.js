@@ -5,8 +5,8 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 
 const MoreButton = (props) => {
     return <div>
-            <Button onClick={props.moreItems} endIcon={<ArrowForwardIcon/>} variant="contained" color="primary">
-            MORE
+            <Button onClick={props.moreItems} endIcon={<ArrowForwardIcon/>} variant="contained" color="primary" style={{fontFamily: 'Vidaloka'}}>
+            Forward
           </Button>
           </div>
 }

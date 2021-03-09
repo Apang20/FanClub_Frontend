@@ -148,7 +148,6 @@ class App extends React.Component {
                 this.setState({ users });
                 this.setState({ cart_items });
                 // console.log(carts, "Carts")
-                // console.log(cart_items, "Cart_Items")
             });
         this.autoLogin()
     }
@@ -158,7 +157,7 @@ class App extends React.Component {
         let addCart
         addCart = {
             item_id: item.id,
-            cart_id: 9 //grab from backend to make dynamic?/ Cart.first after seeding
+            cart_id: 9 //grab from backend(localhost) to make dynamic?/ Cart.first after seeding
         };
         let reqPack = {};
         reqPack.method = "POST";
