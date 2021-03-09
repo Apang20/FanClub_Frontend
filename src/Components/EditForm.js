@@ -8,11 +8,11 @@ class EditForm extends Component {
 
     state = {
         username: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        phoneNumber: "",
-        shippingAddress: ""
+        email: ""
+        // firstName: "",
+        // lastName: "",
+        // phoneNumber: "",
+        // shippingAddress: ""
     }
 
     handleSubmit(e) { //must match up to keys in localhost
@@ -20,11 +20,11 @@ class EditForm extends Component {
         e.preventDefault()
         let newInfo = {
             username: this.state.username,
-            first_name: this.state.firstName,
-            last_name: this.state.lastName,
-            email: this.state.email,
-            phone_number: this.state.phoneNumber,
-            shipping_address: this.state.shippingAddress
+            email: this.state.email
+            // first_name: this.state.firstName,
+            // last_name: this.state.lastName,
+            // phone_number: this.state.phoneNumber,
+            // shipping_address: this.state.shippingAddress
         }
 
         let reqPack = {
@@ -32,12 +32,12 @@ class EditForm extends Component {
             method: "PATCH",
             body: JSON.stringify(newInfo)
         }
-        console.log(this.props, "Current User in Edit")
+        // console.log(this.props, "Current User in Edit")
 
         fetch("http://localhost:3000/users/" + this.props.currentUser.id, reqPack)
             .then(resp => resp.json())
             .then(newInfo => {
-                this.props.patchInfo(this.state) //newInfo
+                this.props.patchInfo(newInfo) 
                 // e.target.reset()
             })
     }
@@ -48,8 +48,10 @@ class EditForm extends Component {
             <div className="form">
             <div>
             <br/>
+            
       <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
-      </div>  
+      </div> 
+       <br/>
             <form onSubmit={(e) => this.handleSubmit(e)} >
 
                 <div className="form">
@@ -68,76 +70,88 @@ class EditForm extends Component {
                         <TextField
                             varient="outlined"
                             color="primary"
-                            type="text"
-                            onChange={(e) => this.setState({ firstName: e.target.value })}
-                            placeholder="First Name"
+                            type="email"
+                            onChange={(e) => this.setState({ email: e.target.value })}
+                            placeholder="Email@gmail.com"
                             class="form-control"
-                            id="firstnamevalue"
-                            name="firstName"
+                            id="emailvalue"
+                            name="emailName"
                         />
-
-                        <div className="form">
-                            <TextField
-                                varient="outlined"
-                                color="primary"
-                                type="text"
-                                onChange={(e) => this.setState({ lastName: e.target.value })}
-                                placeholder="Last Name"
-                                class="form-control"
-                                id="lastnamevalue"
-                                name="lastName"
-                            />
-
-                            <div className="form">
-                                <TextField
-                                    varient="outlined"
-                                    color="primary"
-                                    type="email"
-                                    onChange={(e) => this.setState({ email: e.target.value })}
-                                    placeholder="Email@gmail.com"
-                                    class="form-control"
-                                    id="emailvalue"
-                                    name="emailName"
-                                />
-
-                                <div className="form">
-                                    <TextField
-                                        varient="outlined"
-                                        color="primary"
-                                        type="text"
-                                        onChange={(e) => this.setState({ phoneNumber: e.target.value })}
-                                        placeholder="Phone Number"
-                                        class="form-control"
-                                        id="phonenumbervalue"
-                                        name="phoneName"
-                                    />
-
-                                    <div className="form">
-                                        <TextField
-                                            varient="outlined"
-                                            color="primary"
-                                            type="text"
-                                            onChange={(e) => this.setState({ shippingAddress: e.target.value })}
-                                            placeholder="Shipping Address"
-                                            class="form-control"
-                                            id="shippingaddressvalue"
-                                            name="shippingAddress"
-                                        />
-
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
-                <input  class="button" id="submit" type="submit" />
+                     </div>
+                                                    
+                    <input variant="outlined" color="primary" style={{fontFamily: 'Vidaloka'}} class="button" id="submit" type="submit" />
                 </form>
-                </div>
+            </div>
         )
-    }
-}
-
+     }
+ }
+                        
 export default EditForm;
+
+//                     <div className="form">
+//                         <TextField
+//                             varient="outlined"
+//                             color="primary"
+//                             type="text"
+//                             onChange={(e) => this.setState({ firstName: e.target.value })}
+//                             placeholder="First Name"
+//                             class="form-control"
+//                             id="firstnamevalue"
+//                             name="firstName"
+//                         />
+
+//                         <div className="form">
+//                             <TextField
+//                                 varient="outlined"
+//                                 color="primary"
+//                                 type="text"
+//                                 onChange={(e) => this.setState({ lastName: e.target.value })}
+//                                 placeholder="Last Name"
+//                                 class="form-control"
+//                                 id="lastnamevalue"
+//                                 name="lastName"
+//                             />
+
+
+//                                 <div className="form">
+//                                     <TextField
+//                                         varient="outlined"
+//                                         color="primary"
+//                                         type="text"
+//                                         onChange={(e) => this.setState({ phoneNumber: e.target.value })}
+//                                         placeholder="Phone Number"
+//                                         class="form-control"
+//                                         id="phonenumbervalue"
+//                                         name="phoneName"
+//                                     />
+
+//                                     <div className="form">
+//                                         <TextField
+//                                             varient="outlined"
+//                                             color="primary"
+//                                             type="text"
+//                                             onChange={(e) => this.setState({ shippingAddress: e.target.value })}
+//                                             placeholder="Shipping Address"
+//                                             class="form-control"
+//                                             id="shippingaddressvalue"
+//                                             name="shippingAddress"
+//                                         />
+
+//                                     </div>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <input  class="button" id="submit" type="submit" />
+//                 </form>
+//                 </div>
+//         )
+//     }
+// }
+
+// export default EditForm;
 
 
 

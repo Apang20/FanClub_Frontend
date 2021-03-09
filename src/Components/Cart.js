@@ -3,7 +3,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import CartItem from './CartItem'
 import Button from '@material-ui/core/Button'
 import AddBoxIcon from '@material-ui/icons/AddBox'
-
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
 // import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
@@ -27,27 +27,47 @@ const styles = theme => ({
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    marginTop: theme.spacing(18),
+    // backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
+    // backgroundSize: 'cover',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundPosition: 'center',
+
   },
   heroButtons: {
-    marginTop: theme.spacing(4),
+    // marginTop: theme.spacing(4),
   },
   cardGrid: {
+    height: '100%',
+    width: '100%',
+    position: 'relative',
+    display: 'flex',
+    marginBottom: theme.spacing(4),
     paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+    paddingBottom: theme.spacing(9),
+    // backgroundColor: theme.palette.background.paper,
+    // backgroundImage: 'url(https://media.giphy.com/media/AdtvZ8gu9gZ32/giphy.gif)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundColor: theme.palette.grey[500],
+
   },
   card: {
     height: '100%',
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
+
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '60%', // 16:9 //'56.25%'
   },
   cardContent: {
-    flexGrow: 1,
+    flexGrow: 10,
   },
   footer: {
+    // backgroundColor: theme.palette.grey[200],
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
@@ -72,28 +92,28 @@ class Cart extends Component {
         })
     }
   }
-  // {this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}</b>
   
   renderCards = (array) => {
     const {classes} = this.props
-    return array.carts.map((cart_item) => ( //item= cart_item
-      <Grid item key={cart_item.id} xs={12} sm={6} md={4}>
-        <Card className={classes.card}>
+
+    return array.carts.map((cart_item) => ( 
+      <Grid item key={cart_item.id} xs={1} sm={1} md={3} >
+        <Card className={classes.card} >
           <CardMedia
             className={classes.cardMedia}
             image={cart_item.item.image}
             title={cart_item.item.name}
           />
           <CardContent className={classes.cardContent}>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h5" component="h1" style={{fontFamily: 'Quicksand'}} >
             {cart_item.item.name}
             </Typography>
             <Typography>
-            {cart_item.item.price}
+            ${cart_item.item.price}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary" onClick={() => this.props.removeFromCart(cart_item)}>
+            <Button size="medium" color="" variant="contained" style={{fontFamily: 'Quicksand'}}  endIcon={<DeleteOutlinedIcon />} onClick={() => this.props.removeFromCart(cart_item)}>
               Delete
             </Button>
           </CardActions>
@@ -110,33 +130,31 @@ class Cart extends Component {
 
       <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
-      </AppBar>
+     
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Studio Ghibli Cart
+            <Typography  variant="h1" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}}  gutterBottom>
+             
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+            <Typography variant="h5" align="center" color="textSecondary" paragraph style={{fontFamily: 'Vidaloka'}}>
+              
+              
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary" variant="outlined" color="primary">
+                <Grid item> <br/>
+                  <Button variant="contained" color="secondary" style={{fontFamily: 'Quicksand'}} >
                   <Link to="/items"> Browse All Items</Link>
                   </Button>
-                
+                <br/><br/><br/>
                 </Grid>
               </Grid>
             </div>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container className={classes.cardGrid} maxWidth="lg" color="primary">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {carts ? this.renderCards(carts): null}
@@ -146,10 +164,8 @@ class Cart extends Component {
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
         </Typography>
         <Copyright />
       </footer>

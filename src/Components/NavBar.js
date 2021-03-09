@@ -2,7 +2,8 @@ import React from 'react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import SaveIcon from '@material-ui/icons/Save'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined';
@@ -31,9 +32,9 @@ class NavBar extends React.Component {
           </Typography>
           <div className="nav-bar-btns" justify="right" alignItems="right">
           <Typography variant="h1" textAlign="right"> 
-          {this.props.currentUser ? <Button startIcon={<ShoppingCartIcon />} variant="outlined" color="inherit"> <Link to="/carts">Cart</Link></Button> : null}
-          {this.props.currentUser ? <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" > <Link to="/users">Account</Link></Button> : null}
-          {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" ><Link to="/login">Login</Link></Button>}
+          {this.props.currentUser ? <Button startIcon={<ShoppingCartOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: 'Vidaloka'}}> <Link to="/carts">Cart</Link></Button> : null}
+          {this.props.currentUser ? <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: 'Vidaloka'}}> <Link to="/users">Account</Link></Button> : null}
+          {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" style={{fontFamily: 'Vidaloka'}} onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: 'Vidaloka'}}><Link to="/login">Login</Link></Button>}
           {this.props.currentUser ? null : <Button startIcon={<LockOutlinedIcon />} variant="outlined" color="inherit" ><Link to="/register">Register</Link></Button>}
           </Typography>
           </div>

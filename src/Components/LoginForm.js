@@ -167,7 +167,7 @@ class LoginForm extends Component {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/register" variant="body2">
+              <Link href="/register" >
                 {"Don't have an account? Register Here!"}
               </Link>
             </Grid>

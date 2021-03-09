@@ -115,9 +115,9 @@ class Register extends Component {
 
   render() {
     const {classes} = this.props
-    return (
 
-      <Grid container component="main" maxWidth="xs" className={classes.root}>
+    return (
+      <Grid container component="main" className={classes.root}>
 <CssBaseline />
 <Grid item xs >
   <div className={classes.paper}>
@@ -218,13 +218,14 @@ class Register extends Component {
         type="submit"
         fullWidth
         variant="contained"
+        color="primary"
         className={classes.submit}
       >
         Register
       </Button>
       <Grid container>
-          <Button component={Link} to="/login" href="#" variant="body2">
-            Already have an account? Login here!
+          <Button component={Link} to="/login"  color="primary" fullWidth>
+            Sign in here after registration!
           </Button>
       </Grid>
       <Box mt={10}>

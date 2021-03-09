@@ -137,7 +137,6 @@ class App extends React.Component {
             .then((user) => this.updateCurrentUser(user));
     };
 
-
     componentDidMount() {
         Promise.all([fetch(ItemsURL), fetch(CartsURL), fetch(UsersURL), fetch(CartItemsURL)])
             .then(([res1, res2, res3, res4]) => {
@@ -194,11 +193,12 @@ class App extends React.Component {
     patchInfo = (newInfo) => {
         this.setState({
             currentUser: {
+                id: newInfo.id,
                 username: newInfo.username,
                 first_name: newInfo.firstName,
                 last_name: newInfo.lastName,
                 email: newInfo.email,
-                // shipping_address: newInfo.shippingAddress,
+                shipping_address: newInfo.shippingAddress,
                 phone_number: newInfo.phoneNumber
             }
         })
@@ -238,6 +238,8 @@ class App extends React.Component {
 
 
     render() {
+        console.log(this.state.currentUser)
+
         const filteredItems = this.state.items.filter(item => item.movie.toLowerCase().includes(this.state.filter.toLowerCase()))
         const filteredMovies = this.state.movies.filter(movie => movie.includes(this.state.movieFilter))
 

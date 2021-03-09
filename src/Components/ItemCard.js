@@ -7,12 +7,12 @@ import { Text } from "@chakra-ui/react"
 class ItemCard extends Component {
     render() {
         return (
-            <div className="item-card">
+            <div className="item-card" style={{fontFamily: 'Vidaloka'}}>
                 <img src={this.props.item.image} alt={this.props.item.name}></img>
-                <h1><b><Text as="u" as="mark" as="samp"> {this.props.item.name}</Text></b></h1><br></br>
+                <h1><b> {this.props.item.name} </b></h1>
                 <h3><b>${this.props.item.price}</b></h3>
-                <p><b>Description:</b> {this.props.item.description}</p><br/>
-                <Button endIcon={<AddShoppingCartIcon/>} variant="contained" color="secondary" onClick={() => (this.props.addToCart(this.props.item, this.props.user))} className="add-btn" >Add to Cart</Button>
+                <p> {this.props.item.description}</p><br/>
+                <Button endIcon={<AddShoppingCartIcon/>} variant="contained" color="secondary" style={{fontFamily: 'Vidaloka'}} onClick={() => (this.props.addToCart(this.props.item, this.props.user))} className="add-btn" >Add to Cart</Button>
             </div>
         );
     };
