@@ -74,7 +74,7 @@ return (
 <b> Ghibli Account Page</b>
 </Typography>
 <br/>
-<Typography className={classes.subTitle} spacing={3} justify="center"variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
+<Typography className={classes.subTitle} spacing={3} justify="center" variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
 <h2><u>Username</u>:           {this.props.currentUser.username}</h2>
 <h2><u>Email</u>:              {this.props.currentUser.email}</h2><br/><br/>
 {this.props.currentUser ? <Button variant="outlined" color="primary" style={{fontFamily: 'Vidaloka'}}><Link to="/edit">Edit Account</Link></Button> : null}

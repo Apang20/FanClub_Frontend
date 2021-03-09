@@ -25,10 +25,11 @@ import NavBar from './Components/NavBar';
 import Cart from './Components/Cart';
 import ItemContainer from './Components/ItemContainer';
 import Register from './Components/Register'
-import NotFound from './Components/NotFound'
-import Footer from './Components/Footer'
+import Thanks from './Components/Thanks'
+// import Footer from './Components/Footer'
 import Home from './Components/Home'
 import EditForm from './Components/EditForm'
+import Checkout from './Components/Checkout'
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, green, red } from '@material-ui/core/colors'
@@ -208,13 +209,13 @@ class App extends React.Component {
 
     moreItems = () => {
         this.setState({
-            limit: this.state.limit + 8
+            limit: this.state.limit + 4
         })
     }
 
     backItems = () => {
         this.setState({
-            limit: this.state.limit - 8
+            limit: this.state.limit - 4
         })
     }
 
@@ -290,6 +291,15 @@ class App extends React.Component {
                             <Route exact path="/users" render={() =>
                                 <Account
                                     currentUser={this.state.currentUser} />} />
+
+                            <Route exact path="/checkout" render={() =>
+                                 <Checkout
+                                    currentUser={this.state.currentUser} />} />
+
+                            <Route exact path="/thanks" render={() =>
+                                <Thanks
+                                    currentUser={this.state.currentUser} />} />
+
                             <Route exact path="/items" render={(props) => (
                                 <ItemContainer
                                     addToCart={this.addToCart}
@@ -302,14 +312,13 @@ class App extends React.Component {
                                     updateMovieFilter={this.updateMovieFilter}
                                     moreItems={this.moreItems}
                                     limit={this.state.limit}
-                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 8)}
+                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
                                     limit={this.state.limit}
                                     itemLength={this.state.items.length}
                                     backItems={this.backItems} />)} />
-                            <Route exact path="/notfound" component={NotFound} />
+                                   
                         </Switch>
-                        <Router />
-                       <Footer/>         
+                        <Router />         
                     </Container>
                 </ThemeProvider>
                 </ChakraProvider>

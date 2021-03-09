@@ -25,13 +25,13 @@
   
   .item-container{
     margin: 2rem; 
-    margin-bottom: 1rem; 
+    margin-bottom: rem; 
     width: auto;
     background: white;
     flex: 0 1 25%;
     display: card;
     margin-top: 10.5rem;
-    height: 50rem;
+    height: 45rem;
     /* margin: 14rem;  */
     /* padding: 1rem; */
     /* opacity: .2; */
@@ -84,6 +84,13 @@
     width: 60rem;
     
   }
+
+
+.background-img{ 
+  background: url("https://wallpaperaccess.com/full/42614.jpg") no-repeat center center fixed; 
+  background-size: cover;
+  margin: auto;
+}
   
   .cart-card {
     display: inline-grid;
@@ -137,20 +144,36 @@
     margin: 1rem; 
     margin-bottom: 0rem; 
     width: auto;
-    margin-top: 60rem;
-    height: 5rem;
+    margin-top: 1rem;
+    height: 1rem;
     flex: 0 1 100%;
     /* background: rgb(194, 188, 188); */
     
   }
   
-  .not-found-pic{
+  .thanks-pic{
     margin: auto;
     display: table;
     height: auto;
     width: auto;
   }
+
+
+
+  /* .thanks {
+
+  } */
   
+
+
+
+
+
+
+
+
+
+
   /* .del-btn {
     color: red;
   } */
@@ -244,21 +267,14 @@ button:hover {
 } */
 
 
-/* .background-img{ */
-  /* background: url("https://i.pinimg.com/originals/61/b2/7f/61b27fc1fc63f0a8796abdc94206c72e.jpg") no-repeat center center fixed;  */
-  /* background: url("https://i.pinimg.com/originals/f6/21/b6/f621b606f99a3abec1c4f07e2532aba0.gif") no-repeat center center fixed;  */
+  /* background: url("https://i.pinimg.com/originals/f6/21/b6/f621b606f99a3abec1c4f07e2532aba0.gif") no-repeat center center fixed;  
   /* background: url("https://pa1.narvii.com/6806/4a29915a496ef3c8f8645eac7c77c75724ce5dde_hq.gif") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-  /* min-height: 100vh; */
-  /* font-family: 'Bebas Neue', cursive; */
-/* } */
+
+ }
 
 
 
-/* .movie-container{
+ .movie-container{
   border-style: solid;
 }
 

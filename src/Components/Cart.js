@@ -48,8 +48,8 @@ const styles = theme => ({
     // marginRight: theme.spacing(1),
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
-    // backgroundImage: 'url(https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-53-576158cc05ab8__880.jpg)',
-    backgroundImage: 'url(https://i.pinimg.com/originals/9f/99/33/9f99336cbe0e60b055056f68645c0e32.jpg)',
+    // backgroundImage: 'url(https://static.boredpanda.com/blog/wp-content/uploads/2016)/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-53-576158cc05ab8__880.jpg)',
+    backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -86,8 +86,8 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    //   fetch("http://localhost:3000/users/" + currentUser.id)
     if (this.props.currentUser) {
+        // fetch("http://localhost:3000/users/" + currentUser.id)
       fetch(`http://localhost:3000/users/${this.props.currentUser.id}`)
         .then(res => res.json())
         .then(currentUserData => {
@@ -96,6 +96,13 @@ class Cart extends Component {
     }
   }
   
+  totalPrice = (array) => {
+    let total = 0;
+    array.carts.map(cart_item => total += parseInt(cart_item.item.price))
+    return total
+  }
+
+
   renderCards = (array) => {
     const {classes} = this.props
 
@@ -148,9 +155,12 @@ class Cart extends Component {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item> <br/>
-                  <Button variant="contained" color="secondary" style={{fontFamily: 'Quicksand'}} >
+                  <Button variant="contained" color="primary" style={{fontFamily: 'Quicksand'}} >
                   <Link to="/items"> Browse All Items</Link>
-                  </Button>
+                  </Button> 
+                  <Button variant="contained" color="secondary" style={{fontFamily: 'Vidaloka'}}>
+                          <Link to="/checkout">Checkout</Link>
+                          </Button>
                 <br/><br/><br/>
                 </Grid>
               </Grid>
@@ -161,8 +171,10 @@ class Cart extends Component {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {carts ? this.renderCards(carts): null}
+            <br/>
+            Total Price: ${this.totalPrice(carts)}
           </Grid>
-        </Container>
+          </Container>
       </main>
       {/* Footer */}
       <footer className={classes.footer}>

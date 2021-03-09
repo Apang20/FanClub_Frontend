@@ -5,14 +5,16 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+import Copyright from '../Components/Copyright'
+
 // import Feature from './Components/Feature'
 
 const styles = theme => ({
   mainFeaturedPost: {
     position: 'relative',
-    backgroundColor: theme.palette.grey[800],
+    // backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
-    marginBottom: theme.spacing(5),
+    marginBottom: theme.spacing(2),
     marginTop: theme.spacing(1),
     //backgroundImage: 'url(https://i.imgur.com/VYBxMKp.gif)',
     backgroundSize: 'cover',
@@ -29,7 +31,7 @@ const styles = theme => ({
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    padding: theme.spacing(3),
+    padding: theme.spacing(0),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(5),
     //   padding: theme.spacing(40),
@@ -43,6 +45,7 @@ render(){
     const {classes} = this.props
 
 return (
+  <div>
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://www.desktopbackground.org/download/2560x960/2011/12/17/313888_studio-ghibli-characters-wallpapers-anime-wallpapers_2560x1600_h.jpg)`
 }}>
 {/* Increase the priority of the hero background image */}
@@ -55,7 +58,7 @@ return (
 <br/>
 <br/>
 <Grid container>
-<Grid item md={5}>
+<Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
 <Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>
 Studio Ghibli Fan Club
@@ -70,6 +73,9 @@ Here, exclusive members can find rare collection of Ghibli items imported from T
 </Grid>
 </Grid>
 </Paper>
+<Copyright />
+<br/>
+</div>
 );
 }}
 

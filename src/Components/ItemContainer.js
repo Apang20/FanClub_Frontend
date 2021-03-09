@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
+import Copyright from '../Components/Copyright'
+
 
 
 class ItemContainer extends Component {
@@ -36,13 +38,18 @@ class ItemContainer extends Component {
                 
                         <div className="background-img">
                         <div className="more-back-btns">
-                        {this.props.limit + 1 < this.props.itemLength ? <MoreButton moreItems={this.props.moreItems} items={this.props.items}/> : null}  <br/>
-                        {this.props.limit == 0 ? null : <BackButton  backItems={this.props.backItems} items={this.props.items}/>}  <br/>
+                        
+                        {this.props.limit + 1 < this.props.itemLength ? <span><MoreButton moreItems={this.props.moreItems} items={this.props.items}/> </span>  : null}
+                                               
                         </div>
                         {this.props.items.map(item => <ItemCard item={item} addToCart={this.props.addToCart} removeFromCart={this.props.removeFromCart} updateCurrentUser={this.props.updateCurrentUser} user={this.props.currentUser} />)} 
+
+                       
+                        {this.props.limit == 0 ? null : <BackButton backItems={this.props.backItems} items={this.props.items}/>}  
                         </div>
                         </div>
                         </div>
+                        <Copyright />
             </div>
 
 
@@ -52,6 +59,8 @@ class ItemContainer extends Component {
 
 export default ItemContainer;
 
+// {this.props.limit + 1 < this.props.itemLength ? <MoreButton moreItems={this.props.moreItems} items={this.props.items}/> : null}  
+// {this.props.limit == 0 ? null :  <span><BackButton  backItems={this.props.backItems} items={this.props.items}/> </span>}  <br/>
 
 
 
