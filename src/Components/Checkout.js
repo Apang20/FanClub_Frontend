@@ -28,6 +28,7 @@ const styles = theme => ({
       },
     },
     paper: {
+      backgroundColor: theme.palette.grey[100],
       marginTop: theme.spacing(3),
       marginBottom: theme.spacing(3),
       padding: theme.spacing(2),
@@ -184,6 +185,7 @@ render(){
         </Grid>
       </Paper>
       <Copyright />
+      <br/>
     </main>
     </React.Fragment>
   );

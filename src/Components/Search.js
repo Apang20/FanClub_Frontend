@@ -12,9 +12,10 @@ const Search = (props) => {
         <div className="search">
         <div>
         <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+        <br/>
+        <br/>
         </div>
-        
-        <Select variant="flushed" size="medium" width="md" placeholder="Filter By Ghibli Movie"  onChange={(e) => props.updateFilter(e.target.value)}>
+        <Select marginLeft="35%" marginRight="35%" color="secondary" style={{fontFamily: 'Vidaloka'}} variant="flushed" width="large" placeholder="Filter By Ghibli Movie"  onChange={(e) => props.updateFilter(e.target.value)}>
         {props.movies.map(movie => {
           <option value="All">All</option>
             return <option value={movie}> {movie} </option>

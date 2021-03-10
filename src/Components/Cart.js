@@ -1,59 +1,42 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import CartItem from './CartItem'
 import Button from '@material-ui/core/Button'
-import AddBoxIcon from '@material-ui/icons/AddBox'
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
-// import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
+
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-// import Link from '@material-ui/core/Link';
 import { withStyles } from "@material-ui/core/styles";
 import Copyright from '../Components/Copyright'
 
 const styles = theme => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    marginTop: theme.spacing(12),
+    marginTop: theme.spacing(0),
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
 
   },
-  heroButtons: {
-    // marginTop: theme.spacing(4),
-  },
+
   cardGrid: {
-    // height: '100%',
-    // width: '100%',
     padding: theme.spacing(8, 10, 5, 8),
 
     position: 'relative',
     display: 'flex',
     marginBottom: theme.spacing(4),
-    // marginLeft: theme.spacing(1),
-    // marginRight: theme.spacing(1),
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
-    // backgroundImage: 'url(https://static.boredpanda.com/blog/wp-content/uploads/2016)/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-53-576158cc05ab8__880.jpg)',
     backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    // backgroundColor: theme.palette.grey[400],
 
   },
   card: {
@@ -64,7 +47,7 @@ const styles = theme => ({
 
   },
   cardMedia: {
-    paddingTop: '60%', // 16:9 //'56.25%'
+    paddingTop: '88%', //'56.25%'
   },
   cardContent: {
     flexGrow: 10,
@@ -72,7 +55,7 @@ const styles = theme => ({
   footer: {
     // backgroundColor: theme.palette.grey[200],
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
+    padding: theme.spacing(2),
   },
 });
 
@@ -163,8 +146,12 @@ class Cart extends Component {
                           </Button>
                 <br/><br/><br/>
                 <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}}>
-                <b>Cart Total</b>: $<u>{this.totalPrice(carts)}</u>
+                <span className="circle-sketch-highlight"><b>Cart Total</b>: <mark>$<u>{this.totalPrice(carts)}</u></mark></span>
+              
+
+
                 </Typography>
+                <br/>
                 </Grid>
               </Grid>
             </div>

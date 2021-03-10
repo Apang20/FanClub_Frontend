@@ -1,24 +1,7 @@
-// import React from 'react';
-// import { render } from 'react-dom';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-
-// import React, { Component } from "react";
-// import { Button, TextField } from '@material-ui/core';
-// import EmailIcon from '@material-ui/core/icons/Email';
-// import PhoneIcon from '@material-ui/core/icons/Phone';
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-// import MovieContainer from './Components/MovieContainer';
-// import Search from './Components/Search'
-// import Paper from '@material-ui/core/Paper'
-// import Grid from '@material-ui/core/Grid'
-
-// import FilterBar from './Components/FilterBar';
-
-import ReactDOM from 'react-dom';
 import './App.css';
+import ReactDOM from 'react-dom';
 import React, { Fragment } from 'react';
 import { Route, Switch, Link, Redirect, BrowserRouter as Router } from 'react-router-dom'
-
 import Account from './Components/Account'
 import LoginForm from './Components/LoginForm';
 import NavBar from './Components/NavBar';
@@ -26,22 +9,14 @@ import Cart from './Components/Cart';
 import ItemContainer from './Components/ItemContainer';
 import Register from './Components/Register'
 import Thanks from './Components/Thanks'
-// import Footer from './Components/Footer'
 import Home from './Components/Home'
 import EditForm from './Components/EditForm'
 import Checkout from './Components/Checkout'
-
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, green, red } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/core/Menu'
-import Button from '@material-ui/core/Button'
-
 import { ChakraProvider } from "@chakra-ui/react"
 
 

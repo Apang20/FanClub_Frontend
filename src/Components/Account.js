@@ -1,17 +1,12 @@
-// import React from 'react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import React, { Component } from 'react'
-
 import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Copyright from '../Components/Copyright'
 
-// import Link from '@material-ui/core/Link';
-// import Feature from './Components/Feature'
 
 const styles = theme => ({
   mainFeaturedPost: {
@@ -28,18 +23,18 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 570,
-    left: 470,
+    top: 160,
+    bottom: 200,
+    right: 0,
+    left: 0,
     backgroundColor: 'rgba(0,0,0,.5)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    marginBottom: theme.spacing(18),
+    marginBottom: theme.spacing(22),
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(5),
+      padding: theme.spacing(5.8),
     //   padding: theme.spacing(40),
       paddingRight: 0,
     },
@@ -79,7 +74,7 @@ return (
 <br/>
 <Typography className={classes.subTitle} spacing={3} justify="center" variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
 <h2><u>Username</u>:           {this.props.currentUser.username}</h2>
-<h2><u>Email</u>:              {this.props.currentUser.email}</h2><br/><br/>
+<h2><u>Email</u>:              {this.props.currentUser.email}</h2><br/>
 {this.props.currentUser ? <Button variant="outlined" color="primary" style={{fontFamily: 'Vidaloka'}}><Link to="/edit">Edit Account</Link></Button> : null}
 
 </Typography>
@@ -87,7 +82,7 @@ return (
 </Grid>
 </Grid>
 </Paper>
-<br/>
+<br/><br/>
 <Copyright />
 </div>
 );

@@ -5,10 +5,10 @@ import Link from '@material-ui/core/Link';
 
 function Copyright() {
     return (
-      <Typography variant="body2" color="textSecondary" align="center">
+      <Typography variant="body1" color="textSecondary" align="center">
         {'Copyright © '}
         <Link color="inherit" href="https://material-ui.com/">
-          Studio Ghibli
+          Studio Ghibli Fan Club
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}

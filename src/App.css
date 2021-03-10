@@ -1,7 +1,7 @@
 
   
   #nav-bar {
-    margin-top: 0.1rem;
+    margin-top: 0rem;
   }
   
   .navbar-pic{
@@ -25,13 +25,13 @@
   
   .item-container{
     margin: 2rem; 
-    margin-bottom: .5rem; 
+    margin-top: 11rem;
+    margin-bottom: 6.5rem; 
     width: auto;
     background: white;
     flex: 0 1 25%;
     display: card;
-    margin-top: 10.5rem;
-    height: 45rem;
+    height: 44.5rem;
     /* margin: 14rem;  */
     /* padding: 1rem; */
     /* opacity: .2; */
@@ -42,15 +42,16 @@
     text-align: center;
     /* padding: 2rem; */
     /* width: 22.7rem; */
+   
     width: 22rem;
-    height: 36rem;
+    height: 35.1rem;
     max-height: 100%;
     display: inline-grid;
-    margin: 1rem 2rem;
+    margin: 3rem 2rem;
     box-shadow: 5px 5px #fdfdfdf8;
     font-size: 18px;
     opacity: .9;
-    border: rgb(173, 175, 179) solid 10px;
+    border: rgb(173, 175, 179) solid 12px;
     background: rgb(255, 255, 255);
     /* font-family: Vidaloka; */
     
@@ -138,8 +139,8 @@
     text-align: center;
     padding: 5rem;
   }
-  
-  
+ 
+
   /* .thanks-pic{
     background: url("https://64.media.tumblr.com/a8f2bb383f0cc03ebd0e1c76e6add65f/tumblr_nl514kT5p61spui9lo1_540.gifv")no-repeat center center fixed; 
     background-size: cover;

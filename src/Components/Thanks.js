@@ -23,10 +23,10 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 420,
+    top: 440,
     bottom: 20,
-    right: 850,
-    left: 0,
+    right: 861,
+    left: 10,
     backgroundColor: 'rgba(0,0,0,.7)',
   },
   mainFeaturedPostContent: {
@@ -63,7 +63,7 @@ return (
 <Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>
 <b>Studio Ghibli Fan Club Thanks You for Your Support!</b>
 </Typography>
-<br/>
+
 <Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
 Please allow up to 3 weeks for international shipping<br/>
 See you again soon!

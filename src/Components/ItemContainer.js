@@ -4,10 +4,6 @@ import Search from './Search'
 import MovieContainer from './MovieContainer'
 import MoreButton from './MoreButton'
 import BackButton from './BackButton'
-import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
-import Paper from '@material-ui/core/Paper'
-import Grid from '@material-ui/core/Grid'
 import Copyright from '../Components/Copyright'
 
 
@@ -37,19 +33,17 @@ class ItemContainer extends Component {
                  
                 
                         <div className="background-img">
-                        <div className="more-back-btns">
-                        
-                        {this.props.limit + 1 < this.props.itemLength ? <span><MoreButton moreItems={this.props.moreItems} items={this.props.items}/> </span>  : null}
-                                               
-                        </div>
+                        <div>
+                        {this.props.limit + 1 < this.props.itemLength ? <span><br/><MoreButton  moreItems={this.props.moreItems} items={this.props.items}/></span>  : null}             
                         {this.props.items.map(item => <ItemCard item={item} addToCart={this.props.addToCart} removeFromCart={this.props.removeFromCart} updateCurrentUser={this.props.updateCurrentUser} user={this.props.currentUser} />)} 
-
-                       
-                        {this.props.limit == 0 ? null : <BackButton backItems={this.props.backItems} items={this.props.items}/>}  
+                        {this.props.limit == 0 ? null : <span><br/><BackButton backItems={this.props.backItems} items={this.props.items}/><br/></span>} <br/><br/>
                         </div>
                         </div>
                         </div>
+                        </div>
+                        <br/>
                         <Copyright />
+                        <br/>
             </div>
 
 
