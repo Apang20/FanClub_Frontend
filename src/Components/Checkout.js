@@ -1,5 +1,4 @@
 
-// import React from 'react';
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -7,11 +6,9 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-// import Link from '@material-ui/core/Link';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper';
 import Copyright from '../Components/Copyright'
-import Thanks from '../Components/Thanks'
 import { withStyles } from '@material-ui/core/styles';
 
 
@@ -61,7 +58,7 @@ render(){
     <main className={classes.layout}>
     <Paper className={classes.paper}>
       <Typography variant="h6" gutterBottom justify="center"variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/>
-        Shipping address
+        Shipping Address
       </Typography>
       <Grid container spacing={3} justify="center">
         <Grid item xs={12} sm={6}>
@@ -148,7 +145,7 @@ render(){
       <br/>
  
       <Typography variant="h6" gutterBottom justify="center" variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}}  paragraph> 
-        Payment method
+        Payment Method
       </Typography>
       <Grid container spacing={3} justify="center">
         <Grid item xs={12} md={6}>

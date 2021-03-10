@@ -23,11 +23,11 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    backgroundColor: 'rgba(0,0,0,.6)',
+    top: 420,
+    bottom: 20,
+    right: 860,
+    left: 10,
+    backgroundColor: 'rgba(0,0,0,.7)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
@@ -61,11 +61,10 @@ return (
 <Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
 <Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>
-Studio Ghibli Fan Club
+<b>Welcome to Studio Ghibli Fan Club!</b>
 </Typography>
-<br/>
 <Typography className={classes.subTitle} variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
-Studio Ghibli films are beloved for many reasons: the strange and fantastical creatures, the richly animated worlds, the oddball humour. 
+Studio Ghibli films are beloved for many reasons; the strange and fantastical creatures, the richly animated worlds, the oddball humour. 
 These characters have won the hearts of many worldwide. 
 Here, exclusive members can find rare collection of Ghibli items imported from Tokyo, Japan!
 </Typography>

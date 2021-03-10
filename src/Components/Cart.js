@@ -162,6 +162,9 @@ class Cart extends Component {
                           <Link to="/checkout">Checkout</Link>
                           </Button>
                 <br/><br/><br/>
+                <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}}>
+                <b>Cart Total</b>: $<u>{this.totalPrice(carts)}</u>
+                </Typography>
                 </Grid>
               </Grid>
             </div>
@@ -172,7 +175,6 @@ class Cart extends Component {
           <Grid container spacing={4}>
             {carts ? this.renderCards(carts): null}
             <br/>
-            Total Price: ${this.totalPrice(carts)}
           </Grid>
           </Container>
       </main>

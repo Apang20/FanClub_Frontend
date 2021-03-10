@@ -8,6 +8,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Copyright from '../Components/Copyright'
+
 // import Link from '@material-ui/core/Link';
 // import Feature from './Components/Feature'
 
@@ -28,13 +30,13 @@ const styles = theme => ({
     position: 'absolute',
     top: 0,
     bottom: 0,
-    right: 500,
+    right: 570,
     left: 470,
-    backgroundColor: 'rgba(0,0,0,.6)',
+    backgroundColor: 'rgba(0,0,0,.5)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    marginBottom: theme.spacing(25),
+    marginBottom: theme.spacing(18),
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(5),
@@ -61,6 +63,7 @@ render(){
     // debugger 
 
 return (
+  <div>
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://media.giphy.com/media/AebNPktTHrdYc/giphy.gif)`
 }}>
 {/* Increase the priority of the hero background image */}
@@ -84,6 +87,9 @@ return (
 </Grid>
 </Grid>
 </Paper>
+<br/>
+<Copyright />
+</div>
 );
 }}
 

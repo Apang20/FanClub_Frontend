@@ -124,7 +124,7 @@ class NavBar extends React.Component {
             color="inherit"
             aria-label="open drawer"
           >
-            <MenuIcon />
+   
           </IconButton>
        
           <InputBase/>
