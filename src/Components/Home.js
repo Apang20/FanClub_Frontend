@@ -22,17 +22,17 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 420,
-    bottom: 20,
-    right: 860,
-    left: 10,
+    top: 370,
+    bottom: 40,
+    right: 840,
+    left: 50,
     backgroundColor: 'rgba(0,0,0,.7)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
     padding: theme.spacing(0),
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(5),
+      padding: theme.spacing(11), //zooms in on pic
     //   padding: theme.spacing(40),
       paddingRight: 0,
     },
@@ -52,17 +52,14 @@ return (
 {/**/}<div className={classes.overlay} />
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
+
 <Grid container>
 <Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
 <Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>
 <b>Welcome to Studio Ghibli Fan Club!</b>
 </Typography>
-<Typography className={classes.subTitle} variant="h4" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
+<Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
 Studio Ghibli films are beloved for many reasons; the strange and fantastical creatures, the richly animated worlds, the oddball humour. 
 These characters have won the hearts of many worldwide. 
 Here, exclusive members can find rare collection of Ghibli items imported from Tokyo, Japan!
@@ -71,8 +68,8 @@ Here, exclusive members can find rare collection of Ghibli items imported from T
 </Grid>
 </Grid>
 </Paper>
-<Copyright />
 <br/>
+<Copyright />
 </div>
 );
 }}

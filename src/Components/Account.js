@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    marginBottom: theme.spacing(22),
+    marginBottom: theme.spacing(20),
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(5.8),

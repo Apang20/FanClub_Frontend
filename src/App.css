@@ -79,10 +79,11 @@
     width: auto;
     background: white;
     flex: 0 1 25%;
-    /* display: card; */
     margin-top: 8rem;
     height: 30rem;
     width: 60rem;
+    /* opacity: 100; */
+    /* display: card; */
     
   }
 

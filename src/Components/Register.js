@@ -135,7 +135,7 @@ class Register extends Component {
             <div>
               <p>{this.state.errorMessage}</p>
             </div>
-        <br />
+        
 
     <form className={classes.form}
           onSubmit={this.createUser}>

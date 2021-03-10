@@ -22,7 +22,6 @@ const styles = theme => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-
   },
 
   cardGrid: {
@@ -33,7 +32,8 @@ const styles = theme => ({
     marginBottom: theme.spacing(4),
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
-    backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
+    // backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
+    backgroundImage: 'url(https://studioghiblimovies.com/wp-content/uploads/2020/03/p08192c7.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -137,7 +137,7 @@ class Cart extends Component {
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
-                <Grid item> <br/>
+                <Grid item > <br/>
                   <Button variant="contained" color="primary" style={{fontFamily: 'Quicksand'}} >
                   <Link to="/items"> Browse All Items</Link>
                   </Button> 
@@ -146,7 +146,7 @@ class Cart extends Component {
                           </Button>
                 <br/><br/><br/>
                 <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}}>
-                <span className="circle-sketch-highlight"><b>Cart Total</b>: <mark>$<u>{this.totalPrice(carts)}</u></mark></span>
+                <span className="circle-sketch-highlight"><b>Cart Total</b>: <mark>$<u>{this.totalPrice(carts)}.00</u></mark></span>
               
 
 

@@ -107,7 +107,7 @@ class LoginForm extends Component {
       <CssBaseline />
       <br/>
       <br/>
-      <br/>
+      
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
         
@@ -115,7 +115,7 @@ class LoginForm extends Component {
         </Avatar>
         
         <Typography component="h1" variant="h5">
-          Studio Ghibli Login
+          Login
         </Typography>
         <form onSubmit={this.login} 
         className={classes.form}>
@@ -175,6 +175,14 @@ class LoginForm extends Component {
         </form>
       </div>
       <Box mt={8} >
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <Copyright />
       </Box>
     </Container>
