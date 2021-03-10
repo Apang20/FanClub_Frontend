@@ -183,7 +183,10 @@ render(){
         <Button variant="contained" color="secondary" style={{fontFamily: ''}}> <Link color="inherit" to="/thanks"> Confirm Order </Link> </Button>
         
         </Grid>
-      </Paper>
+        <div  align="right" >
+        <img  width="12%" height="5%" src="https://i.pinimg.com/originals/9d/d1/a0/9dd1a0c90caa865e3718947e2b91d35e.gif"/>
+        </div>
+        </Paper>
       <Copyright />
       <br/>
     </main>

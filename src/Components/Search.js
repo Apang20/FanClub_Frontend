@@ -18,17 +18,18 @@ const Search = (props) => {
         <Select marginLeft="35%" marginRight="35%" color="secondary" variant="flushed" width="large" placeholder="Filter By Ghibli Movie"  onChange={(e) => props.updateFilter(e.target.value)}>
         {props.movies.map(movie => {
           <option value="All">All</option>
-            return <option value={movie}> {movie} </option>
-          })}
-          </Select>
-
+          return <option value={movie}> {movie} </option>
+        })}
+        </Select>
         </div> 
-      </label>
+        </label>
     </div>
   );
 };
 
 export default Search;
+// <img width="8%" height="10%" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ccaa6b40-c9e1-4fca-a714-e73eb7a0d47d/d998yjs-cbde5b99-d8ed-409d-97a3-e2dc4807c12b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvY2NhYTZiNDAtYzllMS00ZmNhLWE3MTQtZTczZWI3YTBkNDdkXC9kOTk4eWpzLWNiZGU1Yjk5LWQ4ZWQtNDA5ZC05N2EzLWUyZGM0ODA3YzEyYi5naWYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.jOOwRQ9Nuo_hoherDGrCkFWIcSqg2wL9C0XevdVXKyU"/>
+
 
 // <select size="large" width="100%" className="select" onChange={(e) => props.updateFilter(e.target.value)}>
 //         </select>

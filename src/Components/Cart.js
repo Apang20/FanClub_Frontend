@@ -19,6 +19,7 @@ const styles = theme => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(0),
+    marginRight: theme.spacing(0),
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -32,6 +33,7 @@ const styles = theme => ({
     marginBottom: theme.spacing(4),
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
+    // paddingRight: theme.spacing(0),
     // backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
     backgroundImage: 'url(https://studioghiblimovies.com/wp-content/uploads/2020/03/p08192c7.jpg)',
     backgroundSize: 'cover',
@@ -125,45 +127,42 @@ class Cart extends Component {
       <CssBaseline />
      
       <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography  variant="h2" align="center" color="inherint" paragraph style={{fontFamily: ''}} >
-             
-            </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph style={{fontFamily: ''}}>
-              
-              
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item > <br/>
-                  <Button variant="contained" color="primary" style={{fontFamily: ''}}  >
-                  <Link to="/items"> Browse All Items</Link>
-                  </Button> 
-                  <Button variant="contained" color="secondary" style={{fontFamily: ''}}>
-                          <Link to="/checkout">Checkout</Link>
-                          </Button>
-                <br/><br/><br/>
-                <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: ''}}>
-                <span className="circle-sketch-highlight"><b>Cart Total</b>: <b>${this.totalPrice(carts)}.00</b></span>
-              
-
-
-                </Typography>
-                <br/>
-                </Grid>
-              </Grid>
-            </div>
-          </Container>
-        </div>
-        <Container className={classes.cardGrid} maxWidth="lg" color="primary">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {carts ? this.renderCards(carts): null}
-            <br/>
-          </Grid>
-          </Container>
+      {/* Hero unit */}
+      <div className={classes.heroContent}>
+      
+      <Container maxWidth="sm">
+      <div className={classes.heroButtons}>
+      <Grid container spacing={2} justify="center">
+      <Grid item > 
+      <br/>
+      <br/>
+      <br/>
+      <Button variant="contained" align="center" color="primary" style={{fontFamily: ''}}  >
+      <Link to="/items"> Browse All Items</Link>
+      </Button> 
+      <Button variant="contained" align="center" color="secondary" style={{fontFamily: ''}}>
+      <Link to="/checkout">Checkout</Link>
+      </Button>
+      <br/><br/><br/>
+      <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: ''}}>
+      <span className="circle-sketch-highlight"><b>Cart Total</b>: <b>${this.totalPrice(carts)}.00</b></span>            
+      
+      </Typography>
+      
+      </Grid>
+      </Grid>
+      </div>
+      </Container>
+      </div>
+      <Container className={classes.cardGrid} maxWidth="lg" color="primary">
+      {/* End hero unit */}
+      <Grid container spacing={4}>
+      {carts ? this.renderCards(carts): null}
+      <div align="right" >
+      <img width="15%" height="1%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif"/>
+      </div>
+      </Grid>
+      </Container>
       </main>
       {/* Footer */}
       <footer className={classes.footer}>

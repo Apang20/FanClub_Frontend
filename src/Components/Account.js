@@ -82,8 +82,9 @@ return (
 </div>
 </Grid>
 </Grid>
+
 </Paper>
-<br/><br/>
+
 <Copyright />
 </div>
 );

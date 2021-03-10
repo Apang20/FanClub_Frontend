@@ -37,8 +37,9 @@
     /* opacity: .2; */
   }
   
-  
+  @media (prefers-reduced-motion: no-preference) {
   .item-card {
+    animation: App-logo-spin infinite 20s linear;
     text-align: center;
     /* padding: 2rem; */
     /* width: 22.7rem; */
@@ -56,7 +57,7 @@
     /* font-family: Vidaloka; */
     
     /* overflow: auto; */ 
-  }
+  }}
   
   
   .item-card img {

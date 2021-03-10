@@ -158,33 +158,38 @@ class LoginForm extends Component {
             color="secondary"
             className={classes.submit}
           >
-            <b>Welcome Ghibli Fan</b>
+          <img  width="40%" height="10%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif"/>
+          <b>Login</b>
+            <img  width="40%" height="10%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif"/>
           </Button>
+          <br/>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
+              <br/>
+              <br/>
                 <b>Forgot password?</b>
               </Link>
             </Grid>
             <Grid item>
               <Link href="/register">
+              <br/>
+              <br/>
                 <b>{"Don't have an account? Register Here!"}</b>
               </Link>
             </Grid>
           </Grid>
         </form>
-      </div>
-      <Box mt={8} >
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <Copyright />
-      </Box>
+        </div>
+        <Box mt={8} >
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        </Box>
+        <Copyright />
+
     </Container>
 
     );

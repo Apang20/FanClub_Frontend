@@ -63,14 +63,12 @@ return (
 <br/>
 <br/>
 <br/>
-
 <Grid container>
 <Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
 <Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: ''}}><br/><br/><br/><br/><br/>
 <b>Ghibli Fan Club Thanks You for Your Support!</b>
 </Typography>
-
 <Typography className={classes.subTitle} variant="h6" color="secondary" style={{fontFamily: ''}} paragraph> <br/> 
 <b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Content @GhibliFanClub for 20% Discount </i></Link></b>  <Link href="https://www.facebook.com/FansOfStudioGhibli/"> {<FacebookIcon/>}</Link> <Link href="https://www.instagram.com/ghibli.movies/?hl=en">{<InstagramIcon/>}</Link> <Link href="https://www.pinterest.com/noblewoods/studio-ghibli/">{<PinterestIcon/>}</Link> <Link href="https://www.youtube.com/watch?v=5JRXlNBTf_M">{<YouTubeIcon/>}</Link><br/>
 {<SwapHorizontalCircleIcon />} Returns must shipped be within 30 days for full refund<br/>

@@ -22,7 +22,7 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 370,
+    top: 530,
     bottom: 40,
     right: 852,
     left: 50,
@@ -45,14 +45,20 @@ render(){
 
 return (
   <div>
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://www.desktopbackground.org/download/2560x960/2011/12/17/313888_studio-ghibli-characters-wallpapers-anime-wallpapers_2560x1600_h.jpg)`
+  <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://www.desktopbackground.org/download/2560x960/2011/12/17/313888_studio-ghibli-characters-wallpapers-anime-wallpapers_2560x1600_h.jpg)`
 }}>
+<div align="right" >
+<img width="9%" height="1%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif"/>
+</div>
 {/* Increase the priority of the hero background image */}
 {<img style={{ display: 'none' }} src={`url(https://data.whicdn.com/images/159503389/original.gif)`} alt={classes.imageText} />}
 {/**/}<div className={classes.overlay} />
 <br/>
 <br/>
 
+{/*<div align="left" >
+<img width="10%" height="1%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif"/>
+</div>*/}
 <Grid container>
 <Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
