@@ -52,7 +52,7 @@ class NavBar extends React.Component {
       <Typography className={classes.title} variant="h4" noWrap>
       {this.props.currentUser ? <Button startIcon={<ShoppingCartOutlinedIcon />}variant="outlined" color="inherit" style={{fontFamily: ''}} > <Link to="/carts">Cart</Link></Button> : null} 
       {this.props.currentUser ? <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}}> <Link to="/users">Account</Link></Button> : null}
-      {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}} onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: 'Vidaloka'}}><Link to="/login">Login</Link></Button>}
+      {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}} onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}}><Link to="/login">Login</Link></Button>}
       {this.props.currentUser ? null : <Button startIcon={<LockOutlinedIcon />} variant="outlined" color="inherit" ><Link to="/register">Register</Link></Button>}
       </Typography>
       </Toolbar>

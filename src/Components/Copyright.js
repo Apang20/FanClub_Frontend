@@ -5,7 +5,7 @@ import Link from '@material-ui/core/Link';
 
 function Copyright() {
     return (
-      <Typography variant="body1" color="textSecondary" align="center" style={{fontFamily: ''}}>
+      <Typography variant="body1" color="inherit" align="center" style={{fontFamily: ''}}>
         {'Copyright © '}
        
           Ghibli Fan Club

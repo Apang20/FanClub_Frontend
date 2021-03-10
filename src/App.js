@@ -133,7 +133,7 @@ class App extends React.Component {
         let addCart
         addCart = {
             item_id: item.id,
-            cart_id: 9 //grab from backend(localhost) to make dynamic?/ Cart.first after seeding
+            cart_id: 21 //grab from backend(localhost) to make dynamic?/ Cart.first after seeding
         };
         let reqPack = {};
         reqPack.method = "POST";
