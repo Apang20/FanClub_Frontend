@@ -138,7 +138,7 @@ class Register extends Component {
         
 
     <form className={classes.form}
-          onSubmit={this.createUser}>
+          onSubmit={this.createUser} >
           <TextField
               variant="outlined"
               margin="normal"

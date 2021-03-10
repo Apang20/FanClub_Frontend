@@ -24,7 +24,7 @@ const styles = theme => ({
     position: 'absolute',
     top: 370,
     bottom: 40,
-    right: 840,
+    right: 852,
     left: 50,
     backgroundColor: 'rgba(0,0,0,.7)',
   },
@@ -56,10 +56,10 @@ return (
 <Grid container>
 <Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
-<Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>
-<b>Welcome to Studio Ghibli Fan Club!</b>
+<Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: ''}}><br/><br/><br/><br/><br/>
+<b>Welcome to Ghibli Fan Club!</b>
 </Typography>
-<Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
+<Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: ''}} paragraph> <br/> 
 Studio Ghibli films are beloved for many reasons; the strange and fantastical creatures, the richly animated worlds, the oddball humour. 
 These characters have won the hearts of many worldwide. 
 Here, exclusive members can find rare collection of Ghibli items imported from Tokyo, Japan!

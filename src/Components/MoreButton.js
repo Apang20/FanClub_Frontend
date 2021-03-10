@@ -7,7 +7,7 @@ import React from 'react'
 
 const MoreButton = (props) => {
   return( <div>
-          <Button onClick={props.moreItems} endIcon={<ArrowForwardIcon/>} variant="contained" color="primary" style={{fontFamily: 'Vidaloka'}}>
+          <Button onClick={props.moreItems} endIcon={<ArrowForwardIcon/>} variant="contained" color="primary" style={{fontFamily: ''}}>
           Forward
         </Button>
         </div>

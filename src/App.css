@@ -141,6 +141,18 @@
     padding: 5rem;
   }
  
+  .del-btn {
+    color: rgb(253, 252, 252);
+    background-color: #e45353;
+    width: max-content;
+    font-size: 18px;
+    /* border-radius: 90px; */
+    height: 2rem;
+    width: 4rem;
+    border: none;
+    justify-self: center;
+    text-align:center;
+  }
 
   /* .thanks-pic{
     background: url("https://64.media.tumblr.com/a8f2bb383f0cc03ebd0e1c76e6add65f/tumblr_nl514kT5p61spui9lo1_540.gifv")no-repeat center center fixed; 

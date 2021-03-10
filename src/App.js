@@ -14,7 +14,7 @@ import EditForm from './Components/EditForm'
 import Checkout from './Components/Checkout'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, green, red } from '@material-ui/core/colors'
-import 'fontsource-roboto';
+// import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { ChakraProvider } from "@chakra-ui/react"
@@ -46,9 +46,9 @@ const theme = createMuiTheme({
         secondary: {
             main: green[400],
         },
-        tertiary: {
-            main: red[400]
-        }
+        error: {
+            main: red[500],
+          },
     }
 })
 

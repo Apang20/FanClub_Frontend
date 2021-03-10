@@ -98,17 +98,17 @@ class Cart extends Component {
             title={cart_item.item.name}
           />
           <CardContent className={classes.cardContent}>
-            <Typography gutterBottom variant="h5" component="h1" style={{fontFamily: 'Quicksand'}} >
-            {cart_item.item.name}
+            <Typography gutterBottom variant="h6" component="h1" style={{fontFamily: ''}} >
+            <b>{cart_item.item.name}</b>
             </Typography>
             <Typography>
             ${cart_item.item.price}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button className="del-btn"  size="medium" variant="contained" style={{fontFamily: 'Quicksand'}}  endIcon={<DeleteOutlinedIcon />} onClick={() => this.props.removeFromCart(cart_item)}>
-              Delete
-            </Button>
+            <h1><button className="del-btn" size="medium" color="red" variant="contained" style={{fontFamily: ''}}  endIcon={<DeleteOutlinedIcon />} onClick={() => this.props.removeFromCart(cart_item)}>
+              <b>Delete</b>
+            </button></h1>
           </CardActions>
         </Card>
       </Grid>
@@ -128,25 +128,25 @@ class Cart extends Component {
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography  variant="h2" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}} >
+            <Typography  variant="h2" align="center" color="inherint" paragraph style={{fontFamily: ''}} >
              
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph style={{fontFamily: 'Vidaloka'}}>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph style={{fontFamily: ''}}>
               
               
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item > <br/>
-                  <Button variant="contained" color="primary" style={{fontFamily: 'Quicksand'}} >
+                  <Button variant="contained" color="primary" style={{fontFamily: ''}} >
                   <Link to="/items"> Browse All Items</Link>
                   </Button> 
-                  <Button variant="contained" color="secondary" style={{fontFamily: 'Vidaloka'}}>
+                  <Button variant="contained" color="secondary" style={{fontFamily: ''}}>
                           <Link to="/checkout">Checkout</Link>
                           </Button>
                 <br/><br/><br/>
-                <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: 'Quicksand'}}>
-                <span className="circle-sketch-highlight"><b>Cart Total</b>: <mark>$<u>{this.totalPrice(carts)}.00</u></mark></span>
+                <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: ''}}>
+                <span className="circle-sketch-highlight"><b>Cart Total</b>: <b>${this.totalPrice(carts)}.00</b></span>
               
 
 

@@ -180,7 +180,7 @@ render(){
             label="Remember credit card details for next time"
           />
         </Grid>
-        <Button variant="contained" color="secondary" style={{fontFamily: 'Vidaloka'}}> <Link color="inherit" to="/thanks"> Confirm Order </Link> </Button>
+        <Button variant="contained" color="secondary" style={{fontFamily: ''}}> <Link color="inherit" to="/thanks"> Confirm Order </Link> </Button>
         
         </Grid>
       </Paper>

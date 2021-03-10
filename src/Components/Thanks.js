@@ -7,8 +7,6 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Copyright from '../Components/Copyright'
 
-// import Feature from './Components/Feature'
-
 const styles = theme => ({
   mainFeaturedPost: {
     position: 'relative',
@@ -25,7 +23,7 @@ const styles = theme => ({
     position: 'absolute',
     top: 440,
     bottom: 20,
-    right: 861,
+    right: 850,
     left: 10,
     backgroundColor: 'rgba(0,0,0,.7)',
   },
@@ -34,9 +32,7 @@ const styles = theme => ({
     padding: theme.spacing(0),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(5),
-    //   padding: theme.spacing(40),
       paddingRight: 0,
-      // paddingLeft: 0
     },
   },
 });
@@ -47,6 +43,8 @@ render(){
 
 return (
   <div>
+  <br/>
+  
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://64.media.tumblr.com/a8f2bb383f0cc03ebd0e1c76e6add65f/tumblr_nl514kT5p61spui9lo1_540.gifv)`
 }}>
 {/* Increase the priority of the hero background image */}
@@ -57,14 +55,15 @@ return (
 <br/>
 <br/>
 <br/>
+
 <Grid container>
 <Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
-<Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: 'Vidaloka'}}><br/><br/><br/><br/><br/>
-<b>Studio Ghibli Fan Club Thanks You for Your Support!</b>
+<Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: ''}}><br/><br/><br/><br/><br/>
+<b>Ghibli Fan Club Thanks You for Your Support!</b>
 </Typography>
 
-<Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: 'Quicksand'}} paragraph> <br/> 
+<Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: ''}} paragraph> <br/> 
 Please allow up to 3 weeks for international shipping<br/>
 See you again soon!
 </Typography>
