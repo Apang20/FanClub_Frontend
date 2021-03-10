@@ -7,12 +7,12 @@ function Copyright() {
     return (
       <Typography variant="body1" color="textSecondary" align="center" style={{fontFamily: ''}}>
         {'Copyright © '}
-        <Link color="inherit" href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office">
+       
           Ghibli Fan Club
-        </Link>{' '}
+        {' '}
         {new Date().getFullYear()}
         {'. '}
-        Terms of Use & Privacy Policy
+        <Link color="inherit" href="https://lemiapp.com/legal/terms"> Terms of Use & Privacy Policy </Link>
       </Typography>
     );
   }

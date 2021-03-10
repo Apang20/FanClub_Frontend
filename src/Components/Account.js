@@ -6,7 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Copyright from '../Components/Copyright'
-
+import EmailIcon from '@material-ui/icons/Email';
+import PersonIcon from '@material-ui/icons/Person';
 
 const styles = theme => ({
   mainFeaturedPost: {
@@ -14,7 +15,7 @@ const styles = theme => ({
     justifyContent: 'center',
     backgroundColor: theme.palette.common.white,
     color: theme.palette.common.white,
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(5),
     marginTop: theme.spacing(8),
     backgroundImage: 'url(https://i.imgur.com/VYBxMKp.gif)',
     backgroundSize: 'cover',
@@ -23,15 +24,15 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 160,
+    top: 130,
     bottom: 200,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.5)',
+    backgroundColor: 'rgba(0,0,0,.6)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    marginBottom: theme.spacing(20),
+    marginBottom: theme.spacing(25),
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(5.8),
@@ -65,16 +66,16 @@ return (
 {<img style={{ display: 'none' }} src={`url(https://data.whicdn.com/images/159503389/original.gif)`} alt={classes.imageText} />}
 {/**/}<div className={classes.overlay} />
 
-<Grid container spacing={5} justify="center">
-<Grid item md={5}>
+<Grid container spacing={9} justify="center">
+<Grid item md={3.5}>
 <div className={classes.mainFeaturedPostContent} container spacing={3} justify="center">
-<Typography className={classes.title} justify="center" color="secondary" variant="h3"  style={{fontFamily: ''}}><br/><br/>
+<Typography className={classes.title} justify="center" color="secondary" variant="h4"  style={{fontFamily: ''}}><br/><br/>
 <b>Ghibli Fan Cub Account </b>
 </Typography>
 <br/>
-<Typography className={classes.subTitle} justify="center" color="secondary" variant="h4" color="inherint" style={{fontFamily: ''}} paragraph> <br/> 
-<h2><u>Username</u>:           {this.props.currentUser.username}</h2>
-<h2><u>Email</u>:              {this.props.currentUser.email}</h2><br/>
+<Typography className={classes.subTitle} justify="center" color="secondary" variant="h5" color="inherint" style={{fontFamily: ''}} paragraph> <br/> 
+<h2>{<PersonIcon />}<u></u> {this.props.currentUser.username}</h2>
+<h2>{<EmailIcon />}<u></u> {this.props.currentUser.email}</h2><br/>
 {this.props.currentUser ? <Button  variant="outlined" color="secondary" style={{fontFamily: ''}}><Link to="/edit"><b>Edit Account</b></Link></Button> : null}
 
 </Typography>

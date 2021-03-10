@@ -1,8 +1,28 @@
 import React, { Component } from 'react'
 // import FormControlLabel from '@material-ui/core/FormControlLabel'
 import TextField from '@material-ui/core/TextField'
-// import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
+import { withStyles } from "@material-ui/core/styles";
 
+const styles = theme => ({
+    paper: {
+      marginTop: theme.spacing(8),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    avatar: {
+      margin: theme.spacing(1),
+      backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+      width: '110%', 
+      marginTop: theme.spacing(1),
+    },
+    submit: {
+      margin: theme.spacing(3, 0, 2),
+    },
+  });
 
 class EditForm extends Component {
 
@@ -44,6 +64,8 @@ class EditForm extends Component {
 
 
     render() {
+        const {classes} = this.props
+
         return (
             <div className="form">
             <div>
@@ -79,15 +101,27 @@ class EditForm extends Component {
                         />
                         </div>
                      </div>
-                                                    
-                    <input variant="outlined" color="primary" style={{fontFamily: 'Vidaloka'}} class="button" id="submit" type="submit" />
-                </form>
+                                        
+                    
+                     <Button
+                     type="submit"
+                     width="50%"
+                     variant="contained"
+                     color="secondary"
+                     className={classes.submit}
+                   >
+                   Submit
+                   </Button>
+                      
+                     </form>
+                  
             </div>
         )
      }
  }
-                        
-export default EditForm;
+ export default withStyles(styles)(EditForm)
+                    
+//export default EditForm;
 
 //                     <div className="form">
 //                         <TextField

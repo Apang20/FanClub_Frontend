@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Copyright from '../Components/Copyright'
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import FeedbackIcon from '@material-ui/icons/Feedback';
+import EmailIcon from '@material-ui/icons/Email';
 import SwapHorizontalCircleIcon from '@material-ui/icons/SwapHorizontalCircle';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -72,11 +72,11 @@ return (
 </Typography>
 
 <Typography className={classes.subTitle} variant="h6" color="secondary" style={{fontFamily: ''}} paragraph> <br/> 
-<b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Your Review for 20% Discount</i></Link></b> <Link href="https://www.facebook.com/FansOfStudioGhibli/"> {<FacebookIcon/>}</Link> <Link href="https://www.instagram.com/ghibli.movies/?hl=en"> {<InstagramIcon/>} </Link>  <Link>{<PinterestIcon/>}</Link> <Link>{<YouTubeIcon/>}</Link><br/>
-{<LocalShippingIcon />} Please allow up to 3 weeks for international shipping<br/>
+<b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Content @GhibliFanClub for 20% Discount </i></Link></b>  <Link href="https://www.facebook.com/FansOfStudioGhibli/"> {<FacebookIcon/>}</Link> <Link href="https://www.instagram.com/ghibli.movies/?hl=en">{<InstagramIcon/>}</Link> <Link href="https://www.pinterest.com/noblewoods/studio-ghibli/">{<PinterestIcon/>}</Link> <Link href="https://www.youtube.com/watch?v=5JRXlNBTf_M">{<YouTubeIcon/>}</Link><br/>
 {<SwapHorizontalCircleIcon />} Returns must shipped be within 30 days for full refund<br/>
-
-{<ContactPhoneIcon />} <Link href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office" color="secondary"> Contact Info </Link> <br/> {<FeedbackIcon />}<Link href="https://lemiapp.com/legal/terms" color="inherint"> Terms & Conditions </Link>
+{<EmailIcon />} Check email for order confirmation <br/>
+{<LocalShippingIcon />} <Link href="https://parcelsapp.com/en/tracking" color="inherint"> Track Your Order </Link> <br/>
+{<ContactPhoneIcon />} <Link href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office" color="secondary"> Contact Us </Link>  
 </Typography>
 
 </div>
