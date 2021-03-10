@@ -22,8 +22,8 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 530,
-    bottom: 40,
+    top: 380,
+    bottom: 46,
     right: 852,
     left: 50,
     backgroundColor: 'rgba(0,0,0,.8)',
@@ -47,9 +47,9 @@ return (
   <div>
   <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://www.desktopbackground.org/download/2560x960/2011/12/17/313888_studio-ghibli-characters-wallpapers-anime-wallpapers_2560x1600_h.jpg)`
 }}>
-<div align="right" >
+{/*<div align="right" >
 <img width="9%" height="1%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif"/>
-</div>
+</div>*/}
 {/* Increase the priority of the hero background image */}
 {<img style={{ display: 'none' }} src={`url(https://data.whicdn.com/images/159503389/original.gif)`} alt={classes.imageText} />}
 {/**/}<div className={classes.overlay} />
@@ -74,6 +74,7 @@ Here, exclusive members can find rare collection of Ghibli items imported from T
 </Grid>
 </Grid>
 </Paper>
+<br/>
 <Copyright />
 <br/>
 </div>
