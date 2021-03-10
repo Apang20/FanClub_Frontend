@@ -155,20 +155,20 @@ class LoginForm extends Component {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="secondary"
             className={classes.submit}
           >
-            Login
+            <b>Welcome Ghibli Fan</b>
           </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+                <b>Forgot password?</b>
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/register" >
-                {"Don't have an account? Register Here!"}
+              <Link href="/register">
+                <b>{"Don't have an account? Register Here!"}</b>
               </Link>
             </Grid>
           </Grid>

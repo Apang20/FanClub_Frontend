@@ -163,44 +163,32 @@ class Register extends Component {
             autoFocus
             onChange={this.handleChange}
           />
-           <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            onChange={this.handleChange}
+          <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="email"
+          label="Email"
+          name="email"
+          autoComplete="email"
+          autoFocus
+          onChange={this.handleChange}
           />
           <TextField
             variant="outlined"
+            // color="#6b7d6c"
             margin="normal"
             required
             fullWidth
-            id="phoneNumber"
-            label="Phone Number"
-            name="phoneNumber"
-            autoComplete="phoneNumber"
+            id="username"
+            label="Username"
+            name="username"
+            type="username"
+            autoComplete="username"
             autoFocus
             onChange={this.handleChange}
           />
-      <TextField
-        variant="outlined"
-        // color="#6b7d6c"
-        margin="normal"
-        required
-        fullWidth
-        id="username"
-        label="Username"
-        name="username"
-        type="username"
-        autoComplete="username"
-        autoFocus
-        onChange={this.handleChange}
-      />
       <TextField
         variant="outlined"
         margin="normal"
@@ -224,8 +212,8 @@ class Register extends Component {
         Register
       </Button>
       <Grid container>
-          <Button component={Link} to="/login"  color="primary" fullWidth>
-            Sign in here after registration!
+          <Button component={Link} to="/login" variant="contained" color="secondary" fullWidth>
+            Log in Here after Registration!
           </Button>
       </Grid>
       <Box mt={10}>
@@ -244,7 +232,18 @@ class Register extends Component {
  }
       export default withStyles(styles)(Register)
 
-
+    //   <TextField
+    //   variant="outlined"
+    //   margin="normal"
+    //   required
+    //   fullWidth
+    //   id="phoneNumber"
+    //   label="Phone Number"
+    //   name="phoneNumber"
+    //   autoComplete="phoneNumber"
+    //   autoFocus
+    //   onChange={this.handleChange}
+    // />
 
 
 

@@ -20,7 +20,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(142),
+    marginRight: theme.spacing(140),
     padding: theme.spacing(5, 1, 5, 5),
   },
 
@@ -33,7 +33,11 @@ class NavBar extends React.Component {
     return (
       <div className={classes.root} >
       <AppBar position="static">
-        <Toolbar>
+      <Toolbar>
+      <Typography className={classes.subTitle} variant="h6" color="inherint" style={{fontFamily: 'Quicksand'}} >
+    
+      </Typography>
+
           <IconButton
             edge="start"
             className={classes.menuButton}

@@ -1,11 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Copyright from '../Components/Copyright'
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import FeedbackIcon from '@material-ui/icons/Feedback';
+import SwapHorizontalCircleIcon from '@material-ui/icons/SwapHorizontalCircle';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import PinterestIcon from '@material-ui/icons/Pinterest';
+import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
+import YouTubeIcon from '@material-ui/icons/YouTube'; 
+
 
 const styles = theme => ({
   mainFeaturedPost: {
@@ -21,17 +29,17 @@ const styles = theme => ({
   },
   overlay: {
     position: 'absolute',
-    top: 440,
-    bottom: 20,
-    right: 850,
+    top: 430,
+    bottom: 35,
+    right: 920,
     left: 10,
-    backgroundColor: 'rgba(0,0,0,.7)',
+    backgroundColor: 'rgba(0,0,0,.8)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
     padding: theme.spacing(0),
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(5),
+      padding: theme.spacing(6.8),
       paddingRight: 0,
     },
   },
@@ -63,10 +71,14 @@ return (
 <b>Ghibli Fan Club Thanks You for Your Support!</b>
 </Typography>
 
-<Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: ''}} paragraph> <br/> 
-Please allow up to 3 weeks for international shipping<br/>
-See you again soon!
+<Typography className={classes.subTitle} variant="h6" color="secondary" style={{fontFamily: ''}} paragraph> <br/> 
+<b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Your Review for 20% Discount</i></Link></b> <Link>{<FacebookIcon/>}</Link> <Link>{<InstagramIcon/>} </Link>  <Link>{<PinterestIcon/>}</Link> <Link>{<YouTubeIcon/>}</Link><br/>
+{<LocalShippingIcon />} Please allow up to 3 weeks for international shipping<br/>
+{<SwapHorizontalCircleIcon />} Returns must shipped be within 30 days for full refund<br/>
+
+{<ContactPhoneIcon />} <Link href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office" color="secondary"> Contact Info </Link> <br/> {<FeedbackIcon />}<Link color="inherint"> Terms & Conditions </Link>
 </Typography>
+
 </div>
 </Grid>
 </Grid>

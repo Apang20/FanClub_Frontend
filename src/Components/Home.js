@@ -26,7 +26,7 @@ const styles = theme => ({
     bottom: 40,
     right: 852,
     left: 50,
-    backgroundColor: 'rgba(0,0,0,.7)',
+    backgroundColor: 'rgba(0,0,0,.8)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
@@ -56,7 +56,7 @@ return (
 <Grid container>
 <Grid item md={6}>
 <div className={classes.mainFeaturedPostContent}>
-<Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: ''}}><br/><br/><br/><br/><br/>
+<Typography className={classes.title} component="h1" variant="h3" color="primary" style={{fontFamily: ''}}><br/><br/><br/><br/><br/>
 <b>Welcome to Ghibli Fan Club!</b>
 </Typography>
 <Typography className={classes.subTitle} variant="h5" color="inherit" style={{fontFamily: ''}} paragraph> <br/> 

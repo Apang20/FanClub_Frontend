@@ -13,8 +13,8 @@ class ItemCard extends Component {
                 <img src={this.props.item.image} alt={this.props.item.name}></img>
                 <Typography gutterBottom variant="h7" style={{fontFamily: ''}} >
                <b> {this.props.item.name} </b> <br/>
-               <b>${this.props.item.price}</b><br/><br/>
-                <p> {this.props.item.description}</p><br/>
+               ${this.props.item.price}<br/><br/>
+                <p> {this.props.item.description}</p>
                 </Typography>
                 <Button endIcon={<AddShoppingCartIcon/>} variant="contained" color="secondary" style={{fontFamily: ''}} onClick={() => (this.props.addToCart(this.props.item, this.props.user))} className="add-btn" >Add to Cart</Button>
             </div>

@@ -65,17 +65,17 @@ return (
 {<img style={{ display: 'none' }} src={`url(https://data.whicdn.com/images/159503389/original.gif)`} alt={classes.imageText} />}
 {/**/}<div className={classes.overlay} />
 
-<Grid container spacing={8} justify="center">
+<Grid container spacing={5} justify="center">
 <Grid item md={5}>
 <div className={classes.mainFeaturedPostContent} container spacing={3} justify="center">
-<Typography className={classes.title} justify="center" component="h1" variant="h3" color="inherit" style={{fontFamily: ''}}><br/><br/>
-<b> Ghibli Account Page</b>
+<Typography className={classes.title} justify="center" color="secondary" variant="h3"  style={{fontFamily: ''}}><br/><br/>
+<b>Ghibli Fan Cub Account </b>
 </Typography>
 <br/>
-<Typography className={classes.subTitle} spacing={3} justify="center" variant="h4" color="inherit" style={{fontFamily: ''}} paragraph> <br/> 
+<Typography className={classes.subTitle} justify="center" color="secondary" variant="h4" color="inherint" style={{fontFamily: ''}} paragraph> <br/> 
 <h2><u>Username</u>:           {this.props.currentUser.username}</h2>
 <h2><u>Email</u>:              {this.props.currentUser.email}</h2><br/>
-{this.props.currentUser ? <Button variant="outlined" color="primary" style={{fontFamily: ''}}><Link to="/edit">Edit Account</Link></Button> : null}
+{this.props.currentUser ? <Button  variant="outlined" color="secondary" style={{fontFamily: ''}}><Link to="/edit"><b>Edit Account</b></Link></Button> : null}
 
 </Typography>
 </div>
@@ -89,6 +89,10 @@ return (
 }}
 
 export default withStyles(styles)(Account)
+// {this.props.currentUser ? <button className="del-btn"><Link to="/edit">Edit </Link></button> : null}
+
+//{this.props.currentUser ? <Button variant="outlined" color="primary" style={{fontFamily: ''}}><Link to="/edit">Edit Account</Link></Button> : null}
+
 
 // <h2><b>Phone Number:</b>  {this.props.currentUser.phone_number}</h2>
 // <h2><b>Name: </b>  {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h2>

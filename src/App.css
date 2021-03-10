@@ -48,9 +48,9 @@
     max-height: 100%;
     display: inline-grid;
     margin: 3rem 2rem;
-    box-shadow: 5px 5px #fdfdfdf8;
     font-size: 18px;
     opacity: .9;
+    box-shadow: 5px 5px #fdfdfdf8;
     border: rgb(173, 175, 179) solid 12px;
     background: rgb(255, 255, 255);
     /* font-family: Vidaloka; */
@@ -145,10 +145,10 @@
     color: rgb(253, 252, 252);
     background-color: #e45353;
     width: max-content;
-    font-size: 18px;
+    font-size: 17px;
     /* border-radius: 90px; */
     height: 2rem;
-    width: 4rem;
+    width: 5rem;
     border: none;
     justify-self: center;
     text-align:center;
