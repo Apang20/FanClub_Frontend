@@ -72,11 +72,11 @@ return (
 </Typography>
 
 <Typography className={classes.subTitle} variant="h6" color="secondary" style={{fontFamily: ''}} paragraph> <br/> 
-<b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Your Review for 20% Discount</i></Link></b> <Link>{<FacebookIcon/>}</Link> <Link>{<InstagramIcon/>} </Link>  <Link>{<PinterestIcon/>}</Link> <Link>{<YouTubeIcon/>}</Link><br/>
+<b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Your Review for 20% Discount</i></Link></b> <Link href="https://www.facebook.com/FansOfStudioGhibli/"> {<FacebookIcon/>}</Link> <Link href="https://www.instagram.com/ghibli.movies/?hl=en"> {<InstagramIcon/>} </Link>  <Link>{<PinterestIcon/>}</Link> <Link>{<YouTubeIcon/>}</Link><br/>
 {<LocalShippingIcon />} Please allow up to 3 weeks for international shipping<br/>
 {<SwapHorizontalCircleIcon />} Returns must shipped be within 30 days for full refund<br/>
 
-{<ContactPhoneIcon />} <Link href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office" color="secondary"> Contact Info </Link> <br/> {<FeedbackIcon />}<Link color="inherint"> Terms & Conditions </Link>
+{<ContactPhoneIcon />} <Link href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office" color="secondary"> Contact Info </Link> <br/> {<FeedbackIcon />}<Link href="https://lemiapp.com/legal/terms" color="inherint"> Terms & Conditions </Link>
 </Typography>
 
 </div>
