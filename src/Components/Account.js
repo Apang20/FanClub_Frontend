@@ -69,7 +69,7 @@ return (
 <Grid container spacing={9} justify="center">
 <Grid item md={3.5}>
 <div className={classes.mainFeaturedPostContent} container spacing={3} justify="center">
-<Typography className={classes.title} justify="center" color="secondary" variant="h4"  style={{fontFamily: ''}}><br/><br/>
+<Typography className={classes.title} justify="center" color="secondary" variant="h3"  style={{fontFamily: ''}}><br/><br/>
 <b>Ghibli Fan Cub Account </b>
 </Typography>
 <br/>

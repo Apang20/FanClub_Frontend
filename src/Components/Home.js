@@ -68,8 +68,8 @@ Here, exclusive members can find rare collection of Ghibli items imported from T
 </Grid>
 </Grid>
 </Paper>
-<br/>
 <Copyright />
+<br/>
 </div>
 );
 }}
