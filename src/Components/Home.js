@@ -11,11 +11,9 @@ import Copyright from '../Components/Copyright'
 const styles = theme => ({
   mainFeaturedPost: {
     position: 'relative',
-    // backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(2),
     marginTop: theme.spacing(1),
-    //backgroundImage: 'url(https://i.imgur.com/VYBxMKp.gif)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
