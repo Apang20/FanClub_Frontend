@@ -14,11 +14,9 @@ import EditForm from './Components/EditForm'
 import Checkout from './Components/Checkout'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, green, red } from '@material-ui/core/colors'
-// import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { ChakraProvider } from "@chakra-ui/react"
-
 
 const ItemsURL = "http://localhost:3000/items/"
 const CartsURL = "http://localhost:3000/carts/"
@@ -56,7 +54,7 @@ const theme = createMuiTheme({
 class App extends React.Component {
 
     state = {
-        currentUser: null, //user:{}
+        currentUser: null, 
         loggedIn: false,
         items: [],
         carts: [],
@@ -123,17 +121,16 @@ class App extends React.Component {
                 this.setState({ carts });
                 this.setState({ users });
                 this.setState({ cart_items });
-                // console.log(carts, "Carts")
             });
         this.autoLogin()
     }
 
 
-    addToCart = (item) => { //item is the obj
+    addToCart = (item) => { 
         let addCart
         addCart = {
             item_id: item.id,
-            cart_id: 9 //grab from backend(localhost) to make dynamic?/ Cart.first after seeding
+            cart_id: 9 
         };
         let reqPack = {};
         reqPack.method = "POST";
@@ -146,7 +143,6 @@ class App extends React.Component {
                 res.item = item
                 let updateCart = [...this.state.carts, res]
                 this.setState({ carts: updateCart });
-                // console.log(res)
             })
     }
 
@@ -171,15 +167,8 @@ class App extends React.Component {
                 id: newInfo.id,
                 username: newInfo.username,
                 email: newInfo.email,
-                // first_name: newInfo.firstName,
-                // last_name: newInfo.lastName,
-                // shipping_address: newInfo.shippingAddress,
-                // phone_number: newInfo.phoneNumber
             }
         })
-        // console.log(newInfo, "NewInfo")
-        // console.log(this.state.currentUser, "Current User")
-
     }
 
     moreItems = () => {
@@ -297,7 +286,6 @@ class App extends React.Component {
                     </Container>
                 </ThemeProvider>
                 </ChakraProvider>
-                
             </Fragment>
 
         )
@@ -306,96 +294,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-
-//<FilterBar />
-
-
-
-
-
-
-
-
-// return (
-//     <Fragment>
-//         <ThemeProvider theme={theme}>
-//             <Container maxWidth="xd">
-//                 <header className="App-header">
-//                     <Typography variant="h2" component="div"> 
-//                         Welcome Header Message!
-//         </Typography>
-//                     <Typography variant="subtitle1">
-//                         Exclusive Site for Ghibli-Fans
-//         </Typography>
-//                 </header>
-//                 <NavBar
-//                     currentUser={this.state.currentUser}
-//                     logOut={this.logOut} />
-//                 <Router />
-//                 <Switch>
-//                     <Route exact path="/" component={Home} />
-//                     <Route exact path="/login" render={() => (
-//                         this.state.currentUser == null ?
-//                             <LoginForm
-//                                 updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
-//                     )} />
-
-//                     <Route exact path="/auth">
-//                         Auth Check{" "}
-//                         {!this.state.loggedIn
-//                             ? "(Works better if you're logged in!)"
-//                             : "(Try it now you're logged in!)"}
-//                         <NavBar loggedIn={this.state.loggedIn} />
-//                     </Route>
-
-//                     <Route exact path="/register" component={Register} />
-//                     <Route path="/carts" render={() => (
-//                         <Cart
-//                             currentUser={this.state.currentUser}
-//                             carts={this.state.carts}
-//                             removeFromCart={this.removeFromCart} />)} />
-
-//                     <Route exact path="/edit" render={() =>
-//                         <EditForm
-//                             currentUser={this.state.currentUser}
-//                             patchInfo={this.patchInfo} />} />
-
-//                     <Route exact path="/users" render={() =>
-//                         <Account
-//                             currentUser={this.state.currentUser} />} />
-//                     <Route exact path="/items" render={(props) => (
-//                         <ItemContainer
-//                             addToCart={this.addToCart}
-//                             updateCurrentUser={this.updateCurrentUser}
-//                             user={this.state.currentUser}
-//                             filter={this.state.filter}
-//                             updateFilter={this.updateFilter}
-//                             movies={this.state.movies}
-//                             movieFilter={this.state.movieFilter}
-//                             updateMovieFilter={this.updateMovieFilter}
-//                             moreItems={this.moreItems}
-//                             limit={this.state.limit}
-//                             items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
-//                             limit={this.state.limit}
-//                             itemLength={this.state.items.length}
-//                             backItems={this.backItems} />)} />
-//                     <Route exact path="/notfound" component={NotFound} />
-//                 </Switch>
-//                 <Router />
-
-//                 <FilterBar />
-//                 <Footer />
-//             </Container>
-//         </ThemeProvider>
-//     </Fragment>
-
-// )
-// }
-
-// }
-
-// export default App;
-
-
