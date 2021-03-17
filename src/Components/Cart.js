@@ -33,8 +33,6 @@ const styles = theme => ({
     marginBottom: theme.spacing(4),
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
-    // paddingRight: theme.spacing(0),
-    // backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
     backgroundImage: 'url(https://studioghiblimovies.com/wp-content/uploads/2020/03/p08192c7.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -49,20 +47,18 @@ const styles = theme => ({
 
   },
   cardMedia: {
-    paddingTop: '88%', //'56.25%'
+    paddingTop: '88%', 
   },
   cardContent: {
     flexGrow: 10,
   },
   footer: {
-    // backgroundColor: theme.palette.grey[200],
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2),
   },
 });
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 9];
-// const cards = this.props.carts 
 
 class Cart extends Component {
 
@@ -155,7 +151,6 @@ class Cart extends Component {
       </Container>
       </div>
       <Container className={classes.cardGrid} maxWidth="lg" color="primary">
-      {/* End hero unit */}
       <Grid container spacing={4}>
       {carts ? this.renderCards(carts): null}
       <div align="right" >
@@ -164,7 +159,6 @@ class Cart extends Component {
       </Grid>
       </Container>
       </main>
-      {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
         </Typography>
@@ -172,7 +166,6 @@ class Cart extends Component {
         </Typography>
         <Copyright />
       </footer>
-      {/* End footer */}
       </React.Fragment>
       );
     }
@@ -180,161 +173,4 @@ class Cart extends Component {
 
 
 export default withStyles(styles)(Cart)
-      // <div>      
-      // <div>
-      // <br/>
-      // <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
-      // </div>           
-      // <div className="cart-container">
-      // <div className="font"> {console.log(this.props.carts)} 
-      // <b>{this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}</b>
-      // </div>
-      // <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item</Link></Button>
-      // </div>
-      //   </div>
-
-
-      // {cards.map((card) => (
-      //   <Grid item key={card} xs={12} sm={6} md={4}>
-      //     <Card className={classes.card}>
-      //       <CardMedia
-      //         className={classes.cardMedia}
-      //         image="https://source.unsplash.com/random"
-      //         title="Image title"
-      //       />
-      //       <CardContent className={classes.cardContent}>
-      //         <Typography gutterBottom variant="h5" component="h2">
-      //           cart item name 
-      //         </Typography>
-      //         <Typography>
-      //           cart item price 
-      //         </Typography>
-      //       </CardContent>
-      //       <CardActions>
-      //         <Button size="small" color="primary">
-      //           Delete
-      //         </Button>
-      //       </CardActions>
-      //     </Card>
-      //   </Grid>
-      // ))}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// class Cart extends Component {
-
-//   state = {
-//     currentUserData: [],
-//   }
-
-//   componentDidMount() {
-//     //   fetch("http://localhost:3000/users/" + currentUser.id)
-//     if (this.props.currentUser) {
-//       fetch(`http://localhost:3000/users/${this.props.currentUser.id}`)
-//         .then(res => res.json())
-//         .then(currentUserData => {
-//           this.setState({ currentUserData })
-//         })
-//     }
-//   }
-
-
-//   render() {
-//     return (
-//       <div>      
-      
-//       <div>
-//       <br/>
-//       <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
-//       </div>           
-//       <div className="cart-container">
-//       <div className="font"> {console.log(this.props.carts)} 
-//       <b>{this.props.carts.map(cart => <CartItem cart={cart} key={cart.id} removeFromCart={this.props.removeFromCart} />)}</b>
-//       </div>
-//       <Button startIcon={<AddBoxIcon/>} variant="outlined" color="primary"><Link to="/items">Add Item</Link></Button>
-//       </div>
-      
-      
-      
-//         </div>
-
-//     );
-//   };
-// }
-// export default Cart;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // {this.props.carts.map(carts => <CartItem carts={carts} currentUser={this.props.currentUser}/>)}
-    // render(){
-    //     return ( 
-    //       <div>
-    //       {this.props.currentUser ?
-    //         <div>
-    //         <h1>Hello, {this.props.currentUser.username}</h1>
-    //         <button><Link to="/directory">Add a new plant to my collection!</Link></button>
-    //         {this.state.currentUserData.collections && this.state.currentUserData.collections.map(collection => <CollectionCard collection={collection} deleteCollection={this.props.deleteCollection}/>)}
-    //         {console.log(this.state.currentUserData.collections)}
-    //         </div>
-    //         :
-    //         <h1>Please login to see your Plant Collection!</h1>
-    //       }
-    //       </div>
-    //     )
-    //   }}
-      // {this.props.items.map(items => <CartItem items={items} updateCurrentUser={this.props.updateCurrentUser}/>)}
-
-      //{this.props.carts.map(cart => <CartItem cart={cart} updateCurrentUser={this.props.updateCurrentUser}/>)}
-
-      //map in props 
-    //   <Route path="/cart" render={() => <Cart currentUser={this.state.currentUser} user={this.state.user} addToCart={this.addToCart} />}/>
-      //
-
-// currentUser={this.state.currentUser} user={this.state.user} addToCart={this.addToCart}
-// <button onClick={() => (this.props.addToCart(this.props.item))} className="add-btn" >Add me to your cart!</button>
-
-//addToCart={this.addToCart}
-// {this.props.items.map(item => <CartItem item={item} addToCart={this.props.addToCart} updateCurrentUser={this.props.updateCurrentUser}/>)}
-
-//  {/*this.props.item.map((item) => <CartItem clickAction = {this.props.addToCart} item={item}/>
-//                     clickAction = {this.props.addToCart})*/}
-
-// <button onClick={() => this.props.donateToy(this.props.toy)} className="del-btn">Donate to GoodWill</button>
-//  <img src={this.props.item.image} alt={this.props.item.name} className="cart-image" />
-//<p>{this.props.toy.likes} Likes </p>
+     
