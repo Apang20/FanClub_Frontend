@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from "@material-ui/core/styles";
-
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined';
-
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -16,10 +14,6 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Copyright from '../Components/Copyright'
-
-// import { Paper } from '@material-ui/core/';
-
-// import Copyright from './Copyright'
 
   
   const styles = theme => ({
@@ -41,7 +35,6 @@ import Copyright from '../Components/Copyright'
       margin: theme.spacing(3, 0, 2),
     },
   });
-
 
 
 class LoginForm extends Component {
@@ -82,35 +75,21 @@ class LoginForm extends Component {
                     this.props.updateCurrentUser(response.user);
                     localStorage.token = response.jwt;
                 }else{
-                    this.setState({error: response.message})
-                    //console.log(response.message)
-                }
-                // Dane: 
-                // localStorage.token = response.jwt;
-                //Video: 
-                // if(response.error_message){
-                // alert(response.error_message)
-                // }else{
-                // this.props.updateCurrentUser(response)
-                // }
-                //this.props.updateCurrentUser(response);
-            });
+                    this.setState({error: response.message})               
+                }         
+         });
     };
 
 
     render() {
         const {classes} = this.props
-
-        return (
-           
+        return (        
             <Container component="main" maxWidth="xs">
       <CssBaseline />
       <br/>
       <br/>
-      
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-        
+        <Avatar className={classes.avatar}>        
           <AccountBoxOutlinedIcon />
         </Avatar>
         
@@ -121,7 +100,6 @@ class LoginForm extends Component {
         className={classes.form}>
           <h2>{this.state.error}</h2>
               
-        {/*<form className={classes.form} noValidate>*/}
           <TextField
             variant="outlined"
             margin="normal"
@@ -193,131 +171,7 @@ class LoginForm extends Component {
     </Container>
 
     );
+  }
 }
-}
-
-
 
 export default withStyles(styles)(LoginForm)
-
-
-//     const useStyles = theme => ({
-//       '@global': {
-//         body: {
-//           backgroundColor: theme.palette.common.white,
-//         },
-//       },
-//       paper: {
-//         marginTop: theme.spacing(8),
-//         display: 'flex',
-//         flexDirection: 'column',
-//         alignItems: 'center',
-//       },
-//       avatar: {
-//         margin: theme.spacing(1),
-//         backgroundColor: theme.palette.secondary.main,
-//       }
-// });
-
-//         <div className={classes.paper}>
-// <Avatar className={classes.avatar}>
-//   <LockOutlinedIcon />
-// </Avatar>
-// </div>
-
-
-
-
-// import React, { Component } from "react";
-// import { Redirect } from "react-router-dom";
-// import Button from '@material-ui/core/Button'
-
-
-// class login extends Component {
-//     state = {
-//         username: "",
-//         password: "",
-//         error: ""
-//     };
-
-//     handleChange = (event) => {
-//         const { name, value } = event.target;
-
-//         this.setState({
-//             [name]: value,
-//         });
-//     };
-
-//     login = (event) => {
-//         event.preventDefault();
-//         event.target.reset();
-
-//         const { username, password } = this.state;
-//         const user = { username, password };
-
-//         fetch("http://localhost:3000/login", {
-//             method: "POST",
-//             headers: {
-//                 Accept: "application/json",
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({ user }),
-//         })
-//             .then((r) => r.json())
-//             .then((response) => {
-//                 console.log(response)
-//                 if (response.user){
-//                     this.props.updateCurrentUser(response.user);
-//                     localStorage.token = response.jwt;
-//                 }else{
-//                     this.setState({error: response.message})
-//                     //console.log(response.message)
-//                 }
-//                 // Dane: 
-//                 // localStorage.token = response.jwt;
-//                 //Video: 
-//                 // if(response.error_message){
-//                 // alert(response.error_message)
-//                 // }else{
-//                 // this.props.updateCurrentUser(response)
-//                 // }
-//                 //this.props.updateCurrentUser(response);
-//             });
-//     };
-
-//     render() {
-//         return (
-//             <div className="form">
-//             <h3>{this.state.error}</h3>
-//                 <form onSubmit={this.login}>
-//                     <br />
-//                     <input
-//                         type="text"
-//                         varient="outlined"
-//                         name="username"
-//                         placeholder="Username"
-//                         onChange={this.handleChange}
-//                     />
-//                     <br />
-//                     <br></br>
-//                     <input
-//                         type="password"
-//                         varient="outlined"
-//                         name="password"
-//                         placeholder="Password"
-//                         onChange={this.handleChange}
-//                     />
-//                     <br />
-//                     <br />
-//                     <br />
-//                     <Button variant="outlined" color="primary" type="submit">Submit</Button>
-//                 </form>
-//                 <br />
-//                 <br />
-//             </div>
-//         );
-//     }
-// }
-
-// export default login;
-
