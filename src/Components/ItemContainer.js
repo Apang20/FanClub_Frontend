@@ -52,10 +52,3 @@ class ItemContainer extends Component {
 };
 
 export default ItemContainer;
-
-// {this.props.limit + 1 < this.props.itemLength ? <MoreButton moreItems={this.props.moreItems} items={this.props.items}/> : null}  
-// {this.props.limit == 0 ? null :  <span><BackButton  backItems={this.props.backItems} items={this.props.items}/> </span>}  <br/>
-
-
-
-
