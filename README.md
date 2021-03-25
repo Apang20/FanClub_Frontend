@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# App: Ghibli Fan Club 
 
-App: Ghibli Fan Club 
+## Overview
 An e-commerce application for exclusive members to browse and purchase rare collectable items 
 
 * Utilized JSON Web Tokens and localStorage to store encrypted user information client-side for ensuring security
@@ -13,5 +13,5 @@ An e-commerce application for exclusive members to browse and purchase rare coll
 - 2 min demo video: https://www.youtube.com/watch?v=FllbOmqOxkw
 
 ## Resources
-- Form from [Material-UI](https://material-ui.com/)
-- 
+- Layout and buttons from [Material-UI](https://material-ui.com/)
+- Search Filter from [Chakra-UI](https://chakra-ui.com/)
