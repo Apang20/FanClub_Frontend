@@ -3,6 +3,7 @@
 ## Overview
 An e-commerce application for exclusive members to browse and purchase rare collectable items 
 
+## About
 * Utilized JSON Web Tokens and localStorage to store encrypted user information client-side for ensuring security
 * Delivered a Javascript/React front-end 
 * Executed multiple callback functions through the invocation of JS event listeners on specific nodes
