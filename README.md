@@ -10,8 +10,7 @@ An e-commerce application for exclusive members to browse and purchase rare coll
 
 ## Demo
 
-- 2 min demo video: https://www.youtube.com/watch?v=FllbOmqOxkw
-- [2 min. Demo Video](https://www.youtube.com/watch?v=FllbOmqOxkw)
+- [2 min Demo Video](https://www.youtube.com/watch?v=FllbOmqOxkw)
 
 ## Resources
 - Layout and buttons from [Material-UI](https://material-ui.com/)
