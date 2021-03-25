@@ -13,5 +13,5 @@ An e-commerce application for exclusive members to browse and purchase rare coll
 - 2 min demo video: https://www.youtube.com/watch?v=FllbOmqOxkw
 
 ## Resources
-- Form from ([Material-UI](https://material-ui.com/))
+- Form from [Material-UI](https://material-ui.com/)
 - 
