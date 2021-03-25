@@ -1,4 +1,4 @@
-# App: Ghibli Fan Club 
+# Ghibli Fan Club 
 
 ## Overview
 An e-commerce application for exclusive members to browse and purchase rare collectable items 
