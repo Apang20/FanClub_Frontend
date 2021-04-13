@@ -18,11 +18,16 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { ChakraProvider } from "@chakra-ui/react"
 
-const BaseURL = 'https://powerful-island-44705.herokuapp.com/'
-const ItemsURL = `${BaseURL}/items/`
-const CartsURL = `${BaseURL}/items/carts/`
-const CartItemsURL = `${BaseURL}/items/cart_items/`
-const UsersURL = `${BaseURL}/items/users/`
+const ItemsURL = 'https://powerful-island-44705.herokuapp.com/items/'
+const CartsURL = 'https://powerful-island-44705.herokuapp.com/carts/'
+const CartItemsURL = 'https://powerful-island-44705.herokuapp.com/cart_items/'
+const UsersURL = 'https://powerful-island-44705.herokuapp.com/users/'
+
+//const BaseURL = 'https://powerful-island-44705.herokuapp.com/'
+// const ItemsURL = `${BaseURL}/items/`
+// const CartsURL = `${BaseURL}/items/carts/`
+// const CartItemsURL = `${BaseURL}/items/cart_items/`
+// const UsersURL = `${BaseURL}/items/users/`
 
 
 const theme = createMuiTheme({
