@@ -14,16 +14,16 @@ import EditForm from './Components/EditForm'
 import Checkout from './Components/Checkout'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, green, red } from '@material-ui/core/colors'
-// import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { ChakraProvider } from "@chakra-ui/react"
 
+const BaseURL = 'https://powerful-island-44705.herokuapp.com/'
+const ItemsURL = `${BaseURL}/items/`
+const CartsURL = `${BaseURL}/items/carts/`
+const CartItemsURL = `${BaseURL}/items/cart_items/`
+const UsersURL = `${BaseURL}/items/users/`
 
-const ItemsURL = "http://localhost:3000/items/"
-const CartsURL = "http://localhost:3000/carts/"
-const CartItemsURL = "http://localhost:3000/cart_items/"
-const UsersURL = "http://localhost:3000/users/"
 
 const theme = createMuiTheme({
     typography: {

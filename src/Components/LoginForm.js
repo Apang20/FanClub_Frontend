@@ -83,9 +83,7 @@ class LoginForm extends Component {
                     localStorage.token = response.jwt;
                 }else{
                     this.setState({error: response.message})
-                    //console.log(response.message)
                 }
-                // Dane: 
                 // localStorage.token = response.jwt;
                 //Video: 
                 // if(response.error_message){
@@ -127,9 +125,9 @@ class LoginForm extends Component {
             margin="normal"
             required
             fullWidth
-            id="username"
-            label="Username"
             name="username"
+            label="Username"
+            id="username"
             autoComplete="username"
             autoFocus
             onChange={this.handleChange}
