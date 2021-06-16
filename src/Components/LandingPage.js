@@ -7,14 +7,14 @@ class LandingPage extends React.Component {
     componentDidMount() {
         this.props.hideShell(false)
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
-            <Home/>
-            <Feature/>
+                <Home />
+                <Feature />
             </div>
         )
     }
 }
 
-export default LandingPage; 
+export default LandingPage;
