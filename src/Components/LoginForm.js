@@ -19,7 +19,6 @@ import Copyright from '../Components/Copyright'
 
 
 
-
 const styles = theme => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -195,5 +194,3 @@ class LoginForm extends Component {
 
 
 export default withStyles(styles)(LoginForm)
-
-

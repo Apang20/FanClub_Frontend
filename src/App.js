@@ -14,23 +14,16 @@ import EditForm from './Components/EditForm'
 import Checkout from './Components/Checkout'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, green, red } from '@material-ui/core/colors'
+// import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { ChakraProvider } from "@chakra-ui/react"
 
 
-const ItemsURL = 'https://powerful-island-44705.herokuapp.com/items/'
-const CartsURL = 'https://powerful-island-44705.herokuapp.com/carts/'
-const CartItemsURL = 'https://powerful-island-44705.herokuapp.com/cart_items/'
-const UsersURL = 'https://powerful-island-44705.herokuapp.com/users/'
-
-//const BaseURL = 'https://powerful-island-44705.herokuapp.com/'
-// const ItemsURL = `${BaseURL}/items/`
-// const CartsURL = `${BaseURL}/items/carts/`
-// const CartItemsURL = `${BaseURL}/items/cart_items/`
-// const UsersURL = `${BaseURL}/items/users/`
-
-
+const ItemsURL = "http://localhost:3000/items/"
+const CartsURL = "http://localhost:3000/carts/"
+const CartItemsURL = "http://localhost:3000/cart_items/"
+const UsersURL = "http://localhost:3000/users/"
 
 const theme = createMuiTheme({
     typography: {
@@ -55,7 +48,7 @@ const theme = createMuiTheme({
         },
         error: {
             main: red[500],
-          },
+        },
     }
 })
 
@@ -63,7 +56,7 @@ const theme = createMuiTheme({
 class App extends React.Component {
 
     state = {
-        currentUser: null, 
+        currentUser: null, //user:{}
         loggedIn: false,
         items: [],
         carts: [],
@@ -108,7 +101,7 @@ class App extends React.Component {
     };
 
     tokenLogin = (token) => {
-        fetch("https://powerful-island-44705.herokuapp.com/auto_login", {
+        fetch("http://localhost:3000/auto_login", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -130,31 +123,30 @@ class App extends React.Component {
                 this.setState({ carts });
                 this.setState({ users });
                 this.setState({ cart_items });
-
+                // console.log(carts, "Carts")
             });
         this.autoLogin()
     }
 
 
-    addToCart = (item) => { 
+    addToCart = (item) => { //item is the obj
         let addCart
         addCart = {
             item_id: item.id,
-
             cart_id: 21 //grab from backend(localhost) to make dynamic?/ Cart.first after seeding
-
         };
         let reqPack = {};
         reqPack.method = "POST";
         reqPack.headers = { "Content-Type": "application/json" };
         reqPack.body = JSON.stringify(addCart);
 
-        fetch("https://powerful-island-44705.herokuapp.com/cart_items", reqPack)
+        fetch("http://localhost:3000/cart_items", reqPack)
             .then(res => res.json())
             .then(res => {
                 res.item = item
                 let updateCart = [...this.state.carts, res]
                 this.setState({ carts: updateCart });
+                // console.log(res)
             })
     }
 
@@ -179,8 +171,15 @@ class App extends React.Component {
                 id: newInfo.id,
                 username: newInfo.username,
                 email: newInfo.email,
+                // first_name: newInfo.firstName,
+                // last_name: newInfo.lastName,
+                // shipping_address: newInfo.shippingAddress,
+                // phone_number: newInfo.phoneNumber
             }
         })
+        // console.log(newInfo, "NewInfo")
+        // console.log(this.state.currentUser, "Current User")
+
     }
 
     moreItems = () => {
@@ -221,83 +220,84 @@ class App extends React.Component {
 
         return (
             <Fragment>
-            <ChakraProvider>
-            <ThemeProvider theme={theme}>
-                    <Container maxWidth="xd">
-                        <header className="App-header">
-                            <Typography variant="h2" component="div"> 
-                               
-                </Typography>
-                            <Typography variant="subtitle1">
-                              
-                </Typography>
-                        </header>
-                        <NavBar
-                            currentUser={this.state.currentUser}
-                            logOut={this.logOut} />
-                        <Router />
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/login" render={() => (
-                                this.state.currentUser == null ?
-                                    <LoginForm
-                                        updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
-                            )} />
+                <ChakraProvider>
+                    <ThemeProvider theme={theme}>
+                        <Container maxWidth="xd">
+                            <header className="App-header">
+                                <Typography variant="h2" component="div">
 
-                            <Route exact path="/auth">
-                                Auth Check{" "}
-                                {!this.state.loggedIn
-                                    ? "(Works better if you're logged in!)"
-                                    : "(Try it now you're logged in!)"}
-                                <NavBar loggedIn={this.state.loggedIn} />
-                            </Route>
+                                </Typography>
+                                <Typography variant="subtitle1">
 
-                            <Route exact path="/register" component={Register} />
-                            <Route path="/carts" render={() => (
-                                <Cart
-                                    currentUser={this.state.currentUser}
-                                    carts={this.state.carts}
-                                    removeFromCart={this.removeFromCart} />)} />
+                                </Typography>
+                            </header>
+                            <NavBar
+                                currentUser={this.state.currentUser}
+                                logOut={this.logOut} />
+                            <Router />
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route exact path="/login" render={() => (
+                                    this.state.currentUser == null ?
+                                        <LoginForm
+                                            updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
+                                )} />
 
-                            <Route exact path="/edit" render={() =>
-                                <EditForm
-                                    currentUser={this.state.currentUser}
-                                    patchInfo={this.patchInfo} />} />
+                                <Route exact path="/auth">
+                                    Auth Check{" "}
+                                    {!this.state.loggedIn
+                                        ? "(Works better if you're logged in!)"
+                                        : "(Try it now you're logged in!)"}
+                                    <NavBar loggedIn={this.state.loggedIn} />
+                                </Route>
 
-                            <Route exact path="/users" render={() =>
-                                <Account
-                                    currentUser={this.state.currentUser} />} />
+                                <Route exact path="/register" component={Register} />
+                                <Route path="/carts" render={() => (
+                                    <Cart
+                                        currentUser={this.state.currentUser}
+                                        carts={this.state.carts}
+                                        removeFromCart={this.removeFromCart} />)} />
 
-                            <Route exact path="/checkout" render={() =>
-                                 <Checkout
-                                    currentUser={this.state.currentUser} />} />
+                                <Route exact path="/edit" render={() =>
+                                    <EditForm
+                                        currentUser={this.state.currentUser}
+                                        patchInfo={this.patchInfo} />} />
 
-                            <Route exact path="/thanks" render={() =>
-                                <Thanks
-                                    currentUser={this.state.currentUser} />} />
+                                <Route exact path="/users" render={() =>
+                                    <Account
+                                        currentUser={this.state.currentUser} />} />
 
-                            <Route exact path="/items" render={(props) => (
-                                <ItemContainer
-                                    addToCart={this.addToCart}
-                                    updateCurrentUser={this.updateCurrentUser}
-                                    user={this.state.currentUser}
-                                    filter={this.state.filter}
-                                    updateFilter={this.updateFilter}
-                                    movies={this.state.movies}
-                                    movieFilter={this.state.movieFilter}
-                                    updateMovieFilter={this.updateMovieFilter}
-                                    moreItems={this.moreItems}
-                                    limit={this.state.limit}
-                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
-                                    limit={this.state.limit}
-                                    itemLength={this.state.items.length}
-                                    backItems={this.backItems} />)} />
-                                   
-                        </Switch>
-                        <Router />         
-                    </Container>
-                </ThemeProvider>
+                                <Route exact path="/checkout" render={() =>
+                                    <Checkout
+                                        currentUser={this.state.currentUser} />} />
+
+                                <Route exact path="/thanks" render={() =>
+                                    <Thanks
+                                        currentUser={this.state.currentUser} />} />
+
+                                <Route exact path="/items" render={(props) => (
+                                    <ItemContainer
+                                        addToCart={this.addToCart}
+                                        updateCurrentUser={this.updateCurrentUser}
+                                        user={this.state.currentUser}
+                                        filter={this.state.filter}
+                                        updateFilter={this.updateFilter}
+                                        movies={this.state.movies}
+                                        movieFilter={this.state.movieFilter}
+                                        updateMovieFilter={this.updateMovieFilter}
+                                        moreItems={this.moreItems}
+                                        limit={this.state.limit}
+                                        items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
+                                        limit={this.state.limit}
+                                        itemLength={this.state.items.length}
+                                        backItems={this.backItems} />)} />
+
+                            </Switch>
+                            <Router />
+                        </Container>
+                    </ThemeProvider>
                 </ChakraProvider>
+
             </Fragment>
 
         )

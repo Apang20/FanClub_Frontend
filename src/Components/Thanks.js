@@ -18,9 +18,11 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 const styles = theme => ({
   mainFeaturedPost: {
     position: 'relative',
+    // backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(1),
+    //backgroundImage: 'url(https://i.imgur.com/VYBxMKp.gif)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -54,7 +56,8 @@ class Thanks extends React.Component {
         <Paper className={classes.mainFeaturedPost} style={{
           backgroundImage: `url(https://64.media.tumblr.com/a8f2bb383f0cc03ebd0e1c76e6add65f/tumblr_nl514kT5p61spui9lo1_540.gifv)`
         }}>
-         <div className={classes.overlay} />
+          {/* Increase the priority of the hero background image */}
+          {/**/}<div className={classes.overlay} />
           <br />
           <br />
           <br />

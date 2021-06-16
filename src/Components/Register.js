@@ -1,5 +1,4 @@
-
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Redirect, Link } from "react-router-dom";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -17,9 +16,9 @@ import Copyright from '../Components/Copyright'
 const styles = theme => ({
   paper: {
     marginTop: theme.spacing(8),
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   avatar: {
     marginTop: theme.spacing(1),
@@ -27,7 +26,7 @@ const styles = theme => ({
 
   },
   form: {
-    width: '40%', 
+    width: '40%',
     marginTop: theme.spacing(1),
     margin: theme.spacing(67)
 
@@ -61,7 +60,7 @@ class Register extends Component {
   createUser = (event) => {
     event.preventDefault();
     // event.target.reset();
-    const { firstName, lastName, email, phoneNumber, username, password } = this.state; 
+    const { firstName, lastName, email, phoneNumber, username, password } = this.state;
 
     let user = {
       first_name: firstName,
@@ -70,12 +69,11 @@ class Register extends Component {
       phone_number: phoneNumber,
       username: username,
       password: password
-      
+      // created: true
 
     };
 
-    // fetch("https://powerful-island-44705.herokuapp.com/users", {
-    fetch("https://localhost:3000/users", {
+    fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,122 +97,120 @@ class Register extends Component {
   };
 
   render() {
-    const {classes} = this.props
+    const { classes } = this.props
 
     return (
       <Grid container component="main" className={classes.root}>
-<CssBaseline />
-<Grid item xs >
-  <div className={classes.paper}>
-    <Avatar className={classes.avatar}>
-      <LockOutlinedIcon />
-    </Avatar> <br/>
-    <Typography component="h1" variant="h5">
-    Register
+        <CssBaseline />
+        <Grid item xs >
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar> <br />
+            <Typography component="h1" variant="h5">
+              Register
     </Typography>
-    <div>
-        {this.state.created ? (
-            <Redirect to="/login" />
-        ) : (
-        <div>
             <div>
-              <p>{this.state.errorMessage}</p>
-            </div>
-        
+              {this.state.created ? (
+                <Redirect to="/login" />
+              ) : (
+                <div>
+                  <div>
+                    <p>{this.state.errorMessage}</p>
+                  </div>
 
-    <form className={classes.form}
-          onSubmit={this.createUser} >
-          <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="firstName"
-              label="First Name"
-              name="firstName"
-              autoComplete="firstname"
-              autoFocus
-              onChange={this.handleChange}
-              />
-            <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="lastName"
-            label="Last Name"
-            name="lastName"
-            autoComplete="lastname"
-            autoFocus
-            onChange={this.handleChange}
-          />
-          <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          id="email"
-          label="Email"
-          name="email"
-          autoComplete="email"
-          autoFocus
-          onChange={this.handleChange}
-          />
-          <TextField
-            variant="outlined"
-            // color="#6b7d6c"
-            margin="normal"
-            required
-            fullWidth
-            id="username"
-            label="Username"
-            name="username"
-            type="username"
-            autoComplete="username"
-            autoFocus
-            onChange={this.handleChange}
-          />
-      <TextField
-        variant="outlined"
-        margin="normal"
-        // color="#6b7d6c"
-        required
-        fullWidth
-        name="password"
-        label="Password"
-        type="password"
-        id="password"
-        autoComplete="current-password"
-        onChange={this.handleChange}
-      />
-      <Button
-        type="submit"
-        fullWidth
-        variant="contained"
-        color="primary"
-        className={classes.submit}
-      >
-        Register
+
+                  <form className={classes.form}
+                    onSubmit={this.createUser} >
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="firstName"
+                      label="First Name"
+                      name="firstName"
+                      autoComplete="firstname"
+                      autoFocus
+                      onChange={this.handleChange}
+                    />
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="lastName"
+                      label="Last Name"
+                      name="lastName"
+                      autoComplete="lastname"
+                      autoFocus
+                      onChange={this.handleChange}
+                    />
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="email"
+                      label="Email"
+                      name="email"
+                      autoComplete="email"
+                      autoFocus
+                      onChange={this.handleChange}
+                    />
+                    <TextField
+                      variant="outlined"
+                      // color="#6b7d6c"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="username"
+                      label="Username"
+                      name="username"
+                      type="username"
+                      autoComplete="username"
+                      autoFocus
+                      onChange={this.handleChange}
+                    />
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      // color="#6b7d6c"
+                      required
+                      fullWidth
+                      name="password"
+                      label="Password"
+                      type="password"
+                      id="password"
+                      autoComplete="current-password"
+                      onChange={this.handleChange}
+                    />
+                    <Button
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      className={classes.submit}
+                    >
+                      Register
       </Button>
-      <Grid container>
-          <Button component={Link} to="/login" variant="contained" color="secondary" fullWidth>
-            Log in Here after Registration!
+                    <Grid container>
+                      <Button component={Link} to="/login" variant="contained" color="secondary" fullWidth>
+                        Log in Here after Registration!
           </Button>
+                    </Grid>
+                    <Box mt={10}>
+                      <Copyright />
+                    </Box>
+                  </form>
+                </div>
+              )}
+            </div>
+          </div>
+        </Grid>
       </Grid>
-      <Box mt={10}>
-        <Copyright />
-      </Box>
-    </form>
-    </div>
-    )}
-    </div>
-  </div>
-</Grid>
-</Grid>
 
     )
   }
- }
-      export default withStyles(styles)(Register)
-
-    
+}
+export default withStyles(styles)(Register)

@@ -6,7 +6,10 @@ import MoreButton from './MoreButton'
 import BackButton from './BackButton'
 import Copyright from '../Components/Copyright'
 
+
+
 class ItemContainer extends Component {
+
 
     render() {
         return (
@@ -17,13 +20,13 @@ class ItemContainer extends Component {
                     movieFilter={this.props.movieFilter}
                     updateMovieFilter={this.props.updateMovieFilter} />
 
-                <div className="movie-container">
-                    <MovieContainer
-                        movies={this.props.movies}
-                        movieFilter={this.props.movieFilter}
-                        updateMovieFilter={this.props.updateMovieFilter} />
+
+
+              
+
 
                     <div className="item-container" >
+
 
                         <div className="background-img">
                             <div>
@@ -33,11 +36,12 @@ class ItemContainer extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                
                 <br />
                 <Copyright />
                 <br />
             </div>
+
 
         )
     }
