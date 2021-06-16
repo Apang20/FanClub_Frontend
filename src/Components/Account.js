@@ -36,10 +36,7 @@ const styles = theme => ({
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(5.8),
-<<<<<<< HEAD
       //   padding: theme.spacing(40),
-=======
->>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
       paddingRight: 0,
     },
   },
@@ -54,12 +51,10 @@ class Account extends Component {
   handleShowForm = () => {
     this.setState({ showForm: !this.state.showForm })
   }
-<<<<<<< HEAD
 
   render() {
     const { classes } = this.props
-    // console.log(this.props.currentUser)
-    // debugger 
+    
 
     return (
       <div>
@@ -106,40 +101,3 @@ export default withStyles(styles)(Account)
 
 
 
-
-
-=======
-  
-render(){
-    const {classes} = this.props 
-
-return (
-  <div>
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://media.giphy.com/media/AebNPktTHrdYc/giphy.gif)`
-    }}>
-   {<img style={{ display: 'none' }} src={`url(https://data.whicdn.com/images/159503389/original.gif)`} alt={classes.imageText} />}
-   {/**/}<div className={classes.overlay} />
-
-<Grid container spacing={9} justify="center">
-<Grid item md={3.5}>
-  <div className={classes.mainFeaturedPostContent} container spacing={3} justify="center">
-  <Typography className={classes.title} justify="center" color="secondary" variant="h3"  style={{fontFamily: ''}}><br/><br/>
-  <b>Ghibli Fan Cub Account </b>
-  </Typography>
-  <br/>
-   <Typography className={classes.subTitle} justify="center" color="secondary" variant="h5" color="inherint" style={{fontFamily: ''}} paragraph> <br/> 
-    <h2>{<PersonIcon />}<u></u> {this.props.currentUser.username}</h2>
-    <h2>{<EmailIcon />}<u></u> {this.props.currentUser.email}</h2><br/>
-    {this.props.currentUser ? <Button  variant="outlined" color="secondary" style={{fontFamily: ''}}><Link to="/edit"><b>Edit Account</b></Link></Button> : null}
-  </Typography>
-  </div>
-</Grid>
-</Grid>
-</Paper>
-<Copyright />
-</div>
- );
-}}
-
-export default withStyles(styles)(Account)
->>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107

@@ -29,42 +29,9 @@ const styles = theme => ({
 
 class NavBar extends React.Component {
   render() {
-    const { classes } = this.props
+    const {classes} = this.props
     return (
       <div className={classes.root} >
-<<<<<<< HEAD
-        <AppBar position="static">
-          <Toolbar>
-            <Typography className={classes.subTitle} variant="h6" color="inherint" style={{ fontFamily: 'Quicksand' }} >
-            </Typography>
-
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-
-            </IconButton>
-
-            <InputBase />
-
-            <Typography className={classes.title} variant="h4" noWrap>
-              {this.props.currentUser ? <Button startIcon={<ShoppingCartOutlinedIcon />} variant="outlined" color="inherit" style={{ fontFamily: '' }} > <Link to="/carts">Cart</Link></Button> : null}
-              {this.props.currentUser ? <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{ fontFamily: '' }}> <Link to="/users">Account</Link></Button> : null}
-              {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" style={{ fontFamily: '' }} onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{ fontFamily: '' }}><Link to="/login">Login</Link></Button>}
-              {this.props.currentUser ? null : <Button startIcon={<LockOutlinedIcon />} variant="outlined" color="inherit" ><Link to="/register">Register</Link></Button>}
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
-  }
-}
-
-export default withStyles(styles)(NavBar);
-
-=======
       <AppBar position="static">
       <Toolbar>
       <Typography className={classes.subTitle} variant="h6" color="inherint" style={{fontFamily: 'Quicksand'}} >
@@ -83,7 +50,7 @@ export default withStyles(styles)(NavBar);
       <Typography className={classes.title} variant="h4" noWrap>
       {this.props.currentUser ? <Button startIcon={<ShoppingCartOutlinedIcon />}variant="outlined" color="inherit" style={{fontFamily: ''}} > <Link to="/carts">Cart</Link></Button> : null} 
       {this.props.currentUser ? <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}}> <Link to="/users">Account</Link></Button> : null}
-      {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}} onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}}><Link to="/login">Login</Link></Button>}
+      {this.props.currentUser ? <Button startIcon={<ExitToAppIcon />} variant="outlined" color="inherit" style={{fontFamily: ''}} onClick={this.props.logOut}> <Link to="/">LogOut</Link></Button> : <Button startIcon={<AccountBoxOutlinedIcon />} variant="outlined" color="inherit" style={{fontFamily: 'Vidaloka'}}><Link to="/login">Login</Link></Button>}
       {this.props.currentUser ? null : <Button startIcon={<LockOutlinedIcon />} variant="outlined" color="inherit" ><Link to="/register">Register</Link></Button>}
       </Typography>
       </Toolbar>
@@ -94,4 +61,3 @@ export default withStyles(styles)(NavBar);
 }
   
 export default withStyles(styles)(NavBar);
->>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107

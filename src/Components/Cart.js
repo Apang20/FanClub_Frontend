@@ -121,7 +121,7 @@ class Cart extends Component {
     return (
 
       <React.Fragment>
-<<<<<<< HEAD
+
         <CssBaseline />
 
         <main>
@@ -171,7 +171,6 @@ class Cart extends Component {
           <Copyright />
         </footer>
         {/* End footer */}
-=======
       <CssBaseline />
      
       <main>
@@ -218,7 +217,6 @@ class Cart extends Component {
         </Typography>
         <Copyright />
       </footer>
->>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
       </React.Fragment>
     );
   }
@@ -226,8 +224,3 @@ class Cart extends Component {
 
 
 export default withStyles(styles)(Cart)
-<<<<<<< HEAD
-=======
-
-
->>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
