@@ -69,7 +69,7 @@ class Cart extends Component {
   componentDidMount() {
     if (this.props.currentUser) {
         // fetch("http://localhost:3000/users/" + currentUser.id)
-      fetch(`http://localhost:3000/users/${this.props.currentUser.id}`)
+      fetch(`https://powerful-island-44705.herokuapp.com/users/${this.props.currentUser.id}`)
         .then(res => res.json())
         .then(currentUserData => {
           this.setState({ currentUserData })
@@ -173,4 +173,5 @@ class Cart extends Component {
 
 
 export default withStyles(styles)(Cart)
-     
+
+

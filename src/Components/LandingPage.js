@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home';
 
+
 class LandingPage extends React.Component {
 
     componentDidMount() {

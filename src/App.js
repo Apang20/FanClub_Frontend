@@ -18,10 +18,19 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { ChakraProvider } from "@chakra-ui/react"
 
-const ItemsURL = "http://localhost:3000/items/"
-const CartsURL = "http://localhost:3000/carts/"
-const CartItemsURL = "http://localhost:3000/cart_items/"
-const UsersURL = "http://localhost:3000/users/"
+
+const ItemsURL = 'https://powerful-island-44705.herokuapp.com/items/'
+const CartsURL = 'https://powerful-island-44705.herokuapp.com/carts/'
+const CartItemsURL = 'https://powerful-island-44705.herokuapp.com/cart_items/'
+const UsersURL = 'https://powerful-island-44705.herokuapp.com/users/'
+
+//const BaseURL = 'https://powerful-island-44705.herokuapp.com/'
+// const ItemsURL = `${BaseURL}/items/`
+// const CartsURL = `${BaseURL}/items/carts/`
+// const CartItemsURL = `${BaseURL}/items/cart_items/`
+// const UsersURL = `${BaseURL}/items/users/`
+
+
 
 const theme = createMuiTheme({
     typography: {
@@ -99,7 +108,7 @@ class App extends React.Component {
     };
 
     tokenLogin = (token) => {
-        fetch("http://localhost:3000/auto_login", {
+        fetch("https://powerful-island-44705.herokuapp.com/auto_login", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -121,6 +130,7 @@ class App extends React.Component {
                 this.setState({ carts });
                 this.setState({ users });
                 this.setState({ cart_items });
+
             });
         this.autoLogin()
     }
@@ -130,14 +140,16 @@ class App extends React.Component {
         let addCart
         addCart = {
             item_id: item.id,
-            cart_id: 9 
+
+            cart_id: 21 //grab from backend(localhost) to make dynamic?/ Cart.first after seeding
+
         };
         let reqPack = {};
         reqPack.method = "POST";
         reqPack.headers = { "Content-Type": "application/json" };
         reqPack.body = JSON.stringify(addCart);
 
-        fetch("http://localhost:3000/cart_items", reqPack)
+        fetch("https://powerful-island-44705.herokuapp.com/cart_items", reqPack)
             .then(res => res.json())
             .then(res => {
                 res.item = item

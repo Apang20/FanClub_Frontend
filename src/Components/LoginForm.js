@@ -60,7 +60,7 @@ class LoginForm extends Component {
         const { username, password } = this.state;
         const user = { username, password };
 
-        fetch("http://localhost:3000/login", {
+        fetch("https://powerful-island-44705.herokuapp.com/login", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -75,9 +75,23 @@ class LoginForm extends Component {
                     this.props.updateCurrentUser(response.user);
                     localStorage.token = response.jwt;
                 }else{
+
+                    this.setState({error: response.message})
+                }
+                // localStorage.token = response.jwt;
+                //Video: 
+                // if(response.error_message){
+                // alert(response.error_message)
+                // }else{
+                // this.props.updateCurrentUser(response)
+                // }
+                //this.props.updateCurrentUser(response);
+            });
+
                     this.setState({error: response.message})               
                 }         
          });
+
     };
 
 
@@ -105,9 +119,9 @@ class LoginForm extends Component {
             margin="normal"
             required
             fullWidth
-            id="username"
-            label="Username"
             name="username"
+            label="Username"
+            id="username"
             autoComplete="username"
             autoFocus
             onChange={this.handleChange}
@@ -175,3 +189,4 @@ class LoginForm extends Component {
 }
 
 export default withStyles(styles)(LoginForm)
+
