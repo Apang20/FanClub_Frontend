@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from "@material-ui/core/styles";
-
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined';
-
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -16,10 +14,6 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Copyright from '../Components/Copyright'
-
-// import { Paper } from '@material-ui/core/';
-
-// import Copyright from './Copyright'
 
   
   const styles = theme => ({
@@ -41,7 +35,6 @@ import Copyright from '../Components/Copyright'
       margin: theme.spacing(3, 0, 2),
     },
   });
-
 
 
 class LoginForm extends Component {
@@ -82,6 +75,7 @@ class LoginForm extends Component {
                     this.props.updateCurrentUser(response.user);
                     localStorage.token = response.jwt;
                 }else{
+
                     this.setState({error: response.message})
                 }
                 // localStorage.token = response.jwt;
@@ -93,22 +87,23 @@ class LoginForm extends Component {
                 // }
                 //this.props.updateCurrentUser(response);
             });
+
+                    this.setState({error: response.message})               
+                }         
+         });
+
     };
 
 
     render() {
         const {classes} = this.props
-
-        return (
-           
+        return (        
             <Container component="main" maxWidth="xs">
       <CssBaseline />
       <br/>
       <br/>
-      
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-        
+        <Avatar className={classes.avatar}>        
           <AccountBoxOutlinedIcon />
         </Avatar>
         
@@ -119,7 +114,6 @@ class LoginForm extends Component {
         className={classes.form}>
           <h2>{this.state.error}</h2>
               
-        {/*<form className={classes.form} noValidate>*/}
           <TextField
             variant="outlined"
             margin="normal"
@@ -191,10 +185,8 @@ class LoginForm extends Component {
     </Container>
 
     );
+  }
 }
-}
-
-
 
 export default withStyles(styles)(LoginForm)
 

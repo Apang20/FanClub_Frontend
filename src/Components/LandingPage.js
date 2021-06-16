@@ -11,7 +11,6 @@ class LandingPage extends React.Component {
         return(
             <div>
             <Home/>
-            <Feature/>
             </div>
         )
     }

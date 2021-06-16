@@ -33,8 +33,6 @@ const styles = theme => ({
     marginBottom: theme.spacing(4),
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
-    // paddingRight: theme.spacing(0),
-    // backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
     backgroundImage: 'url(https://studioghiblimovies.com/wp-content/uploads/2020/03/p08192c7.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -49,20 +47,18 @@ const styles = theme => ({
 
   },
   cardMedia: {
-    paddingTop: '88%', //'56.25%'
+    paddingTop: '88%', 
   },
   cardContent: {
     flexGrow: 10,
   },
   footer: {
-    // backgroundColor: theme.palette.grey[200],
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2),
   },
 });
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 9];
-// const cards = this.props.carts 
 
 class Cart extends Component {
 
@@ -155,7 +151,6 @@ class Cart extends Component {
       </Container>
       </div>
       <Container className={classes.cardGrid} maxWidth="lg" color="primary">
-      {/* End hero unit */}
       <Grid container spacing={4}>
       {carts ? this.renderCards(carts): null}
       <div align="right" >
@@ -164,7 +159,6 @@ class Cart extends Component {
       </Grid>
       </Container>
       </main>
-      {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
         </Typography>
@@ -172,7 +166,6 @@ class Cart extends Component {
         </Typography>
         <Copyright />
       </footer>
-      {/* End footer */}
       </React.Fragment>
       );
     }
@@ -180,4 +173,5 @@ class Cart extends Component {
 
 
 export default withStyles(styles)(Cart)
-     
+
+
