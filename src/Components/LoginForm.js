@@ -74,7 +74,7 @@ class LoginForm extends Component {
     })
       .then((r) => r.json())
       .then((response) => {
-        console.log(response)
+        console.log(response, "Avelon")
         if (response.user) {
           this.props.updateCurrentUser(response.user);
           localStorage.token = response.jwt;
