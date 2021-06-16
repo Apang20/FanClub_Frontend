@@ -7,6 +7,21 @@ import BackButton from './BackButton'
 import Copyright from '../Components/Copyright'
 
 class ItemContainer extends Component {
+<<<<<<< HEAD
+
+
+    render() {
+        return (
+            <div className="search">
+                <Search
+                    updateFilter={this.props.updateFilter}
+                    movies={this.props.movies}
+                    movieFilter={this.props.movieFilter}
+                    updateMovieFilter={this.props.updateMovieFilter} />
+
+
+
+=======
       
     render() {
         return (
@@ -17,26 +32,32 @@ class ItemContainer extends Component {
                 movieFilter={this.props.movieFilter} 
                 updateMovieFilter={this.props.updateMovieFilter}/>              
                                                   
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
                 <div className="movie-container">
-                    <MovieContainer 
-                    movies={this.props.movies} 
-                    movieFilter={this.props.movieFilter} 
-                    updateMovieFilter={this.props.updateMovieFilter} />
+                    <MovieContainer
+                        movies={this.props.movies}
+                        movieFilter={this.props.movieFilter}
+                        updateMovieFilter={this.props.updateMovieFilter} />
 
                     <div className="item-container" >
+<<<<<<< HEAD
+
+
+=======
                                  
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
                         <div className="background-img">
-                        <div>
-                        {this.props.limit + 1 < this.props.itemLength ? <span><br/><MoreButton  moreItems={this.props.moreItems} items={this.props.items}/></span>  : null}             
-                        {this.props.items.map(item => <ItemCard item={item} addToCart={this.props.addToCart} removeFromCart={this.props.removeFromCart} updateCurrentUser={this.props.updateCurrentUser} user={this.props.currentUser} />)} 
-                        {this.props.limit == 0 ? null : <span><br/><BackButton backItems={this.props.backItems} items={this.props.items}/><br/></span>} <br/><br/>
+                            <div>
+                                {this.props.limit + 1 < this.props.itemLength ? <span><br /><MoreButton moreItems={this.props.moreItems} items={this.props.items} /></span> : null}
+                                {this.props.items.map(item => <ItemCard item={item} addToCart={this.props.addToCart} removeFromCart={this.props.removeFromCart} updateCurrentUser={this.props.updateCurrentUser} user={this.props.currentUser} />)}
+                                {this.props.limit == 0 ? null : <span><br /><BackButton backItems={this.props.backItems} items={this.props.items} /><br /></span>} <br /><br />
+                            </div>
                         </div>
-                        </div>
-                        </div>
-                        </div>
-                        <br/>
-                        <Copyright />
-                        <br/>
+                    </div>
+                </div>
+                <br />
+                <Copyright />
+                <br />
             </div>
 
         )
@@ -44,3 +65,7 @@ class ItemContainer extends Component {
 };
 
 export default ItemContainer;
+<<<<<<< HEAD
+
+=======
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107

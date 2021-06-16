@@ -4,17 +4,17 @@ import Link from '@material-ui/core/Link';
 
 
 function Copyright() {
-    return (
-      <Typography variant="body1" color="inherit" align="center" style={{fontFamily: ''}}>
-        {'Copyright © '}
-       
-          Ghibli Fan Club
-        {' '}
-        {new Date().getFullYear()}
-        {'. '}
-        <Link color="inherit" href="https://lemiapp.com/legal/terms"> Terms of Use & Privacy Policy </Link>
-      </Typography>
-    );
-  }
+  return (
+    <Typography variant="body1" color="inherit" align="center" style={{ fontFamily: '' }}>
+      {'Copyright © '}
 
-    export default Copyright; 
+          Ghibli Fan Club
+      {' '}
+      {new Date().getFullYear()}
+      {'. '}
+      <Link color="inherit" href="https://lemiapp.com/legal/terms"> Terms of Use & Privacy Policy </Link>
+    </Typography>
+  );
+}
+
+export default Copyright;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from "@material-ui/core/styles";
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -15,6 +15,32 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Copyright from '../Components/Copyright'
 
+<<<<<<< HEAD
+// import { Paper } from '@material-ui/core/';
+
+// import Copyright from './Copyright'
+
+
+const styles = theme => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '110%',
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+});
+=======
   
   const styles = theme => ({
     paper: {
@@ -35,10 +61,144 @@ import Copyright from '../Components/Copyright'
       margin: theme.spacing(3, 0, 2),
     },
   });
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
 
 
 class LoginForm extends Component {
 
+<<<<<<< HEAD
+  state = {
+    username: "",
+    password: "",
+    error: ""
+  };
+
+  handleChange = (event) => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  login = (event) => {
+    event.preventDefault();
+    event.target.reset();
+
+    const { username, password } = this.state;
+    const user = { username, password };
+
+    // fetch("https://powerful-island-44705.herokuapp.com/login", {
+    fetch("https://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ user }),
+    })
+      .then((r) => r.json())
+      .then((response) => {
+        console.log(response)
+        if (response.user) {
+          this.props.updateCurrentUser(response.user);
+          localStorage.token = response.jwt;
+        } else {
+          this.setState({ error: response.message })
+        }
+        // localStorage.token = response.jwt;
+        //Video: 
+        // if(response.error_message){
+        // alert(response.error_message)
+        // }else{
+        // this.props.updateCurrentUser(response)
+        // }
+        //this.props.updateCurrentUser(response);
+      });
+  };
+
+
+  render() {
+    const { classes } = this.props
+
+    return (
+
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <br />
+        <br />
+
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+
+            <AccountBoxOutlinedIcon />
+          </Avatar>
+
+          <Typography component="h1" variant="h5">
+            Login
+        </Typography>
+          <form onSubmit={this.login}
+            className={classes.form}>
+            <h2>{this.state.error}</h2>
+
+            {/*<form className={classes.form} noValidate>*/}
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="username"
+              label="Username"
+              id="username"
+              autoComplete="username"
+              autoFocus
+              onChange={this.handleChange}
+
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={this.handleChange}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="secondary"
+              className={classes.submit}
+            >
+              <img width="40%" height="10%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif" />
+              <b>Login</b>
+              <img width="40%" height="10%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif" />
+            </Button>
+            <br />
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  <br />
+                  <br />
+                  <b>Forgot password?</b>
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/register">
+                  <br />
+                  <br />
+                  <b>{"Don't have an account? Register Here!"}</b>
+                </Link>
+              </Grid>
+=======
     state = {
         username: "",
         password: "",
@@ -169,24 +329,29 @@ class LoginForm extends Component {
               <br/>
                 <b>{"Don't have an account? Register Here!"}</b>
               </Link>
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
             </Grid>
-          </Grid>
-        </form>
+          </form>
         </div>
         <Box mt={8} >
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </Box>
         <Copyright />
 
-    </Container>
+      </Container>
 
     );
   }
 }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
 
 export default withStyles(styles)(LoginForm)
 

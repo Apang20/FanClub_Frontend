@@ -70,11 +70,12 @@ class Register extends Component {
       phone_number: phoneNumber,
       username: username,
       password: password
-      // created: true
+      
 
     };
 
-    fetch("https://powerful-island-44705.herokuapp.com/users", {
+    // fetch("https://powerful-island-44705.herokuapp.com/users", {
+    fetch("https://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
