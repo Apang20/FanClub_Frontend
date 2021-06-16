@@ -34,8 +34,8 @@ class EditForm extends Component {
         // shippingAddress: ""
     }
 
-    handleSubmit(e) { //must match up to keys in localhost
-        //console.log(e.target, "Event")
+    handleSubmit(e) { 
+      
         e.preventDefault()
         let newInfo = {
             username: this.state.username,
@@ -53,7 +53,7 @@ class EditForm extends Component {
         }
         // console.log(this.props, "Current User in Edit")
 
-        fetch("http://localhost:3000/users/" + this.props.currentUser.id, reqPack)
+        fetch("https://powerful-island-44705.herokuapp.com/users/" + this.props.currentUser.id, reqPack)
             .then(resp => resp.json())
             .then(newInfo => {
                 this.props.patchInfo(newInfo) 

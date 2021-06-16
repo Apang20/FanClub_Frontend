@@ -106,7 +106,7 @@ class App extends React.Component {
     };
 
     tokenLogin = (token) => {
-        fetch("http://localhost:3000/auto_login", {
+        fetch("https://powerful-island-44705.herokuapp.com/auto_login", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -128,13 +128,13 @@ class App extends React.Component {
                 this.setState({ carts });
                 this.setState({ users });
                 this.setState({ cart_items });
-                // console.log(carts, "Carts")
+                
             });
         this.autoLogin()
     }
 
 
-    addToCart = (item) => { //item is the obj
+    addToCart = (item) => { 
         let addCart
         addCart = {
             item_id: item.id,
@@ -145,7 +145,7 @@ class App extends React.Component {
         reqPack.headers = { "Content-Type": "application/json" };
         reqPack.body = JSON.stringify(addCart);
 
-        fetch("http://localhost:3000/cart_items", reqPack)
+        fetch("https://powerful-island-44705.herokuapp.com/cart_items", reqPack)
             .then(res => res.json())
             .then(res => {
                 res.item = item
