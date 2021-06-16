@@ -25,6 +25,7 @@ const styles = theme => ({
 
 class EditForm extends Component {
 
+<<<<<<< HEAD
   state = {
     username: "",
     email: ""
@@ -50,6 +51,33 @@ class EditForm extends Component {
       headers: { "Content-Type": "application/json" },
       method: "PATCH",
       body: JSON.stringify(newInfo)
+=======
+    state = {
+        username: "",
+        email: ""
+    }
+
+    handleSubmit(e) { 
+
+        e.preventDefault()
+        let newInfo = {
+            username: this.state.username,
+            email: this.state.email
+        }
+
+        let reqPack = {
+            headers: { "Content-Type": "application/json" },
+            method: "PATCH",
+            body: JSON.stringify(newInfo)
+        }
+
+        fetch("https://powerful-island-44705.herokuapp.com/users/" + this.props.currentUser.id, reqPack)
+            .then(resp => resp.json())
+            .then(newInfo => {
+                this.props.patchInfo(newInfo) 
+                e.target.reset()
+            })
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
     }
     // console.log(this.props, "Current User in Edit")
 
@@ -89,6 +117,7 @@ class EditForm extends Component {
             />
 
             <div className="form">
+<<<<<<< HEAD
               <TextField
                 varient="outlined"
                 color="primary"
@@ -121,3 +150,56 @@ class EditForm extends Component {
 }
 export default withStyles(styles)(EditForm)
 
+=======
+            <div>
+         
+            
+      <img className="navbar-pic" src="https://www.pngkey.com/png/full/133-1338872_-hayao-miyazaki-princess-mononoke-ponyo-spirited-away.png" />
+      </div> 
+       
+            <form onSubmit={(e) => this.handleSubmit(e)} >
+
+                <div className="form">
+                    <TextField
+                        varient="outlined"
+                        color="primary"
+                        type="text"
+                        onChange={(e) => this.setState({ username: e.target.value })}
+                        placeholder="Username"
+                        class="form-control"
+                        id="usernamevalue"
+                        name="username"
+                    />
+
+                    <div className="form">
+                        <TextField
+                            varient="outlined"
+                            color="primary"
+                            type="email"
+                            onChange={(e) => this.setState({ email: e.target.value })}
+                            placeholder="Email@gmail.com"
+                            class="form-control"
+                            id="emailvalue"
+                            name="emailName"
+                        />
+                        </div>
+                     </div>
+                                        
+                    
+                     <Button
+                     type="submit"
+                     width="50%"
+                     variant="contained"
+                     color="secondary"
+                     className={classes.submit}
+                   >
+                   Submit
+                   </Button>                      
+                     </form>   
+            </div>
+        )
+     }
+ }
+ export default withStyles(styles)(EditForm)
+                    
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107

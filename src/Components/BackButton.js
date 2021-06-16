@@ -8,6 +8,7 @@ const BackButton = (props) => {
           </Button>
 }
 export default BackButton
+<<<<<<< HEAD
 
 
 
@@ -54,3 +55,5 @@ export default BackButton
 
 
 // import React from 'react'
+=======
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107

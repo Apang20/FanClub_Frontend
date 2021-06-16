@@ -196,7 +196,3 @@ class Checkout extends Component {
 }
 
 export default withStyles(styles)(Checkout)
-// startIcon={<ShoppingCartOutlinedIcon />}
-// export default Checkout;
-
-// {this.props.currentUser ? <Button variant="outlined" color="primary" style={{fontFamily: 'Vidaloka'}}><Link to="/edit">Edit Account</Link></Button> : null}

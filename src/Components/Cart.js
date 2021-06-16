@@ -33,8 +33,6 @@ const styles = theme => ({
     marginBottom: theme.spacing(4),
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
-    // paddingRight: theme.spacing(0),
-    // backgroundImage: 'url(https://i.pinimg.com/originals/d7/ba/1c/d7ba1c73c817108fdb8e9532b4934337.jpg)',
     backgroundImage: 'url(https://studioghiblimovies.com/wp-content/uploads/2020/03/p08192c7.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -49,20 +47,18 @@ const styles = theme => ({
 
   },
   cardMedia: {
-    paddingTop: '88%', //'56.25%'
+    paddingTop: '88%', 
   },
   cardContent: {
     flexGrow: 10,
   },
   footer: {
-    // backgroundColor: theme.palette.grey[200],
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2),
   },
 });
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 9];
-// const cards = this.props.carts 
 
 class Cart extends Component {
 
@@ -125,6 +121,7 @@ class Cart extends Component {
     return (
 
       <React.Fragment>
+<<<<<<< HEAD
         <CssBaseline />
 
         <main>
@@ -174,6 +171,54 @@ class Cart extends Component {
           <Copyright />
         </footer>
         {/* End footer */}
+=======
+      <CssBaseline />
+     
+      <main>
+      {/* Hero unit */}
+      <div className={classes.heroContent}>
+      
+      <Container maxWidth="sm">
+      <div className={classes.heroButtons}>
+      <Grid container spacing={2} justify="center">
+      <Grid item > 
+      <br/>
+      <br/>
+      <br/>
+      <Button variant="contained" align="center" color="primary" style={{fontFamily: ''}}  >
+      <Link to="/items"> Browse All Items</Link>
+      </Button> 
+      <Button variant="contained" align="center" color="secondary" style={{fontFamily: ''}}>
+      <Link to="/checkout">Checkout</Link>
+      </Button>
+      <br/><br/><br/>
+      <Typography variant="h4" align="center" color="inherint" paragraph style={{fontFamily: ''}}>
+      <span className="circle-sketch-highlight"><b>Cart Total</b>: <b>${this.totalPrice(carts)}.00</b></span>            
+      
+      </Typography>
+      
+      </Grid>
+      </Grid>
+      </div>
+      </Container>
+      </div>
+      <Container className={classes.cardGrid} maxWidth="lg" color="primary">
+      <Grid container spacing={4}>
+      {carts ? this.renderCards(carts): null}
+      <div align="right" >
+      <img width="15%" height="1%" src="https://media2.giphy.com/media/dZiikBDkgHfRvfdHZ9/source.gif"/>
+      </div>
+      </Grid>
+      </Container>
+      </main>
+      <footer className={classes.footer}>
+        <Typography variant="h6" align="center" gutterBottom>
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+        </Typography>
+        <Copyright />
+      </footer>
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
       </React.Fragment>
     );
   }
@@ -181,3 +226,8 @@ class Cart extends Component {
 
 
 export default withStyles(styles)(Cart)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107

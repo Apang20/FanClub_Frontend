@@ -10,11 +10,19 @@ class LandingPage extends React.Component {
     render() {
         return (
             <div>
+<<<<<<< HEAD
                 <Home />
                 <Feature />
+=======
+            <Home/>
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
             </div>
         )
     }
 }
 
+<<<<<<< HEAD
 export default LandingPage;
+=======
+export default LandingPage; 
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107

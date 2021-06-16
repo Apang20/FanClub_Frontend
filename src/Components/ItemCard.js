@@ -24,4 +24,7 @@ class ItemCard extends Component {
 
 
 export default ItemCard;
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb7bfa648602e34fac4f6108685bbcc4fbd59107
