@@ -48,7 +48,7 @@ const theme = createMuiTheme({
         },
         error: {
             main: red[500],
-          },
+        },
     }
 })
 
@@ -220,84 +220,84 @@ class App extends React.Component {
 
         return (
             <Fragment>
-            <ChakraProvider>
-            <ThemeProvider theme={theme}>
-                    <Container maxWidth="xd">
-                        <header className="App-header">
-                            <Typography variant="h2" component="div"> 
-                               
-                </Typography>
-                            <Typography variant="subtitle1">
-                              
-                </Typography>
-                        </header>
-                        <NavBar
-                            currentUser={this.state.currentUser}
-                            logOut={this.logOut} />
-                        <Router />
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/login" render={() => (
-                                this.state.currentUser == null ?
-                                    <LoginForm
-                                        updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
-                            )} />
+                <ChakraProvider>
+                    <ThemeProvider theme={theme}>
+                        <Container maxWidth="xd">
+                            <header className="App-header">
+                                <Typography variant="h2" component="div">
 
-                            <Route exact path="/auth">
-                                Auth Check{" "}
-                                {!this.state.loggedIn
-                                    ? "(Works better if you're logged in!)"
-                                    : "(Try it now you're logged in!)"}
-                                <NavBar loggedIn={this.state.loggedIn} />
-                            </Route>
+                                </Typography>
+                                <Typography variant="subtitle1">
 
-                            <Route exact path="/register" component={Register} />
-                            <Route path="/carts" render={() => (
-                                <Cart
-                                    currentUser={this.state.currentUser}
-                                    carts={this.state.carts}
-                                    removeFromCart={this.removeFromCart} />)} />
+                                </Typography>
+                            </header>
+                            <NavBar
+                                currentUser={this.state.currentUser}
+                                logOut={this.logOut} />
+                            <Router />
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route exact path="/login" render={() => (
+                                    this.state.currentUser == null ?
+                                        <LoginForm
+                                            updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
+                                )} />
 
-                            <Route exact path="/edit" render={() =>
-                                <EditForm
-                                    currentUser={this.state.currentUser}
-                                    patchInfo={this.patchInfo} />} />
+                                <Route exact path="/auth">
+                                    Auth Check{" "}
+                                    {!this.state.loggedIn
+                                        ? "(Works better if you're logged in!)"
+                                        : "(Try it now you're logged in!)"}
+                                    <NavBar loggedIn={this.state.loggedIn} />
+                                </Route>
 
-                            <Route exact path="/users" render={() =>
-                                <Account
-                                    currentUser={this.state.currentUser} />} />
+                                <Route exact path="/register" component={Register} />
+                                <Route path="/carts" render={() => (
+                                    <Cart
+                                        currentUser={this.state.currentUser}
+                                        carts={this.state.carts}
+                                        removeFromCart={this.removeFromCart} />)} />
 
-                            <Route exact path="/checkout" render={() =>
-                                 <Checkout
-                                    currentUser={this.state.currentUser} />} />
+                                <Route exact path="/edit" render={() =>
+                                    <EditForm
+                                        currentUser={this.state.currentUser}
+                                        patchInfo={this.patchInfo} />} />
 
-                            <Route exact path="/thanks" render={() =>
-                                <Thanks
-                                    currentUser={this.state.currentUser} />} />
+                                <Route exact path="/users" render={() =>
+                                    <Account
+                                        currentUser={this.state.currentUser} />} />
 
-                            <Route exact path="/items" render={(props) => (
-                                <ItemContainer
-                                    addToCart={this.addToCart}
-                                    updateCurrentUser={this.updateCurrentUser}
-                                    user={this.state.currentUser}
-                                    filter={this.state.filter}
-                                    updateFilter={this.updateFilter}
-                                    movies={this.state.movies}
-                                    movieFilter={this.state.movieFilter}
-                                    updateMovieFilter={this.updateMovieFilter}
-                                    moreItems={this.moreItems}
-                                    limit={this.state.limit}
-                                    items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
-                                    limit={this.state.limit}
-                                    itemLength={this.state.items.length}
-                                    backItems={this.backItems} />)} />
-                                   
-                        </Switch>
-                        <Router />         
-                    </Container>
-                </ThemeProvider>
+                                <Route exact path="/checkout" render={() =>
+                                    <Checkout
+                                        currentUser={this.state.currentUser} />} />
+
+                                <Route exact path="/thanks" render={() =>
+                                    <Thanks
+                                        currentUser={this.state.currentUser} />} />
+
+                                <Route exact path="/items" render={(props) => (
+                                    <ItemContainer
+                                        addToCart={this.addToCart}
+                                        updateCurrentUser={this.updateCurrentUser}
+                                        user={this.state.currentUser}
+                                        filter={this.state.filter}
+                                        updateFilter={this.updateFilter}
+                                        movies={this.state.movies}
+                                        movieFilter={this.state.movieFilter}
+                                        updateMovieFilter={this.updateMovieFilter}
+                                        moreItems={this.moreItems}
+                                        limit={this.state.limit}
+                                        items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
+                                        limit={this.state.limit}
+                                        itemLength={this.state.items.length}
+                                        backItems={this.backItems} />)} />
+
+                            </Switch>
+                            <Router />
+                        </Container>
+                    </ThemeProvider>
                 </ChakraProvider>
-                
+
             </Fragment>
 
         )
@@ -306,96 +306,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-
-//<FilterBar />
-
-
-
-
-
-
-
-
-// return (
-//     <Fragment>
-//         <ThemeProvider theme={theme}>
-//             <Container maxWidth="xd">
-//                 <header className="App-header">
-//                     <Typography variant="h2" component="div"> 
-//                         Welcome Header Message!
-//         </Typography>
-//                     <Typography variant="subtitle1">
-//                         Exclusive Site for Ghibli-Fans
-//         </Typography>
-//                 </header>
-//                 <NavBar
-//                     currentUser={this.state.currentUser}
-//                     logOut={this.logOut} />
-//                 <Router />
-//                 <Switch>
-//                     <Route exact path="/" component={Home} />
-//                     <Route exact path="/login" render={() => (
-//                         this.state.currentUser == null ?
-//                             <LoginForm
-//                                 updateCurrentUser={this.updateCurrentUser} /> : <Redirect to="/items" />
-//                     )} />
-
-//                     <Route exact path="/auth">
-//                         Auth Check{" "}
-//                         {!this.state.loggedIn
-//                             ? "(Works better if you're logged in!)"
-//                             : "(Try it now you're logged in!)"}
-//                         <NavBar loggedIn={this.state.loggedIn} />
-//                     </Route>
-
-//                     <Route exact path="/register" component={Register} />
-//                     <Route path="/carts" render={() => (
-//                         <Cart
-//                             currentUser={this.state.currentUser}
-//                             carts={this.state.carts}
-//                             removeFromCart={this.removeFromCart} />)} />
-
-//                     <Route exact path="/edit" render={() =>
-//                         <EditForm
-//                             currentUser={this.state.currentUser}
-//                             patchInfo={this.patchInfo} />} />
-
-//                     <Route exact path="/users" render={() =>
-//                         <Account
-//                             currentUser={this.state.currentUser} />} />
-//                     <Route exact path="/items" render={(props) => (
-//                         <ItemContainer
-//                             addToCart={this.addToCart}
-//                             updateCurrentUser={this.updateCurrentUser}
-//                             user={this.state.currentUser}
-//                             filter={this.state.filter}
-//                             updateFilter={this.updateFilter}
-//                             movies={this.state.movies}
-//                             movieFilter={this.state.movieFilter}
-//                             updateMovieFilter={this.updateMovieFilter}
-//                             moreItems={this.moreItems}
-//                             limit={this.state.limit}
-//                             items={this.filteredItems().slice(this.state.limit, this.state.limit + 4)}
-//                             limit={this.state.limit}
-//                             itemLength={this.state.items.length}
-//                             backItems={this.backItems} />)} />
-//                     <Route exact path="/notfound" component={NotFound} />
-//                 </Switch>
-//                 <Router />
-
-//                 <FilterBar />
-//                 <Footer />
-//             </Container>
-//         </ThemeProvider>
-//     </Fragment>
-
-// )
-// }
-
-// }
-
-// export default App;
-
-

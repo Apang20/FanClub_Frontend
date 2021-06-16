@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -25,30 +24,3 @@ class ItemCard extends Component {
 
 export default ItemCard;
 
-// <img className="item-img" src={this.props.item.image} alt={this.props.item.name}></img><br/>
-
-
-
-
-
-
-
-
-
-
-
-
-        // const ItemCard = ({ item, currentUser, addToCart}) => {
-
-
-        // {currentUser? <button onClick={() => addToCart(item)}>Add to Shopping Cart</button> : null } 
-
-    //   <button onClick={() => props.removeTrans(props.transaction)} className="del-btn"> Delete </button>
-
-//     <Card>
-//     <Card.Content>
-//         <Card.Header>{username}</Card.Header>
-
-//         <Card.Description></Card.Description>
-//     </Card.Content>
-// </Card>

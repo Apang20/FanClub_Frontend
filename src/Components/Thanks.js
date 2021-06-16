@@ -12,7 +12,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
-import YouTubeIcon from '@material-ui/icons/YouTube'; 
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 
 const styles = theme => ({
@@ -45,71 +45,51 @@ const styles = theme => ({
   },
 });
 
-class Thanks extends React.Component{ 
-render(){
-    const {classes} = this.props
+class Thanks extends React.Component {
+  render() {
+    const { classes } = this.props
 
-return (
-  <div>
-  <br/>
-  
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(https://64.media.tumblr.com/a8f2bb383f0cc03ebd0e1c76e6add65f/tumblr_nl514kT5p61spui9lo1_540.gifv)`
-}}>
-{/* Increase the priority of the hero background image */}
-{/**/}<div className={classes.overlay} />
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<Grid container>
-<Grid item md={6}>
-<div className={classes.mainFeaturedPostContent}>
-<Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{fontFamily: ''}}><br/><br/><br/><br/><br/>
-<b>Ghibli Fan Club Thanks You for Your Support!</b>
-</Typography>
-<Typography className={classes.subTitle} variant="h6" color="secondary" style={{fontFamily: ''}} paragraph> <br/> 
-<b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Content @GhibliFanClub for 20% Discount </i></Link></b>  <Link href="https://www.facebook.com/FansOfStudioGhibli/"> {<FacebookIcon/>}</Link> <Link href="https://www.instagram.com/ghibli.movies/?hl=en">{<InstagramIcon/>}</Link> <Link href="https://www.pinterest.com/noblewoods/studio-ghibli/">{<PinterestIcon/>}</Link> <Link href="https://www.youtube.com/watch?v=5JRXlNBTf_M">{<YouTubeIcon/>}</Link><br/>
-{<SwapHorizontalCircleIcon />} Returns must shipped be within 30 days for full refund<br/>
-{<EmailIcon />} Check email for order confirmation <br/>
-{<LocalShippingIcon />} <Link href="https://parcelsapp.com/en/tracking" color="inherint"> Track Your Order </Link> <br/>
-{<ContactPhoneIcon />} <Link href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office" color="secondary"> Contact Us </Link>  
-</Typography>
+    return (
+      <div>
+        <br />
 
-</div>
-</Grid>
-</Grid>
-</Paper>
-<Copyright />
-<br/>
-</div>
-);
-}}
+        <Paper className={classes.mainFeaturedPost} style={{
+          backgroundImage: `url(https://64.media.tumblr.com/a8f2bb383f0cc03ebd0e1c76e6add65f/tumblr_nl514kT5p61spui9lo1_540.gifv)`
+        }}>
+          {/* Increase the priority of the hero background image */}
+          {/**/}<div className={classes.overlay} />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Grid container>
+            <Grid item md={6}>
+              <div className={classes.mainFeaturedPostContent}>
+                <Typography className={classes.title} component="h1" variant="h3" color="inherit" style={{ fontFamily: '' }}><br /><br /><br /><br /><br />
+                  <b>Ghibli Fan Club Thanks You for Your Support!</b>
+                </Typography>
+                <Typography className={classes.subTitle} variant="h6" color="secondary" style={{ fontFamily: '' }} paragraph> <br />
+                  <b><Link href="https://www.sociablelabs.com/ghibli-coupons"><i>Post Content @GhibliFanClub for 20% Discount </i></Link></b>  <Link href="https://www.facebook.com/FansOfStudioGhibli/"> {<FacebookIcon />}</Link> <Link href="https://www.instagram.com/ghibli.movies/?hl=en">{<InstagramIcon />}</Link> <Link href="https://www.pinterest.com/noblewoods/studio-ghibli/">{<PinterestIcon />}</Link> <Link href="https://www.youtube.com/watch?v=5JRXlNBTf_M">{<YouTubeIcon />}</Link><br />
+                  {<SwapHorizontalCircleIcon />} Returns must shipped be within 30 days for full refund<br />
+                  {<EmailIcon />} Check email for order confirmation <br />
+                  {<LocalShippingIcon />} <Link href="https://parcelsapp.com/en/tracking" color="inherint"> Track Your Order </Link> <br />
+                  {<ContactPhoneIcon />} <Link href="https://lemiapp.com/lemi/the-magic-of-studio-ghibli/studio-ghibli-corporate-office" color="secondary"> Contact Us </Link>
+                </Typography>
+
+              </div>
+            </Grid>
+          </Grid>
+        </Paper>
+        <Copyright />
+        <br />
+      </div>
+    );
+  }
+}
 
 export default withStyles(styles)(Thanks)
 
 
 
-// import React, { Component } from 'react'
-// import Copyright from '../Components/Copyright'
-// import Typography from '@material-ui/core/Typography';
-
-
-
-// class Thanks extends React.Component {
-//   render() {
-//     return (
-
-//       <div className="thanks">
-//       <Typography gutterBottom variant="h5" component="h1" style={{fontFamily: 'Quicksand'}} >
-//       Thank You
-//       </Typography>
-//         <img className="thanks-pic" src="https://64.media.tumblr.com/a8f2bb383f0cc03ebd0e1c76e6add65f/tumblr_nl514kT5p61spui9lo1_540.gifv" />
-//         />
-
-//       </div>
-//     )
-//   }
-// }
-// export default Thanks;
