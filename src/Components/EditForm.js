@@ -28,22 +28,14 @@ class EditForm extends Component {
     state = {
         username: "",
         email: ""
-        // firstName: "",
-        // lastName: "",
-        // phoneNumber: "",
-        // shippingAddress: ""
     }
 
-    handleSubmit(e) { //must match up to keys in localhost
-        //console.log(e.target, "Event")
+    handleSubmit(e) { 
         e.preventDefault()
         let newInfo = {
             username: this.state.username,
             email: this.state.email
-            // first_name: this.state.firstName,
-            // last_name: this.state.lastName,
-            // phone_number: this.state.phoneNumber,
-            // shipping_address: this.state.shippingAddress
+            
         }
 
         let reqPack = {
@@ -51,7 +43,6 @@ class EditForm extends Component {
             method: "PATCH",
             body: JSON.stringify(newInfo)
         }
-        // console.log(this.props, "Current User in Edit")
 
         fetch("http://localhost:3000/users/" + this.props.currentUser.id, reqPack)
             .then(resp => resp.json())

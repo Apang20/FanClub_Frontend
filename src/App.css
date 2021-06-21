@@ -47,8 +47,7 @@
     box-shadow: 5px 5px #fdfdfdf8;
     border: rgb(173, 175, 179) solid 12px;
     background: rgb(255, 255, 255);
-    /* font-family: Vidaloka; */
-    /* overflow: auto; */ 
+   
   }
   
   
@@ -56,7 +55,7 @@
     justify-self: center;
     height: 16rem;
     width: 18rem;
-    /* margin-bottom: 10rem; */
+   
   }
   
   .item-card:hover {

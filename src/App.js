@@ -14,7 +14,6 @@ import EditForm from './Components/EditForm'
 import Checkout from './Components/Checkout'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, green, red } from '@material-ui/core/colors'
-// import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { ChakraProvider } from "@chakra-ui/react"
@@ -56,7 +55,7 @@ const theme = createMuiTheme({
 class App extends React.Component {
 
     state = {
-        currentUser: null, //user:{}
+        currentUser: null, 
         loggedIn: false,
         items: [],
         carts: [],
@@ -123,17 +122,17 @@ class App extends React.Component {
                 this.setState({ carts });
                 this.setState({ users });
                 this.setState({ cart_items });
-                // console.log(carts, "Carts")
+                
             });
         this.autoLogin()
     }
 
 
-    addToCart = (item) => { //item is the obj
+    addToCart = (item) => { 
         let addCart
         addCart = {
             item_id: item.id,
-            cart_id: 21 //grab from backend(localhost) to make dynamic?/ Cart.first after seeding
+            cart_id: 21 //Cart.first after seeding
         };
         let reqPack = {};
         reqPack.method = "POST";
@@ -146,7 +145,7 @@ class App extends React.Component {
                 res.item = item
                 let updateCart = [...this.state.carts, res]
                 this.setState({ carts: updateCart });
-                // console.log(res)
+                
             })
     }
 
@@ -171,14 +170,10 @@ class App extends React.Component {
                 id: newInfo.id,
                 username: newInfo.username,
                 email: newInfo.email,
-                // first_name: newInfo.firstName,
-                // last_name: newInfo.lastName,
-                // shipping_address: newInfo.shippingAddress,
-                // phone_number: newInfo.phoneNumber
+
             }
         })
-        // console.log(newInfo, "NewInfo")
-        // console.log(this.state.currentUser, "Current User")
+  
 
     }
 

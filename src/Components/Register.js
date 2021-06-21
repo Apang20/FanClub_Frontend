@@ -4,7 +4,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -59,7 +58,6 @@ class Register extends Component {
 
   createUser = (event) => {
     event.preventDefault();
-    // event.target.reset();
     const { firstName, lastName, email, phoneNumber, username, password } = this.state;
 
     let user = {
@@ -69,7 +67,6 @@ class Register extends Component {
       phone_number: phoneNumber,
       username: username,
       password: password
-      // created: true
 
     };
 
@@ -83,10 +80,7 @@ class Register extends Component {
     })
       .then((r) => r.json())
       .then((response) => {
-        // console.log(response, "Register response")
-        //         // if (response.status === "created") {
-        //         //   this.setState({ created: true, errorMessage: "" });
-        //         // }
+      
       })
       .catch((response) =>
         this.setState({

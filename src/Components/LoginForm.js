@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from "@material-ui/core/styles";
 
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined';
-
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -81,14 +79,7 @@ class LoginForm extends Component {
         } else {
           this.setState({ error: response.message })
         }
-        // localStorage.token = response.jwt;
-        //Video: 
-        // if(response.error_message){
-        // alert(response.error_message)
-        // }else{
-        // this.props.updateCurrentUser(response)
-        // }
-        //this.props.updateCurrentUser(response);
+    
       });
   };
 

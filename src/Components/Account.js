@@ -55,8 +55,7 @@ class Account extends Component{
   
 render(){
     const {classes} = this.props
-    // console.log(this.props.currentUser)
-    // debugger 
+    
 
 return (
   <div>
